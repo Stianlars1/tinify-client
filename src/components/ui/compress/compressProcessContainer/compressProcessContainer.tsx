@@ -5,7 +5,7 @@ import CompressionCard from "../compressCard/compressCard";
 import { CompressProcessHeader } from "../compressProcessHeader/compressProcessHeader";
 import { CompressResponse } from "../types";
 import styles from "./css/compressProcessContainer.module.css";
-export const CompressProcessContainer = () => {
+const CompressProcessContainer = () => {
   const context = useContext(FileUploadContext);
   const { files } = context;
   const [compressedFiles, setCompressedFiles] = useState<CompressResponse[]>(
@@ -50,29 +50,4 @@ export const CompressProcessContainer = () => {
   );
 };
 
-// const Card = (file: File) => {
-//   const [progress, setProgress] = useState(0);
-
-//   // simulate progress counter
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setProgress((prev) => {
-//         if (prev >= 100) {
-//           clearInterval(interval);
-//           return 100;
-//         }
-//         return prev + 10;
-//       });
-//     }, 500);
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   return (
-//     <li style={{ listStyleType: "none" }}>
-//       <h3>File: {file.name}</h3>
-//       <p>Status: Uploading...</p>
-//       <progress style={{ width: "100%" }} value={progress} max="100"></progress>
-//     </li>
-//   );
-// };
+export default CompressProcessContainer;

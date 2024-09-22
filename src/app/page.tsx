@@ -1,17 +1,31 @@
 import { PageContent } from "@/components/layout/pageContent/pageContent";
-import { CompressDropZone } from "@/components/ui/compress/compressDropZone/compressDropZone";
-import { CompressProcessContainer } from "@/components/ui/compress/compressProcessContainer/compressProcessContainer";
+import { TinifyServices } from "@/types";
 import { Metadata } from "next";
-import { getCompressionTag } from "./actions/tags";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import { rootMeta } from "./rootMeta";
 export const metadata: Metadata = rootMeta;
-
+const CompressDropZone = dynamic(
+  () => import("@/components/ui/compress/compressDropZone/compressDropZone"),
+  {
+    ssr: false,
+    loading: () => <></>,
+  }
+);
+const CompressProcessContainer = dynamic(
+  () =>
+    import(
+      "@/components/ui/compress/compressProcessContainer/compressProcessContainer"
+    ),
+  {
+    ssr: false,
+    loading: () => <></>,
+  }
+);
 export default async function CompressPage() {
-  const compressionTag = await getCompressionTag();
-
   return (
     <PageContent
-      tag={compressionTag}
+      service={TinifyServices.COMPRESS}
       title="Compress any images without losing quality"
       description={
         <span>
@@ -21,8 +35,10 @@ export default async function CompressPage() {
         </span>
       }
     >
-      <CompressDropZone />
-      <CompressProcessContainer />
+      <Suspense fallback={<></>}>
+        <CompressDropZone />
+        <CompressProcessContainer />
+      </Suspense>
     </PageContent>
   );
 }

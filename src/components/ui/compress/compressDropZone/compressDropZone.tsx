@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useContext, useState } from "react";
 import styles from "./css/compressDropZone.module.css";
 
-export const CompressDropZone = () => {
+const CompressDropZone = () => {
   const context = useContext(FileUploadContext);
   const { files, setFiles } = context;
   const [isOver, setIsOver] = useState(false);
@@ -95,3 +95,4 @@ export const CompressDropZone = () => {
     </>
   );
 };
+export default CompressDropZone;
