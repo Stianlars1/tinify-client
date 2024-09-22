@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@builder.io/partytown": "^0.10.2",
+    "@next/bundle-analyzer": "^14.2.13",
     "axios": "^1.7.7",
-    "lottie-react": "^2.4.0",
+    "lottie-light-react": "^2.4.0",
     "next": "14.2.11",
     "react": "^18",
     "react-dom": "^18",

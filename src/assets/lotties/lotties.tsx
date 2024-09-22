@@ -1,5 +1,5 @@
 "use client";
-import Lottie from "lottie-react";
+import Lottie, { LottieOptions } from "lottie-light-react";
 import emailAnimationData from "./animations/email.json";
 import imageUploadV1 from "./animations/imageUpload_v1.json";
 import imageUploadV2 from "./animations/imageUpload_v2.json";
@@ -34,7 +34,7 @@ export const ImageUploadV2 = ({
 }: {
   widthHeight?: number | undefined;
 }) => {
-  const defaultLottieOptions = {
+  const defaultLottieOptions: LottieOptions = {
     loop: true,
     autoplay: true,
     animationData: imageUploadV2,
@@ -46,6 +46,7 @@ export const ImageUploadV2 = ({
       height: `${widthHeight}px`,
     },
     className: "lottie-animation imageUpload",
+    renderer: "svg",
   };
 
   return <Lottie {...defaultLottieOptions} />;

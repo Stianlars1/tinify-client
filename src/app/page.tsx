@@ -2,7 +2,6 @@ import { PageContent } from "@/components/layout/pageContent/pageContent";
 import { TinifyServices } from "@/types";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import { rootMeta } from "./rootMeta";
 export const metadata: Metadata = rootMeta;
 const CompressDropZone = dynamic(
@@ -35,10 +34,8 @@ export default async function CompressPage() {
         </span>
       }
     >
-      <Suspense fallback={<></>}>
-        <CompressDropZone />
-        <CompressProcessContainer />
-      </Suspense>
+      <CompressDropZone />
+      <CompressProcessContainer />
     </PageContent>
   );
 }
