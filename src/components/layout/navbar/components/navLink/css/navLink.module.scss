@@ -1,0 +1,16 @@
+.navLink {
+  font-size: 1.2rem;
+  border-bottom: 2px solid transparent;
+  color: hsl(var(--foreground) / 0.7);
+
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: hsl(var(--foreground) / 1);
+  }
+}
+
+.activeLink {
+  border-bottom: 2px solid
+    light-dark(hsl(var(--border)), hsl(var(--muted-foreground)));
+}

@@ -1,0 +1,8 @@
+.imageUpload {
+  margin-top: -1.25rem;
+  svg {
+    * {
+      fill: light-dark(hsl(var(--black)), hsl(var(--white)));
+    }
+  }
+}

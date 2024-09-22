@@ -1,0 +1,26 @@
+.compressDropZone {
+  display: inline-flex;
+  max-width: 750px;
+  min-height: 125px;
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 3px dashed light-dark(hsl(var(--border)), hsl(var(--foreground)/0.5));
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+  color: hsl(var(--foreground));
+}
+.compressDropZone:hover {
+  border-color: light-dark(hsl(var(--black)), hsl(var(--white)));
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+
+.isOver {
+  border-color: light-dark(hsl(var(--black)), hsl(var(--white)));
+  background-color: hsl(var(--muted));
+}/*# sourceMappingURL=compressDropZone.module.css.map */

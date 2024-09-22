@@ -1,0 +1,6 @@
+.imageUpload {
+  margin-top: -1.25rem;
+}
+.imageUpload svg * {
+  fill: light-dark(hsl(var(--black)), hsl(var(--white)));
+}/*# sourceMappingURL=lotties.css.map */

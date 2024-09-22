@@ -1,0 +1,37 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(var(--muted));
+  padding: 0 calc((100vw - var(--max-width)) / 2 + var(--padding));
+
+  --ring-shadow: 0 0 #0000;
+  --ring-offset-shadow: 0 0 #0000;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--ring-shadow, 0 0 #0000), var(--shadow);
+
+  .logo {
+    width: 3rem;
+    height: 3rem;
+
+    border: 1px solid white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .navLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 0 var(--padding);
+  }
+}

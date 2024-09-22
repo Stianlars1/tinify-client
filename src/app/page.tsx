@@ -1,28 +1,28 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { PageContent } from "@/components/layout/pageContent/pageContent";
+import { CompressDropZone } from "@/components/ui/compress/compressDropZone/compressDropZone";
+import { CompressProcessContainer } from "@/components/ui/compress/compressProcessContainer/compressProcessContainer";
+import { Metadata } from "next";
+import { getCompressionTag } from "./actions/tags";
+import { rootMeta } from "./rootMeta";
+export const metadata: Metadata = rootMeta;
 
-export default function Home() {
+export default async function CompressPage() {
+  const compressionTag = await getCompressionTag();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <ol>
-          <li>
-            Welcome to <code>Tinify.dev</code>.
-          </li>
-        </ol>
-      </main>
-      <footer className={styles.footer}>
-        <a href="https://tinify.dev" target="_blank" rel="noopener noreferrer">
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          → Tinify.dev {new Date().getFullYear()}
-        </a>
-      </footer>
-    </div>
+    <PageContent
+      tag={compressionTag}
+      title="Compress any images without losing quality"
+      description={
+        <span>
+          Supports <strong>JPG</strong>, <strong>PNG</strong>,{" "}
+          <strong>GIF</strong>, <strong>WEBP</strong>, and more formats. Fast
+          and easy to use.
+        </span>
+      }
+    >
+      <CompressDropZone />
+      <CompressProcessContainer />
+    </PageContent>
   );
 }

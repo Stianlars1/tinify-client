@@ -1,0 +1,76 @@
+.animatedLoadingBar {
+  border-radius: 0.125rem;
+  display: block;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: loading-frames;
+  animation-name: loading-frames;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(8%, #eeeeee),
+    color-stop(18%, #e3e3e3),
+    color-stop(33%, #eeeeee)
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #eeeeee 8%,
+    #dddddd 18%,
+    #eeeeee 33%
+  );
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  -webkit-background-size: 50rem 6.5rem;
+  position: relative;
+}
+
+@-webkit-keyframes loading-frames {
+  0% {
+    background-position: -29.25rem 0;
+  }
+  100% {
+    background-position: 29.25rem 0;
+  }
+}
+
+@keyframes loading-frames {
+  0% {
+    background-position: -29.25rem 0;
+  }
+  100% {
+    background-position: 29.25rem 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .animatedLoadingBar {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(7%, hsl(var(--black))),
+      color-stop(18%, hsl(var(--border))),
+      color-stop(34%, hsl(var(--black)))
+    );
+    background: -webkit-linear-gradient(
+      left,
+      hsl(var(--black)) 7%,
+      hsl(var(--border)) 18%,
+      hsl(var(--black)) 34%
+    );
+    background: linear-gradient(
+      to right,
+      hsl(var(--black)) 7%,
+      hsl(var(--border)) 18%,
+      hsl(var(--black)) 34%
+    );
+    -webkit-background-size: 50rem 6.5rem;
+  }
+}

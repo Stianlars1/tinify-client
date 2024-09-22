@@ -1,0 +1,40 @@
+.button {
+  font-size: 0.875rem;
+  padding: 4px 8px;
+  border-radius: calc(var(--radius) - 3px);
+  border: 1px solid transparent;
+  display: inline-block;
+  transition: all 0.15s ease;
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.downloadButton {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+
+  &:hover {
+    background-color: hsl(var(--primary) / 0.7);
+  }
+}
+
+.downloadAllButton {
+  background-color: light-dark(hsl(var(--black)), hsl(var(--purple)));
+  color: hsl(var(--white));
+  padding: 0.65rem 1rem;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: light-dark(
+      hsl(var(--black) / 0.7),
+      hsl(var(--purple) / 0.7)
+    );
+  }
+}
+@media screen and (max-width: 400px) {
+  .downloadButton {
+    padding: 0.15rem !important;
+  }
+}
