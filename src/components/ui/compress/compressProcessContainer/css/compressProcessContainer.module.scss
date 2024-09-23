@@ -12,6 +12,7 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--ring-shadow, 0 0 #0000), var(--shadow);
   background-color: transparent;
+  border: 0.5px solid hsl(var(--border));
 }
 
 .cardsList li:first-child {

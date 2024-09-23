@@ -4,7 +4,8 @@
   justify-content: space-between;
   background-color: hsl(var(--muted));
   padding: 0 calc((100vw - var(--max-width)) / 2 + var(--padding));
-
+  grid-column: 1 / -1px;
+  grid-row: 1 / 2;
   --ring-shadow: 0 0 #0000;
   --ring-offset-shadow: 0 0 #0000;
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);

@@ -9,7 +9,7 @@
   --success: 88 50% 53%;
   --purple: 262.1 83.3% 57.8%;
   --purple-foreground: 210 20% 98%;
-  --background: 0 0% 100%;
+  --background: 204 30% 97%;
   --foreground: 222.2 84% 4.9%;
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;
@@ -52,7 +52,7 @@
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 7% 76%;
+    --muted-foreground: 240 5% 64.9%;
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
@@ -87,8 +87,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: system-ui, -apple-system, sans-serif, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
+  font-family: system-ui, -apple-system, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
@@ -116,4 +115,4 @@ body h6 {
   html {
     color-scheme: dark;
   }
-} /*# sourceMappingURL=globals.css.map */
+}/*# sourceMappingURL=globals.css.map */

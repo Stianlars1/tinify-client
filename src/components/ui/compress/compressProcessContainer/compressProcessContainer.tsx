@@ -11,6 +11,7 @@ const CompressProcessContainer = () => {
   const [compressedFiles, setCompressedFiles] = useState<CompressResponse[]>(
     []
   );
+  const [perfectQuality, setPerfectQuality] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
 
   const setCompressedFileInContext = (compressedFile: CompressResponse) => {
@@ -28,12 +29,19 @@ const CompressProcessContainer = () => {
         originalFile={file}
         setCompressedFileInContext={setCompressedFileInContext}
         setIsProcessingFiles={setIsProcessingFiles}
+        perfectQuality={perfectQuality}
       />
     ));
   }, [files]); // Recalculate only when `files` changes
 
+  const handleQualityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const isChecked = event.target.checked;
+    setPerfectQuality(isChecked);
+  };
   return (
     <div>
+      <label>Perfect quality</label>
+      <input type="checkbox" onChange={handleQualityChange} />
       {files.length > 0 ? (
         <div>
           <CompressProcessHeader

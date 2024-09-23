@@ -2,7 +2,7 @@
   padding: 0.75rem 1rem;
   border-top: 1px solid transparent;
   border-bottom: 1px solid light-dark(hsl(var(--border)), hsl(var(--muted-foreground)/0.2));
-  background-color: hsl(var(--muted));
+  background-color: light-dark(hsl(var(--card)), hsl(var(--muted)));
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -71,6 +71,7 @@
   align-items: center;
   justify-content: center; /* Center the image inside the container */
   border-radius: calc(var(--radius) - 6px);
+  border: 0.5px solid hsl(var(--border)/0.8);
 }
 .card .compressCard .imageWrapper .image {
   width: 100%;
@@ -215,6 +216,9 @@
   max-height: min-content;
   font-size: 1rem;
   align-self: center;
+  justify-self: flex-end;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 @media screen and (max-width: 640px) {

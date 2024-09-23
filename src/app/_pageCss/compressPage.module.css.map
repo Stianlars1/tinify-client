@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"compressPage.module.css"}
+{"version":3,"sources":["compressPage.module.scss","compressPage.module.css"],"names":[],"mappings":"AAAA;EACE,gBAAA;EACA,iBAAA;EACA,cAAA;EACA,4BAAA;EAEA,6EAAA;EAEA,6BAAA;EACA,eAAA;ACDF;ADGE;EACE,8DAAA;EACA,mCAAA;ACDJ","file":"compressPage.module.css"}

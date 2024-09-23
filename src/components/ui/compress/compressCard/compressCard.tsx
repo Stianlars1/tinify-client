@@ -1,23 +1,32 @@
 import { ArrowDownIcon, SparklesIcon } from "@/assets/icons/icons";
-import { formatFileSize, getOriginalFileInfo } from "@/utils/imageUtils";
+import {
+  formatFileSize,
+  getOriginalFileInfo,
+  IMAGE_PLACEHOLDER,
+} from "@/utils/imageUtils";
 import { COMPRESS_URL } from "@/utils/urls";
 import axios, { AxiosError, AxiosRequestConfig } from "axios";
-import { default as Image } from "next/image";
+import Image from "next/image";
 import { memo, useEffect, useRef, useState } from "react";
 import { DownloadButton } from "../../buttons/downloadButton";
 import { Skeleton } from "../../loaders/skeleton";
 import { Bolt } from "../assets";
 import { CompressResponse } from "../types";
 import styles from "./css/compressCard.module.css";
-
+enum CompressionType {
+  LOSSY = "LOSSY",
+  LOSSLESS = "LOSSLESS",
+}
 interface CompressionCardProps {
   originalFile: File;
+  perfectQuality: boolean;
   setCompressedFileInContext: (compressedFile: CompressResponse) => void;
   setIsProcessingFiles: (processing: boolean) => void;
 }
 
 const CompressionCard = ({
   originalFile,
+  perfectQuality,
   setCompressedFileInContext,
   setIsProcessingFiles,
 }: CompressionCardProps) => {
@@ -28,6 +37,7 @@ const CompressionCard = ({
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [isCompressed, setIsCompressed] = useState(false);
   const [hasDownloaded, setHasDownloaded] = useState(false);
+  const [imageLoadError, setImageLoadError] = useState(false);
   const [compressedData, setCompressedData] = useState<CompressResponse | null>(
     null
   );
@@ -42,11 +52,19 @@ const CompressionCard = ({
     }
 
     const uploadAndCompress = async (file: File) => {
+      console.log("perfectQuality", perfectQuality);
+      console.log(
+        "compressionType",
+        perfectQuality ? CompressionType.LOSSLESS : CompressionType.LOSSY
+      );
       try {
         setIsProcessingFiles(true);
         const formData = new FormData();
         formData.append("file", file);
-        formData.append("compressionType", "LOSSY");
+        formData.append(
+          "compressionType",
+          perfectQuality ? CompressionType.LOSSLESS : CompressionType.LOSSY
+        );
 
         const requestConfig: AxiosRequestConfig = {
           headers: {
@@ -86,6 +104,7 @@ const CompressionCard = ({
       } catch (error: unknown) {
         console.error("Compression failed message:", error);
         const axiosError = error as AxiosError;
+        console.error("Compression failed axiosError:", axiosError);
         if (axiosError.name === "AxiosError") {
           const data = axiosError.response?.data as CompressResponse;
           setCompressedData(data);
@@ -115,7 +134,11 @@ const CompressionCard = ({
     compressedData &&
     formatFileSize(parseFloat(compressedData?.compressedSize));
   const isError = compressedData && compressedData.isError;
-
+  // <ImagePreviewIcon className={styles.defaultImage} />
+  const handlePreviewImageError = () => {
+    console.error("Error loading image preview");
+    setImageLoadError(true);
+  };
   return (
     <li className={styles.card}>
       <div className={styles.compressCard}>
@@ -123,9 +146,14 @@ const CompressionCard = ({
           <Image
             alt={originalName}
             className={styles.image}
-            src={originalImage}
+            src={imageLoadError ? IMAGE_PLACEHOLDER : originalImage}
             width={50}
             height={50}
+            objectFit="cover"
+            quality={75}
+            priority={false}
+            placeholder={IMAGE_PLACEHOLDER}
+            onError={handlePreviewImageError}
           />
         </div>
 
@@ -237,6 +265,12 @@ const getErrorMessages = (errorMessage: string) => {
   if (errorMessage.includes("Unsupported image format")) {
     const format = errorMessage.split(":")[3].trim();
     return `Unsupported image format: ${format}`;
+  }
+
+  if (errorMessage.includes("Failed to process image with ImageMagick")) {
+    // Something happened, the backend couldnt process the image.
+    // it may be due to the image´s format, but i cant tell 100% sure. but about 95% sure
+    return "Failed";
   }
 
   return "An error occurred while compressing image";

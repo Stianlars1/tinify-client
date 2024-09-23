@@ -1,10 +1,13 @@
+.dropZoneWrapper {
+  position: relative;
+}
+
 .compressDropZone {
   display: inline-flex;
-  max-width: 750px;
-  min-height: 125px;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
   padding: 2rem;
-  border-radius: var(--radius);
-  border: 3px dashed light-dark(hsl(var(--border)), hsl(var(--foreground)/0.5));
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -15,8 +18,6 @@
   color: hsl(var(--foreground));
 }
 .compressDropZone:hover {
-  border-color: light-dark(hsl(var(--black)), hsl(var(--white)));
-  background-color: hsl(var(--muted));
   color: hsl(var(--muted-foreground));
 }
 

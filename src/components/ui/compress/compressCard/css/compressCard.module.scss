@@ -5,7 +5,7 @@
   border-top: 1px solid transparent;
   border-bottom: 1px solid
     light-dark(hsl(var(--border)), hsl(var(--muted-foreground) / 0.2));
-  background-color: hsl(var(--muted));
+  background-color: light-dark(hsl(var(--card)), hsl(var(--muted)));
   //border-radius: var(--radius);
 
   height: fit-content;
@@ -89,6 +89,7 @@
       align-items: center;
       justify-content: center; /* Center the image inside the container */
       border-radius: calc(var(--radius) - 6px);
+      border: 0.5px solid hsl(var(--border) / 0.8);
       .image {
         width: 100%;
         height: 100%;
@@ -251,6 +252,8 @@
       max-height: min-content;
       font-size: 1rem;
       align-self: center;
+      justify-self: flex-end;
+      width: fit-content;
     }
   }
 }
