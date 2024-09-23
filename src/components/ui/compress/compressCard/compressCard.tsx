@@ -152,7 +152,9 @@ const CompressionCard = ({
             objectFit="cover"
             quality={75}
             priority={false}
-            placeholder={IMAGE_PLACEHOLDER}
+            // placeholder={IMAGE_PLACEHOLDER}
+            placeholder="blur"
+            blurDataURL={IMAGE_PLACEHOLDER}
             onError={handlePreviewImageError}
           />
         </div>

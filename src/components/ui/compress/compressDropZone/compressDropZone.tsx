@@ -2,7 +2,7 @@
 import { ImageUploadV2 } from "@/assets/lotties/lotties";
 import { useDarkMode } from "@/hooks/useDarkmode";
 import { FileUploadContext } from "@/providers/FileProvider";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { useContext, useState } from "react";
 import styles from "./css/compressDropZone.module.css";
 
@@ -64,7 +64,7 @@ const CompressDropZone = () => {
         className={`${styles.compressDropZone} ${isOver ? styles.isOver : ""}`}
         htmlFor="compress-dropzone"
       >
-        {!isOver && !hasDropped && <ImageUploadV2 />}
+        {isOver && !hasDropped && <ImageUploadV2 />}
         {hasDropped && (
           <Image
             alt="Image dropped"
@@ -74,10 +74,11 @@ const CompressDropZone = () => {
             className="imageUpload"
           />
         )}
-        {isOver && !hasDropped && (
+        {!isOver && !hasDropped && (
           <Image
             alt="Image dropped"
             src={IS_HOVERING_IMAGE}
+            layout="intrinsic"
             width={100}
             height={100}
             className="imageUpload"
