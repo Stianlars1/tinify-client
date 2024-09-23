@@ -2,7 +2,7 @@
 import { ImageUploadV2 } from "@/assets/lotties/lotties";
 import { useDarkMode } from "@/hooks/useDarkmode";
 import { FileUploadContext } from "@/providers/FileProvider";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useContext, useState } from "react";
 import styles from "./css/compressDropZone.module.css";
 

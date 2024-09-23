@@ -6,7 +6,7 @@ import {
 } from "@/utils/imageUtils";
 import { COMPRESS_URL } from "@/utils/urls";
 import axios, { AxiosError, AxiosRequestConfig } from "axios";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { memo, useEffect, useRef, useState } from "react";
 import { DownloadButton } from "../../buttons/downloadButton";
 import { Skeleton } from "../../loaders/skeleton";

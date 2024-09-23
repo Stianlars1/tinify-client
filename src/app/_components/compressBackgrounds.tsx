@@ -1,5 +1,5 @@
 import blobsUrl from "@/assets/backgrounds/blobs.svg";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { WaveBG2 } from "../_pageAssets";
 import styles from "./css/compressBackgrounds.module.css";
 export const CompressBackgrounds = () => {
