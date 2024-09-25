@@ -2,7 +2,10 @@
   --nav-height: 64px;
   --padding: 20px;
   --max-width: calc(var(--padding) + 1024px);
+  --content-width: 750px;
   --radius: 0.5rem;
+  --primary-hex: #2563eb;
+  --muted-hex: #f4f4f5;
   --black: 240 10% 3.9%;
   --white: 0 0% 100%;
   --activeText: 124 84% 25%;
@@ -94,6 +97,8 @@ body {
   will-change: auto;
   display: grid;
   grid-template-rows: var(--nav-height) 1fr auto;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Allow vertical scroll */
 }
 body a {
   color: inherit;
@@ -114,5 +119,10 @@ body h6 {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --padding: 40px;
   }
 }/*# sourceMappingURL=globals.css.map */

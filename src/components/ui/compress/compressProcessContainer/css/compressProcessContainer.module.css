@@ -22,4 +22,18 @@
   border-color: transparent;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
+}
+
+.perfectQualityWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-top: -1.65rem;
+  margin-bottom: 3rem;
+}
+.perfectQualityWrapper .perfectQualityLabel {
+  font-size: 1rem;
+  font-weight: 600;
 }/*# sourceMappingURL=compressProcessContainer.module.css.map */

@@ -4,14 +4,15 @@ import {
   getOriginalFileInfo,
   IMAGE_PLACEHOLDER,
 } from "@/utils/imageUtils";
+import limit from "@/utils/uploadLimit";
 import { COMPRESS_URL } from "@/utils/urls";
 import axios, { AxiosError, AxiosRequestConfig } from "axios";
-import Image from "next/legacy/image";
+import { default as Image } from "next/image";
 import { memo, useEffect, useRef, useState } from "react";
 import { DownloadButton } from "../../buttons/downloadButton";
 import { Skeleton } from "../../loaders/skeleton";
 import { Bolt } from "../assets";
-import { CompressResponse } from "../types";
+import { ImageResponse } from "../types";
 import styles from "./css/compressCard.module.css";
 enum CompressionType {
   LOSSY = "LOSSY",
@@ -20,7 +21,7 @@ enum CompressionType {
 interface CompressionCardProps {
   originalFile: File;
   perfectQuality: boolean;
-  setCompressedFileInContext: (compressedFile: CompressResponse) => void;
+  setCompressedFileInContext: (compressedFile: ImageResponse) => void;
   setIsProcessingFiles: (processing: boolean) => void;
 }
 
@@ -38,7 +39,7 @@ const CompressionCard = ({
   const [isCompressed, setIsCompressed] = useState(false);
   const [hasDownloaded, setHasDownloaded] = useState(false);
   const [imageLoadError, setImageLoadError] = useState(false);
-  const [compressedData, setCompressedData] = useState<CompressResponse | null>(
+  const [compressedData, setCompressedData] = useState<ImageResponse | null>(
     null
   );
 
@@ -52,11 +53,6 @@ const CompressionCard = ({
     }
 
     const uploadAndCompress = async (file: File) => {
-      console.log("perfectQuality", perfectQuality);
-      console.log(
-        "compressionType",
-        perfectQuality ? CompressionType.LOSSLESS : CompressionType.LOSSY
-      );
       try {
         setIsProcessingFiles(true);
         const formData = new FormData();
@@ -88,7 +84,7 @@ const CompressionCard = ({
           },
         };
 
-        const response = await axios.post<CompressResponse>(
+        const response = await axios.post<ImageResponse>(
           COMPRESS_URL,
           formData,
           requestConfig
@@ -97,8 +93,8 @@ const CompressionCard = ({
         if (response.status === 200) {
           setIsCompressed(true);
           hasCompressed.current = true; // Prevent future re-execution
-          setCompressedData(response.data as CompressResponse);
-          setCompressedFileInContext(response.data as CompressResponse);
+          setCompressedData(response.data as ImageResponse);
+          setCompressedFileInContext(response.data as ImageResponse);
           setIsProcessingFiles(false);
         }
       } catch (error: unknown) {
@@ -106,7 +102,7 @@ const CompressionCard = ({
         const axiosError = error as AxiosError;
         console.error("Compression failed axiosError:", axiosError);
         if (axiosError.name === "AxiosError") {
-          const data = axiosError.response?.data as CompressResponse;
+          const data = axiosError.response?.data as ImageResponse;
           setCompressedData(data);
           setIsCompressed(false);
           hasCompressed.current = true; // Prevent future re-execution
@@ -115,7 +111,11 @@ const CompressionCard = ({
       }
     };
 
-    uploadAndCompress(originalFile);
+    // Use the limit function
+    limit(() => uploadAndCompress(originalFile)).catch((error) => {
+      // Handle any errors that might occur in the upload process
+      console.error("Upload failed: ", error);
+    });
   }, [originalFile]); // Dependency on originalFile ensures this only runs once for each file
 
   const loadingText =
@@ -152,9 +152,7 @@ const CompressionCard = ({
             objectFit="cover"
             quality={75}
             priority={false}
-            // placeholder={IMAGE_PLACEHOLDER}
-            placeholder="blur"
-            blurDataURL={IMAGE_PLACEHOLDER}
+            placeholder={IMAGE_PLACEHOLDER}
             onError={handlePreviewImageError}
           />
         </div>

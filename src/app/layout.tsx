@@ -4,7 +4,6 @@ import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import { Libre_Franklin } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Providers } from "./providers";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -58,11 +57,9 @@ export default function RootLayout({
       <body
         className={` ${libre.className} ${geistMono.variable} ${geistSans.variable}`}
       >
-        <Providers>
-          <Navbar />
-          <PageContainer>{children}</PageContainer>
-          <Footer />
-        </Providers>
+        <Navbar />
+        <PageContainer>{children}</PageContainer>
+        <Footer />
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-export interface CompressResponse {
+export interface ImageResponse {
   url: string;
   originalFilename: string;
   originalFileSize: string;

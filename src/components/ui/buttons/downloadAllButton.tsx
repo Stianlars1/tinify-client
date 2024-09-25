@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactElement, ReactNode } from "react";
-import { CompressResponse } from "../compress/types";
+import { ImageResponse } from "../compress/types";
 import styles from "./css/button.module.css";
 export const DownloadAllButton = ({
   children,
@@ -9,7 +9,7 @@ export const DownloadAllButton = ({
   compressedFiles,
 }: {
   children: ReactElement | ReactNode;
-  compressedFiles: CompressResponse[];
+  compressedFiles: ImageResponse[];
   className?: string;
 }) => {
   const handleDownloadAll = async () => {

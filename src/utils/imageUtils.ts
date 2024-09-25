@@ -1,4 +1,4 @@
-interface ImageFileInfo {
+export interface ImageFileInfo {
   originalName: string;
   originalSize: string;
   originalFormat: string;
@@ -10,6 +10,11 @@ export const getOriginalFileInfo = (file: File): ImageFileInfo => {
   const originalFormat = file.type.split("/")[1].toUpperCase();
   const originalImage = URL.createObjectURL(file);
   return { originalName, originalSize, originalFormat, originalImage };
+};
+export const getResizeImagesInfo = (files: File[]): ImageFileInfo[] => {
+  return files.slice(0, 3).map((file) => {
+    return { ...getOriginalFileInfo(file) };
+  });
 };
 
 export const formatFileSize = (sizeInBytes: number): string => {

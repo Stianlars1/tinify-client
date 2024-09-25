@@ -1,41 +1,22 @@
-.waveWrapper {
-  position: absolute; /* Or fixed if you want it to stay on scroll */
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw; /* Full screen width */
-  height: 100%; /* Full screen height, or use a calculated value */
-  z-index: -1;
-  opacity: 0.15;
+.wavebg2 g g {
+  opacity: 0.23;
 }
-.waveWrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 100;
-}
-.waveWrapper .waveBackground {
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover; /* Ensures that the aspect ratio remains intact */
+@media screen and (prefers-color-scheme: dark) {
+  .wavebg2 g g {
+    opacity: 1 !important;
+  }
 }
 
-.blobsWrapper {
-  aspect-ratio: 2.57/1;
-  position: absolute; /* Or fixed if you want it to stay on scroll */
-  top: 800px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw; /* Full screen width */
-  z-index: -1;
-  opacity: 0.8;
+@media screen and (max-width: 1280px) {
+  .blobWrapper {
+    margin-top: 100px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(-1);
+  }
 }
-.blobsWrapper .blobs {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover; /* Ensures that the aspect ratio remains intact */
+@media screen and (max-width: 1000px) {
+  .blobWrapper {
+    margin-top: 200px;
+    opacity: 0.1 !important;
+  }
 }/*# sourceMappingURL=compressBackgrounds.module.css.map */

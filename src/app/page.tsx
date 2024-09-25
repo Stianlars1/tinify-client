@@ -1,29 +1,15 @@
 import { PageContent } from "@/components/layout/pageContent/pageContent";
 import { TinifyServices } from "@/types";
 import { Metadata } from "next";
-import dynamic from "next/dynamic";
 
+import CompressProcessContainer from "@/components/ui/compress/compressProcessContainer/compressProcessContainer";
+import { DropZone } from "@/components/ui/dropzone/dropZone";
+import { CompressSections } from "@/features/compressSections/CompressSections";
+import FileUploadProvider from "@/providers/FileProvider";
 import { CompressBackgrounds } from "./_components/compressBackgrounds";
-import styles from "./_pageCss/compressPage.module.css";
 import { rootMeta } from "./rootMeta";
 export const metadata: Metadata = rootMeta;
-const CompressDropZone = dynamic(
-  () => import("@/components/ui/compress/compressDropZone/compressDropZone"),
-  {
-    ssr: false,
-    loading: () => <></>,
-  }
-);
-const CompressProcessContainer = dynamic(
-  () =>
-    import(
-      "@/components/ui/compress/compressProcessContainer/compressProcessContainer"
-    ),
-  {
-    ssr: false,
-    loading: () => <></>,
-  }
-);
+
 export default async function CompressPage() {
   return (
     <PageContent
@@ -37,10 +23,12 @@ export default async function CompressPage() {
         </span>
       }
     >
-      <div className={styles.compressDropzoneWrapper}>
-        <CompressDropZone />
-      </div>
-      <CompressProcessContainer />
+      <FileUploadProvider>
+        <DropZone />
+        <CompressProcessContainer />
+      </FileUploadProvider>
+
+      <CompressSections />
 
       <CompressBackgrounds />
     </PageContent>

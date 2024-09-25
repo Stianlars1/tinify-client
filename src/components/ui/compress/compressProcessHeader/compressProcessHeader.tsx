@@ -1,13 +1,13 @@
 import { formatFileSize } from "@/utils/imageUtils";
 import { DownloadAllButton } from "../../buttons/downloadAllButton";
 import { Skeleton } from "../../loaders/skeleton";
-import { CompressResponse } from "../types";
+import { ImageResponse } from "../types";
 import styles from "./css/compressProcessHeader.module.css";
 export const CompressProcessHeader = ({
   compressedFiles,
   isProcessing,
 }: {
-  compressedFiles: CompressResponse[];
+  compressedFiles: ImageResponse[];
   isProcessing: boolean;
 }) => {
   const totalBytesSaved = getTotalSavedBytes(compressedFiles);
@@ -62,7 +62,7 @@ export const CompressProcessHeader = ({
   );
 };
 
-const getTotalSavedBytes = (compressedFiles: CompressResponse[]) => {
+const getTotalSavedBytes = (compressedFiles: ImageResponse[]) => {
   const originalFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.originalFileSize),
     0
@@ -74,7 +74,7 @@ const getTotalSavedBytes = (compressedFiles: CompressResponse[]) => {
   return formatFileSize(originalFileSizes - compressedFileSizes);
 };
 
-const getTotalSavedPercent = (compressedFiles: CompressResponse[]) => {
+const getTotalSavedPercent = (compressedFiles: ImageResponse[]) => {
   const originalFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.originalFileSize),
     0

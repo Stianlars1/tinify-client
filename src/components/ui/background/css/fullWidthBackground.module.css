@@ -1,0 +1,56 @@
+.fullBackground {
+  position: absolute; /* Positioned out of content flow */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; /* Full viewport width */
+  height: 100%;
+  overflow: visible;
+}
+.fullBackground > * {
+  width: 100%;
+  height: auto;
+}
+
+.contain {
+  height: auto;
+  overflow: visible;
+}
+.contain > * {
+  width: 100%;
+}
+
+.overflow {
+  overflow: visible;
+  width: 100vw;
+  height: auto;
+}
+.overflow > * {
+  overflow: visible;
+  width: auto;
+  height: 100%;
+}
+
+@media screen and (min-width: 1400px) {
+  .overflow {
+    width: 100vw;
+    margin-top: 200px;
+    top: 0;
+  }
+  .overflow > * {
+    width: 100vw;
+    height: auto;
+    top: 0;
+  }
+  .overflow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, hsl(var(--background)), transparent 40%);
+  }
+  .overflow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left, hsl(var(--background)), transparent 40%);
+  }
+}/*# sourceMappingURL=fullWidthBackground.module.css.map */

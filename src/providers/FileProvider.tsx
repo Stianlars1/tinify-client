@@ -1,12 +1,12 @@
 "use client";
-import { CompressResponse } from "@/components/ui/compress/types";
+import { ImageResponse } from "@/components/ui/compress/types";
 import { createContext, ReactNode, useState } from "react";
 
 interface FileUploadContextType {
   files: File[];
-  compressedFiles: CompressResponse[];
+  compressedFiles: ImageResponse[];
   setFiles: (files: File[]) => void;
-  setCompressedFiles: (files: CompressResponse[]) => void;
+  setCompressedFiles: (files: ImageResponse[]) => void;
 }
 
 export const FileUploadContext = createContext<FileUploadContextType>({
@@ -22,9 +22,7 @@ export default function FileUploadProvider({
   children: ReactNode;
 }) {
   const [files, setFiles] = useState<File[]>([]);
-  const [compressedFiles, setCompressedFiles] = useState<CompressResponse[]>(
-    []
-  );
+  const [compressedFiles, setCompressedFiles] = useState<ImageResponse[]>([]);
 
   return (
     <FileUploadContext.Provider

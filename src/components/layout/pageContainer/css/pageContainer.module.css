@@ -1,8 +1,11 @@
 .pageContainer {
-  display: grid;
   max-width: var(--max-width);
-  padding: 0 var(--padding) 0;
   margin: 0 auto;
-  font-family: var(--font-sf-pro);
   padding: 40px var(--padding);
+}
+
+.fullWidth {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }/*# sourceMappingURL=pageContainer.module.css.map */

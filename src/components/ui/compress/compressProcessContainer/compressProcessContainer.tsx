@@ -3,18 +3,16 @@ import { FileUploadContext } from "@/providers/FileProvider";
 import { useContext, useMemo, useState } from "react";
 import CompressionCard from "../compressCard/compressCard";
 import { CompressProcessHeader } from "../compressProcessHeader/compressProcessHeader";
-import { CompressResponse } from "../types";
+import { ImageResponse } from "../types";
 import styles from "./css/compressProcessContainer.module.css";
 const CompressProcessContainer = () => {
   const context = useContext(FileUploadContext);
   const { files } = context;
-  const [compressedFiles, setCompressedFiles] = useState<CompressResponse[]>(
-    []
-  );
   const [perfectQuality, setPerfectQuality] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [compressedFiles, setCompressedFiles] = useState<ImageResponse[]>([]);
 
-  const setCompressedFileInContext = (compressedFile: CompressResponse) => {
+  const setCompressedFileInContext = (compressedFile: ImageResponse) => {
     setCompressedFiles((prev) => [...prev, compressedFile]);
   };
 
@@ -40,9 +38,15 @@ const CompressProcessContainer = () => {
   };
   return (
     <div>
-      <label>Perfect quality</label>
-      <input type="checkbox" onChange={handleQualityChange} />
-      {files.length > 0 ? (
+      <div className={styles.perfectQualityWrapper}>
+        <label className={styles.perfectQualityLabel}>Perfect quality</label>
+        <input
+          className={styles.perfectQualityInput}
+          type="checkbox"
+          onChange={handleQualityChange}
+        />
+      </div>
+      {files.length > 0 && (
         <div>
           <CompressProcessHeader
             isProcessing={isProcessing}
@@ -51,8 +55,6 @@ const CompressProcessContainer = () => {
 
           <ul className={styles.cardsList}>{fileCards}</ul>
         </div>
-      ) : (
-        <p>No files uploaded yet</p>
       )}
     </div>
   );

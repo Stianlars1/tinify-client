@@ -1,0 +1,74 @@
+.customInput {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: 6px 12px;
+  height: 45px;
+  font-family: inherit;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--input));
+  outline: none;
+  border-radius: calc(var(--radius) - 2px);
+  color: hsl(var(--foreground));
+  margin: 0;
+  transition: border-color 0.15s ease-in-out;
+}
+.customInput:-webkit-autofill {
+  box-shadow: inset 0 0 0 100px hsl(var(--card));
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+.customInput:autofill {
+  box-shadow: inset 0 0 0 100px hsl(var(--card));
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+.customInput::-moz-placeholder {
+  color: hsl(var(--foreground)/0.5);
+}
+.customInput::placeholder {
+  color: hsl(var(--foreground)/0.5);
+}
+.customInput:hover, .customInput:focus, .customInput:active {
+  border-color: hsl(var(--input-hover));
+}
+@media screen and (prefers-color-scheme: dark), screen and (-webkit-prefers-color-scheme: dark) {
+  .customInput:hover, .customInput:focus, .customInput:active {
+    border-color: hsl(var(--input-hover));
+  }
+}
+
+.customInputLabel {
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+.customInputLabelWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4125rem;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+/* Override autofill styles */
+.customInput:-webkit-autofill {
+  -webkit-text-fill-color: hsl(var(--foreground)) !important; /* Change text color */
+  background-color: hsl(var(--card)) !important; /* Change background color */
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.customInput:autofill,
+.customInput:-webkit-autofill,
+.customInput:-webkit-autofill-strong-password,
+.customInput:-webkit-autofill-strong-password-viewable,
+.customInput:-webkit-autofill-and-obscured {
+  -webkit-text-fill-color: hsl(var(--foreground)) !important; /* Change text color */
+  background-color: hsl(var(--card)) !important; /* Change background color */
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}/*# sourceMappingURL=customInput.module.css.map */

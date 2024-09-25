@@ -1,0 +1,50 @@
+.resizeProcessHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+.resizeProcessHeader .specs .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+.resizeProcessHeader .specs .title .savedSpan {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+.resizeProcessHeader .specs .title .smallTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+}
+.resizeProcessHeader .specs .subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 640px) {
+  .resizeProcessHeader {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .resizeProcessHeader .specs {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=resizeProcessHeader.module.css.map */

@@ -1,0 +1,17 @@
+.titleTag {
+  margin: 0 auto 40px !important;
+  text-align: center;
+  padding: 0.5rem 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 999px;
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid hsl(var(--border));
+  position: relative;
+  display: inline-flex;
+  align-self: center;
+  text-align: center;
+  overflow: hidden;
+}/*# sourceMappingURL=titleTag.module.css.map */

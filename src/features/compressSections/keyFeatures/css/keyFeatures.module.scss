@@ -1,0 +1,47 @@
+.keyFeatures {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  align-items: stretch; /* Ensures all items have the same height */
+
+  gap: 1.5rem;
+  margin: 0 auto;
+  .featureItem {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-wrap: balance;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: hsl(var(--card));
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+
+    .check,
+    .bolt,
+    .gift,
+    .mobile {
+      align-self: center;
+    }
+
+    .check {
+      color: hsl(var(--success));
+    }
+
+    .bolt {
+      color: hsl(var(--warning));
+    }
+    .gift {
+      stroke: hsl(var(--purple));
+    }
+    .mobile {
+      color: hsl(var(--primary));
+    }
+  }
+}

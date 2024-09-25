@@ -3,7 +3,11 @@
   --nav-height: 64px;
   --padding: 20px;
   --max-width: calc(var(--padding) + 1024px);
+  --content-width: 750px;
   --radius: 0.5rem;
+
+  --primary-hex: #2563eb;
+  --muted-hex: #f4f4f5;
 
   //const colors
   --black: 240 10% 3.9%;
@@ -28,6 +32,8 @@
   --secondary-foreground: 222.2 47.4% 11.2%;
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
+  // --muted: 240 4.8% 95.9%;
+  // --muted-foreground: 240 3.8% 46.1%;
   --accent: 210 40% 96.1%;
   --accent-foreground: 222.2 47.4% 11.2%;
   --destructive: 0 84.2% 60.2%;
@@ -106,6 +112,9 @@ body {
   display: grid;
   grid-template-rows: var(--nav-height) 1fr auto;
 
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Allow vertical scroll */
+
   a {
     color: inherit;
     text-decoration: none;
@@ -128,5 +137,11 @@ body {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --padding: 40px;
   }
 }

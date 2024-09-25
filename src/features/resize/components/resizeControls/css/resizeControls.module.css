@@ -1,0 +1,26 @@
+.downloadButtonText {
+  display: none;
+}
+
+.downloadButtonIconWrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.downloadButtonIconWrapper .downloadButtonIcon {
+  display: flex;
+  width: 1.5rem;
+  fill: black;
+  color: white;
+  stroke: transparent;
+  z-index: 10;
+}
+.downloadButtonIconWrapper::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 100%;
+  background-color: light-dark(hsl(var(--white)), hsl(var(--white)));
+  z-index: 0;
+}/*# sourceMappingURL=resizeControls.module.css.map */
