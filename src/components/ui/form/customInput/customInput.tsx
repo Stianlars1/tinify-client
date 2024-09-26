@@ -41,7 +41,7 @@ export const CustomInputLabel = ({
   return (
     <label
       {...props}
-      className={`${styles.customInputWrapper} ${
+      className={`${styles.customInputLabel} ${
         props.className ? props.className : " "
       }`}
     >
@@ -54,7 +54,7 @@ export const CustomInputWrapper = ({
   children,
   style = {},
   className = "",
-  direction = "row",
+  direction = undefined,
 }: {
   children: ReactElement | ReactElement[] | ReactNode | ReactNode[];
   style?: CSSProperties;
@@ -64,7 +64,7 @@ export const CustomInputWrapper = ({
   return (
     <div
       suppressHydrationWarning
-      className={`${styles.customInputLabelWrapper} ${className}`}
+      className={`${styles.customInputWrapper} ${className}`}
       style={{ ...style, flexDirection: direction }}
     >
       {children}

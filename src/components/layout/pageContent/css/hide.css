@@ -1,0 +1,7 @@
+.hide {
+  display: unset;
+}
+
+[data-hide-header=true].hide {
+  display: none !important;
+}/*# sourceMappingURL=hide.css.map */

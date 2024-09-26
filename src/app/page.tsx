@@ -2,10 +2,10 @@ import { PageContent } from "@/components/layout/pageContent/pageContent";
 import { TinifyServices } from "@/types";
 import { Metadata } from "next";
 
-import CompressProcessContainer from "@/components/ui/compress/compressProcessContainer/compressProcessContainer";
-import { DropZone } from "@/components/ui/dropzone/dropZone";
+import { CompressProcessContainer } from "@/components/ui/compress/compressProcessContainer/compressProcessContainer";
+import { DropZone } from "@/components/ui/dropzones/dropzone/dropZone";
 import { CompressSections } from "@/features/compressSections/CompressSections";
-import FileUploadProvider from "@/providers/FileProvider";
+import { FileUploadProvider } from "@/providers/FileProvider";
 import { CompressBackgrounds } from "./_components/compressBackgrounds";
 import { rootMeta } from "./rootMeta";
 export const metadata: Metadata = rootMeta;

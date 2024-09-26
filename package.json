@@ -15,7 +15,7 @@
     "@stianlarsen/meteors": "^1.0.7",
     "axios": "^1.7.7",
     "lottie-light-react": "^2.4.0",
-    "next": "14.2.11",
+    "next": "14.2.13",
     "p-limit": "^6.1.0",
     "react": "^18",
     "react-dom": "^18",
@@ -26,7 +26,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.11",
-    "typescript": "^5"
+    "eslint-config-next": "14.2.13",
+    "typescript": "^5.5.0"
   }
 }

@@ -1,11 +1,11 @@
 "use client";
 import { FileUploadContext } from "@/providers/FileProvider";
 import { useContext, useMemo, useState } from "react";
-import CompressionCard from "../compressCard/compressCard";
+import { CompressionCard } from "../compressCard/compressCard";
 import { CompressProcessHeader } from "../compressProcessHeader/compressProcessHeader";
 import { ImageResponse } from "../types";
 import styles from "./css/compressProcessContainer.module.css";
-const CompressProcessContainer = () => {
+export const CompressProcessContainer = () => {
   const context = useContext(FileUploadContext);
   const { files } = context;
   const [perfectQuality, setPerfectQuality] = useState(false);
@@ -59,5 +59,3 @@ const CompressProcessContainer = () => {
     </div>
   );
 };
-
-export default CompressProcessContainer;

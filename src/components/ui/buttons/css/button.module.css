@@ -5,6 +5,8 @@
   border: 1px solid transparent;
   display: inline-block;
   transition: all 0.15s ease;
+  cursor: pointer;
+  z-index: 100;
 }
 .button:active {
   transform: scale(0.95);

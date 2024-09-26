@@ -11,11 +11,7 @@ export const FileDownloadContext = createContext<FileDownloadContextType>({
   setCompressedFiles: () => {},
 });
 
-export default function FileUploadProvider({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export const FileUploadProvider = ({ children }: { children: ReactNode }) => {
   const [compressedFiles, setCompressedFiles] = useState<File[]>([]);
 
   return (
@@ -25,7 +21,7 @@ export default function FileUploadProvider({
       {children}
     </FileDownloadContext.Provider>
   );
-}
+};
 
 // expected usage
 // const context = useContext(FileDownloadContext);

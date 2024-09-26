@@ -1,0 +1,155 @@
+.resize {
+  position: relative;
+  z-index: 10;
+}
+
+.resizeContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 40px;
+  gap: 2.5rem;
+
+  z-index: 100;
+}
+
+.resizePreviewContainer {
+  flex: 1 0 auto;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  box-sizing: content-box;
+  margin: auto;
+  perspective: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--input));
+
+  border-radius: var(--radius);
+
+  --ring-shadow: 0 0 #0000;
+  --ring-offset-shadow: 0 0 #0000;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--ring-shadow, 0 0 #0000), var(--shadow);
+
+  .resizePreviewWrapper {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .resizePreviewImage {
+      position: absolute;
+      margin: auto;
+      border-radius: 4px;
+      border: 1px solid hsl(var(--muted-foreground) / 0.2);
+      border-style: inline;
+      overflow: hidden;
+      --ring-shadow: 0 0 #0000;
+      --ring-offset-shadow: 0 0 #0000;
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--ring-shadow, 0 0 #0000), var(--shadow);
+
+      object-fit: cover; /* Ensures the image scales to cover the container while maintaining aspect ratio */
+      object-position: center; /* Center the image within the container */
+    }
+
+    .firstImage {
+      opacity: 1;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+
+    .secondImage {
+      opacity: 1;
+      z-index: 0;
+
+      left: 70%;
+      top: 30%;
+      transform: translateX(-70%) translateY(-30%) scale(0.95);
+    }
+
+    .thirdImage {
+      opacity: 1;
+      z-index: -1;
+
+      left: 90%;
+      top: 10%;
+      transform: translateX(-90%) translateY(-10%) scale(0.9);
+    }
+  }
+
+  .imageNames {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .imageName {
+      font-size: 12px;
+      color: hsl(var(--muted-foreground));
+      list-style-type: decimal;
+    }
+  }
+}
+
+.arrowRight {
+  transform: rotate(-90deg);
+  width: 3rem;
+}
+
+.showHideImageNamesButton {
+  border: 0;
+  border-bottom: 1px solid hsl(var(--border));
+  cursor: pointer;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .resizeContent {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .firstImage {
+      left: 50%;
+      top: 90%;
+      transform: translateX(-50%) translateY(-90%) scale(1);
+    }
+
+    .secondImage {
+      left: 70%;
+      top: 70%;
+      transform: translateX(-70%) translateY(-70%) scale(0.95);
+    }
+
+    .thirdImage {
+      left: 90%;
+      top: 50%;
+      transform: translateX(-90%) translateY(-50%) scale(0.9);
+    }
+  }
+
+  .arrowRight {
+    transform: rotate(0);
+  }
+
+  .headerHidden {
+    padding-top: 0;
+  }
+}

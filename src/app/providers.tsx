@@ -1,6 +1,6 @@
 "use client";
 
-import FileUploadProvider from "@/providers/FileProvider";
+import { FileUploadProvider } from "@/providers/FileProvider";
 import { ReactElement } from "react";
 
 export function Providers({

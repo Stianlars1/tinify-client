@@ -1,0 +1,13 @@
+.resize {
+  padding-bottom: 0;
+  .resizePreviewWrapper {
+    .resizePreviewImage {
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .resize {
+    padding-bottom: 6rem;
+  }
+}

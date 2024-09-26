@@ -1,0 +1,69 @@
+.resizeProcessHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+  padding-top: 40px;
+}
+.resizeProcessHeader .specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.resizeProcessHeader .specs .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+.resizeProcessHeader .specs .title .savedSpan {
+  display: flex;
+  align-items: flex-end;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  line-height: 1;
+}
+.resizeProcessHeader .specs .title .savedSpan .percent {
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+.resizeProcessHeader .specs .title .smallTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+  display: flex;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+}
+.resizeProcessHeader .specs .subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+  display: flex;
+  align-items: center;
+}
+
+.resetButton {
+  font-size: 0.875rem;
+  padding: 6px 12px;
+  border-radius: calc(var(--radius) - 3px);
+  border: 1px solid transparent;
+  display: inline-block;
+  transition: all 0.15s ease;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  z-index: 100;
+  cursor: pointer;
+}
+.resetButton:hover {
+  background-color: hsl(var(--primary)/0.7);
+}
+.resetButton:active {
+  transform: scale(0.95);
+}/*# sourceMappingURL=resizeProcessHeader.module.css.map */

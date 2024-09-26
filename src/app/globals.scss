@@ -115,6 +115,7 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll */
   overflow-y: auto; /* Allow vertical scroll */
 
+  scroll-behavior: smooth;
   a {
     color: inherit;
     text-decoration: none;

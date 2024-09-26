@@ -16,11 +16,7 @@ export const FileUploadContext = createContext<FileUploadContextType>({
   setCompressedFiles: () => {},
 });
 
-export default function FileUploadProvider({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export const FileUploadProvider = ({ children }: { children: ReactNode }) => {
   const [files, setFiles] = useState<File[]>([]);
   const [compressedFiles, setCompressedFiles] = useState<ImageResponse[]>([]);
 
@@ -31,4 +27,4 @@ export default function FileUploadProvider({
       {children}
     </FileUploadContext.Provider>
   );
-}
+};

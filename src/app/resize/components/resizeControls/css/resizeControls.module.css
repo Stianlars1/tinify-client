@@ -1,0 +1,47 @@
+.tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  margin-bottom: 1.5rem;
+}
+.tabs .tab {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid hsl(var(--border));
+  font-size: 1rem;
+  cursor: pointer;
+  color: hsl(var(--muted-foreground));
+}
+.tabs .tab:hover {
+  border-bottom: 2px solid hsl(var(--foreground));
+}
+.tabs .activeTab {
+  color: hsl(var(--foreground));
+  border-bottom: 2px solid hsl(var(--foreground));
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.resizeButton {
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius);
+  background-color: hsl(var(--primary));
+  color: hsl(var(--white));
+  font-weight: 600;
+  border: none;
+  border: 1px solid hsl(var(--border));
+  cursor: pointer;
+}/*# sourceMappingURL=resizeControls.module.css.map */

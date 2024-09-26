@@ -1,0 +1,78 @@
+.tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  margin-bottom: 1.5rem;
+  .tab {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid hsl(var(--border));
+    font-size: 1rem;
+    cursor: pointer;
+    color: hsl(var(--muted-foreground));
+
+    &:hover {
+      border-bottom: 2px solid hsl(var(--foreground));
+    }
+  }
+
+  .activeTab {
+    color: hsl(var(--foreground));
+    border-bottom: 2px solid hsl(var(--foreground));
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  gap: 1rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.resizeButton {
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius);
+  background-color: hsl(var(--primary));
+  color: hsl(var(--white));
+  font-weight: 600;
+  border: none;
+  border: 1px solid hsl(var(--border));
+
+  cursor: pointer;
+}
+
+// .downloadButtonText {
+//   display: none;
+// }
+
+// .downloadButtonIconWrapper {
+//   display: flex;
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   .downloadButtonIcon {
+//     display: flex;
+//     width: 1.5rem;
+//     fill: black;
+//     color: white;
+//     stroke: transparent;
+//     z-index: 10;
+//   }
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     inset: 5px;
+//     border-radius: 100%;
+//     background-color: light-dark(hsl(var(--white)), hsl(var(--white)));
+//     z-index: 0;
+//   }
+// }

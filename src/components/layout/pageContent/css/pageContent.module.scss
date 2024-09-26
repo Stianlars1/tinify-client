@@ -7,6 +7,8 @@
   width: 100%;
   max-width: 100%;
   position: relative;
+  max-width: var(--content-width);
+  margin: 0 auto;
   > * {
     font-family: inherit;
     min-width: 100%;
@@ -39,6 +41,19 @@
         color: hsl(var(--foreground));
         font-weight: 300;
       }
+    }
+  }
+}
+
+.pageContentFull {
+  flex: 1;
+  min-height: 100%;
+}
+
+[data-hide-header="true"] {
+  .pageContent {
+    .pageHeaderWrapper {
+      display: none !important;
     }
   }
 }

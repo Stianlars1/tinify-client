@@ -1,0 +1,8 @@
+.resize {
+  padding-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  .resize {
+    padding-bottom: 6rem;
+  }
+}/*# sourceMappingURL=resize.module.css.map */
