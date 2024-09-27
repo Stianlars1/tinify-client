@@ -17,6 +17,7 @@ export const getAllUsageData = async (): Promise<UsageDataType> => {
     return [];
   }
 };
+
 export const getCompressionTag = async () => {
   const allUsageData = await getAllUsageData();
   if (allUsageData.length === 0) {

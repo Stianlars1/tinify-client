@@ -142,7 +142,7 @@
   font-size: 14px;
   display: inline-flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   font-weight: 600;
   gap: 0.5rem;
 }
@@ -168,7 +168,7 @@
 .card .compressCard .compressed .compressedSpecs .compressedSize {
   display: inline-flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 0.15rem;
 }
 .card .compressCard .compressed .compressedSpecs .compressedSize .bolt {

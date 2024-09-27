@@ -150,7 +150,6 @@ export const CompressionCard = memo(
               src={imageLoadError ? IMAGE_PLACEHOLDER : originalImage}
               width={50}
               height={50}
-              objectFit="cover"
               quality={75}
               priority={false}
               placeholder={IMAGE_PLACEHOLDER}

@@ -12,7 +12,7 @@
     "@builder.io/partytown": "^0.10.2",
     "@next/bundle-analyzer": "^14.2.13",
     "@stianlarsen/border-beam": "^1.0.9",
-    "@stianlarsen/meteors": "^1.0.7",
+    "@stianlarsen/meteors": "^1.0.8",
     "axios": "^1.7.7",
     "lottie-light-react": "^2.4.0",
     "next": "14.2.13",

@@ -3,8 +3,8 @@ import { Metadata } from "next";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "hsl(240 10% 3.9%)" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f8fa" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b " },
   ],
 };
 
