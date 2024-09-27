@@ -25,8 +25,8 @@ export const Resize = () => {
 
         {isImageDropped && (
           <>
-            <ResizeContent images={files} />
             <HiddenDropZone />
+            <ResizeContent images={files} />
           </>
         )}
       </section>

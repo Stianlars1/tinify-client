@@ -10,4 +10,10 @@
 
 .activeLink {
   border-bottom: 2px solid light-dark(hsl(var(--border)), hsl(var(--muted-foreground)));
+}
+
+@media screen and (max-width: 768px) {
+  .navLink {
+    font-size: 0.875rem;
+  }
 }/*# sourceMappingURL=navLink.module.css.map */

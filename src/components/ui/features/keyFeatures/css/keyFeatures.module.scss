@@ -45,3 +45,9 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .featureList {
+    grid-template-columns: 1fr;
+  }
+}

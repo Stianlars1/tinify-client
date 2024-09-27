@@ -1,5 +1,5 @@
 import { DownloadAllButton } from "@/components/ui/buttons/downloadAllButton";
-import { ResizedImages } from "@/components/ui/compress/types";
+import { ResizedImage } from "@/components/ui/compress/types";
 import { Skeleton } from "@/components/ui/loaders/skeleton";
 import { formatFileSize } from "@/utils/imageUtils";
 import { ReactElement } from "react";
@@ -10,7 +10,7 @@ export const ResizeProcessHeader = ({
   isProcessing,
   totalFiles,
 }: {
-  compressedFiles: ResizedImages[];
+  compressedFiles: ResizedImage[];
   isProcessing: boolean;
   totalFiles: number;
 }): ReactElement => {
@@ -47,7 +47,7 @@ export const ResizeProcessHeader = ({
   );
 };
 
-const getTotalSavedBytes = (compressedFiles: ResizedImages[]) => {
+const getTotalSavedBytes = (compressedFiles: ResizedImage[]) => {
   const originalFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.originalFileSize),
     0
@@ -59,7 +59,7 @@ const getTotalSavedBytes = (compressedFiles: ResizedImages[]) => {
   return formatFileSize(originalFileSizes - compressedFileSizes);
 };
 
-const getTotalSavedPercent = (compressedFiles: ResizedImages[]) => {
+const getTotalSavedPercent = (compressedFiles: ResizedImage[]) => {
   const originalFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.originalFileSize),
     0
@@ -78,7 +78,7 @@ const getTotalSavedPercent = (compressedFiles: ResizedImages[]) => {
 
 const getSavedText = (
   isProcessing: boolean,
-  compressedFiles: ResizedImages[]
+  compressedFiles: ResizedImage[]
 ) => {
   if (isProcessing) {
     return (
@@ -113,7 +113,7 @@ const getSavedText = (
 
 const getSubtitle = (
   isProcessing: boolean,
-  compressedFiles: ResizedImages[],
+  compressedFiles: ResizedImage[],
   totalFiles: number
 ) => {
   // {isProcessing ? "" : "Finished"}{" "}

@@ -126,4 +126,9 @@ body h6 {
   :root {
     --padding: 40px;
   }
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --nav-height: 40px;
+  }
 }/*# sourceMappingURL=globals.css.map */

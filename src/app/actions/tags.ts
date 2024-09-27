@@ -7,7 +7,6 @@ export const getAllUsageData = async (): Promise<UsageDataType> => {
   try {
     const response = await fetch(STATS_URL, { next: { revalidate: 0 } });
     const tags = await response.json();
-    console.log("tags", tags);
     const tagsMap = Object.entries(tags).reduce((acc, [key, value]) => {
       acc.push({ serviceName: key, count: value as number });
       return acc;

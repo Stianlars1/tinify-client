@@ -1,4 +1,4 @@
-import { ImageResponse, ResizedImages } from "@/components/ui/compress/types";
+import { ImageResponse, ResizedImage } from "@/components/ui/compress/types";
 import {
   CustomInput,
   CustomInputLabel,
@@ -8,17 +8,20 @@ import { limit } from "@/utils/uploadLimit";
 import { RESIZE_URL } from "@/utils/urls";
 import axios, { AxiosError } from "axios";
 import { ReactElement, useState } from "react";
+import { ResizeOptions } from "../resizeContent/resizeContent";
 import styles from "./css/resizeControls.module.css";
 export const ResizeControls = ({
   images,
   loading,
+  updateResizeOptions,
   setResizedImages,
   setLoading,
 }: {
   images: File[];
   loading: boolean;
+  updateResizeOptions: (options: ResizeOptions) => void;
   setLoading: (loading: boolean) => void;
-  setResizedImages: (compressedFile: ResizedImages) => void;
+  setResizedImages: (compressedFile: ResizedImage) => void;
 }): ReactElement => {
   const [activeTab, setActiveTab] = useState<"scale" | "pixels">("pixels");
   const [width, setWidth] = useState<number | "">("");
@@ -78,7 +81,7 @@ export const ResizeControls = ({
         const data = response.data;
         if (data.isError) {
         } else {
-          const resizedImages: ResizedImages = {
+          const resizedImages: ResizedImage = {
             ...data,
             width,
             height,
@@ -121,12 +124,26 @@ export const ResizeControls = ({
     setLoading(false);
   };
 
+  const handleWidthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    updateResizeOptions({ width: e.target.value });
+    setWidth(e.target.value === "" ? "" : parseInt(e.target.value));
+  };
+  // const handleHeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {}
+
   return (
     <>
       <div>
         <div className={styles.tabs}>
           <button
-            onClick={() => setActiveTab("pixels")}
+            onClick={() => {
+              setScale("");
+              updateResizeOptions({
+                scale: "",
+                width: "",
+                height: "",
+              });
+              setActiveTab("pixels");
+            }}
             className={
               activeTab === "pixels"
                 ? `${styles.activeTab} ${styles.tab}`
@@ -137,7 +154,16 @@ export const ResizeControls = ({
           </button>
 
           <button
-            onClick={() => setActiveTab("scale")}
+            onClick={() => {
+              setWidth("");
+              setHeight("");
+              updateResizeOptions({
+                scale: "",
+                width: "",
+                height: "",
+              });
+              setActiveTab("scale");
+            }}
             className={
               activeTab === "scale"
                 ? `${styles.activeTab} ${styles.tab}`
@@ -155,32 +181,34 @@ export const ResizeControls = ({
                 <CustomInputLabel>Width:</CustomInputLabel>
                 <CustomInput
                   type="number"
-                  disabled={scale !== ""}
                   value={width}
                   onFocus={() => {
                     setScale("");
                   }}
-                  onChange={(e) =>
-                    setWidth(
-                      e.target.value === "" ? "" : parseInt(e.target.value)
-                    )
-                  }
+                  onChange={handleWidthChange}
                 />
               </CustomInputWrapper>
               <CustomInputWrapper>
                 <CustomInputLabel>Height:</CustomInputLabel>
                 <CustomInput
                   type="number"
-                  disabled={scale !== ""}
                   value={height}
+                  placeholder={
+                    keepAspectRatio && width !== undefined && width !== ""
+                      ? "auto"
+                      : ""
+                  }
                   onFocus={() => {
                     setScale("");
                   }}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    // if aspect ratio is set, update width to keep aspect ratio
+
+                    updateResizeOptions({ height: e.target.value });
                     setHeight(
                       e.target.value === "" ? "" : parseInt(e.target.value)
-                    )
-                  }
+                    );
+                  }}
                 />
               </CustomInputWrapper>
             </>
@@ -192,14 +220,14 @@ export const ResizeControls = ({
                 <CustomInputLabel>Scale (e.g., 0.5 for 50%):</CustomInputLabel>
                 <CustomInput
                   type="number"
-                  disabled={width !== "" || height !== ""}
                   step="0.01"
                   value={scale}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    updateResizeOptions({ scale: e.target.value });
                     setScale(
                       e.target.value === "" ? "" : parseFloat(e.target.value)
-                    )
-                  }
+                    );
+                  }}
                 />
               </CustomInputWrapper>
             </>
@@ -209,8 +237,12 @@ export const ResizeControls = ({
             <CustomInputLabel className={styles.checkbox}>
               <CustomInput
                 type="checkbox"
-                checked={keepAspectRatio}
-                onChange={(e) => setKeepAspectRatio(e.target.checked)}
+                checked={keepAspectRatio || activeTab === "scale"}
+                disabled={activeTab === "scale"}
+                onChange={(e) => {
+                  updateResizeOptions({ keepAspectRatio: e.target.checked });
+                  setKeepAspectRatio(e.target.checked);
+                }}
               />
               Keep Aspect Ratio
             </CustomInputLabel>
@@ -220,7 +252,10 @@ export const ResizeControls = ({
               <CustomInput
                 type="checkbox"
                 checked={addCompression}
-                onChange={(e) => setAddCompression(e.target.checked)}
+                onChange={(e) => {
+                  updateResizeOptions({ addCompression: e.target.checked });
+                  setAddCompression(e.target.checked);
+                }}
               />
               Compression
             </CustomInputLabel>

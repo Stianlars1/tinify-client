@@ -42,6 +42,8 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--ring-shadow, 0 0 #0000), var(--shadow);
 
+  box-sizing: border-box;
+
   .resizePreviewWrapper {
     width: 200px;
     height: 200px;
@@ -68,6 +70,7 @@
 
       object-fit: cover; /* Ensures the image scales to cover the container while maintaining aspect ratio */
       object-position: center; /* Center the image within the container */
+      background-color: hsl(var(--background));
     }
 
     .firstImage {
@@ -101,10 +104,35 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 4px;
     .imageName {
-      font-size: 12px;
+      font-size: 14px;
       color: hsl(var(--muted-foreground));
-      list-style-type: decimal;
+      display: inline-flex;
+      align-items: center;
+      list-style-type: none;
+      gap: 0.5rem;
+
+      .fromSizeTag,
+      .toSizeTag {
+        padding: 0.1rem 0.3rem;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .fromSizeTag {
+        background-color: hsl(var(--muted));
+        color: hsl(var(--muted-foreground));
+      }
+      .toSizeTag {
+        background-color: hsl(var(--primary));
+        color: hsl(var(--white));
+      }
     }
   }
 }
@@ -125,23 +153,31 @@
   .resizeContent {
     flex-direction: column;
     gap: 1.5rem;
+    .resizePreviewContainer {
+      padding: 1rem 2rem;
+      gap: 0.5rem;
+      width: 75%;
+      .resizePreviewWrapper {
+        width: 180px;
+        height: 180px;
+        .firstImage {
+          left: 50%;
+          top: 90%;
+          transform: translateX(-50%) translateY(-90%) scale(1);
+        }
 
-    .firstImage {
-      left: 50%;
-      top: 90%;
-      transform: translateX(-50%) translateY(-90%) scale(1);
-    }
+        .secondImage {
+          left: 70%;
+          top: 70%;
+          transform: translateX(-70%) translateY(-70%) scale(0.95);
+        }
 
-    .secondImage {
-      left: 70%;
-      top: 70%;
-      transform: translateX(-70%) translateY(-70%) scale(0.95);
-    }
-
-    .thirdImage {
-      left: 90%;
-      top: 50%;
-      transform: translateX(-90%) translateY(-50%) scale(0.9);
+        .thirdImage {
+          left: 90%;
+          top: 50%;
+          transform: translateX(-90%) translateY(-50%) scale(0.9);
+        }
+      }
     }
   }
 
@@ -151,5 +187,12 @@
 
   .headerHidden {
     padding-top: 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  .resizeContent {
+    .resizePreviewContainer {
+      width: 100%;
+    }
   }
 }

@@ -18,8 +18,6 @@
     width: 3rem;
     height: 3rem;
 
-    border: 1px solid white;
-    border-radius: 8px;
     overflow: hidden;
   }
 
@@ -34,5 +32,13 @@
 @media screen and (max-width: 1024px) {
   .navbar {
     padding: 0 var(--padding);
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    .logo {
+      width: 30px;
+      height: 30px;
+    }
   }
 }

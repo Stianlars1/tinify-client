@@ -146,3 +146,8 @@ body {
     --padding: 40px;
   }
 }
+@media screen and (max-width: 768px) {
+  :root {
+    --nav-height: 40px;
+  }
+}

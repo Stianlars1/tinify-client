@@ -37,6 +37,7 @@
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   --shadow-colored: 0 1px 2px 0 var(--shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--shadow);
+  box-sizing: border-box;
 }
 .resizePreviewContainer .resizePreviewWrapper {
   width: 200px;
@@ -63,6 +64,7 @@
      object-fit: cover; /* Ensures the image scales to cover the container while maintaining aspect ratio */
   -o-object-position: center;
      object-position: center; /* Center the image within the container */
+  background-color: hsl(var(--background));
 }
 .resizePreviewContainer .resizePreviewWrapper .firstImage {
   opacity: 1;
@@ -89,11 +91,34 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 4px;
 }
 .resizePreviewContainer .imageNames .imageName {
-  font-size: 12px;
+  font-size: 14px;
   color: hsl(var(--muted-foreground));
-  list-style-type: decimal;
+  display: inline-flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 0.5rem;
+}
+.resizePreviewContainer .imageNames .imageName .fromSizeTag,
+.resizePreviewContainer .imageNames .imageName .toSizeTag {
+  padding: 0.1rem 0.3rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 400;
+}
+.resizePreviewContainer .imageNames .imageName .fromSizeTag {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+.resizePreviewContainer .imageNames .imageName .toSizeTag {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--white));
 }
 
 .arrowRight {
@@ -113,17 +138,26 @@
     flex-direction: column;
     gap: 1.5rem;
   }
-  .resizeContent .firstImage {
+  .resizeContent .resizePreviewContainer {
+    padding: 1rem 2rem;
+    gap: 0.5rem;
+    width: 75%;
+  }
+  .resizeContent .resizePreviewContainer .resizePreviewWrapper {
+    width: 180px;
+    height: 180px;
+  }
+  .resizeContent .resizePreviewContainer .resizePreviewWrapper .firstImage {
     left: 50%;
     top: 90%;
     transform: translateX(-50%) translateY(-90%) scale(1);
   }
-  .resizeContent .secondImage {
+  .resizeContent .resizePreviewContainer .resizePreviewWrapper .secondImage {
     left: 70%;
     top: 70%;
     transform: translateX(-70%) translateY(-70%) scale(0.95);
   }
-  .resizeContent .thirdImage {
+  .resizeContent .resizePreviewContainer .resizePreviewWrapper .thirdImage {
     left: 90%;
     top: 50%;
     transform: translateX(-90%) translateY(-50%) scale(0.9);
@@ -133,5 +167,10 @@
   }
   .headerHidden {
     padding-top: 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  .resizeContent .resizePreviewContainer {
+    width: 100%;
   }
 }/*# sourceMappingURL=resizeContent.module.css.map */
