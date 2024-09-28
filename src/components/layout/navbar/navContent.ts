@@ -5,7 +5,7 @@ export interface NavLink {
 export const NAV_LINKS: NavLink[] = [
   {
     name: "Compress",
-    url: "/",
+    url: "/compress",
   },
   {
     name: "Resize",

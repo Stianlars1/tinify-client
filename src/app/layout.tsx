@@ -1,6 +1,5 @@
 import { Footer } from "@/components/layout/footer/footer";
 import { Navbar } from "@/components/layout/navbar/navbar";
-import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import { Libre_Franklin } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -58,7 +57,7 @@ export default function RootLayout({
         className={` ${libre.className} ${geistMono.variable} ${geistSans.variable}`}
       >
         <Navbar />
-        <PageContainer>{children}</PageContainer>
+        {children}
         <Footer />
       </body>
     </html>

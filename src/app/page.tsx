@@ -1,36 +1,53 @@
-import { PageContent } from "@/components/layout/pageContent/pageContent";
-import { TinifyServices } from "@/types";
-import { Metadata } from "next";
+import { RootHeader } from "@/features/root/header/rootHeader";
+import { SectionOverview } from "@/features/root/sectionOverview/sectionOverview";
+import { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 
-import { CompressProcessContainer } from "@/components/ui/compress/compressProcessContainer/compressProcessContainer";
-import { DropZone } from "@/components/ui/dropzones/dropzone/dropZone";
-import { CompressSections } from "@/features/compressSections/CompressSections";
-import { FileUploadProvider } from "@/providers/FileProvider";
-import { CompressBackgrounds } from "./_components/compressBackgrounds";
+import { Features } from "@/features/root/features/features";
+import Script from "next/script";
 import { rootMeta } from "./rootMeta";
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f8fa" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b " },
+  ],
+};
+
 export const metadata: Metadata = rootMeta;
+const geistMono = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+  display: "swap",
+});
 
-export default async function CompressPage() {
+export default async function Home() {
   return (
-    <PageContent
-      service={TinifyServices.COMPRESS}
-      title="Compress any images without losing quality"
-      description={
-        <span>
-          Supports <strong>JPG</strong>, <strong>PNG</strong>,{" "}
-          <strong>GIF</strong>, <strong>WEBP</strong>, <strong>PDF</strong>, and
-          more formats. Fast and easy to use.
-        </span>
-      }
-    >
-      <FileUploadProvider>
-        <DropZone />
-        <CompressProcessContainer />
-      </FileUploadProvider>
+    <>
+      <Script
+        src={"/scripts/rootHeaderBackground.min.js"}
+        strategy="beforeInteractive"
+      />
+      <Script
+        src={"/scripts/overviewSectionBackground.js"}
+        strategy="beforeInteractive"
+      />
 
-      <CompressSections />
-
-      <CompressBackgrounds />
-    </PageContent>
+      <main
+        style={{
+          ...geistMono.style,
+          backgroundColor: "hsl(var(--background))",
+          zIndex: 0,
+        }}
+      >
+        <RootHeader />
+        <SectionOverview />
+        <Features />
+        {/* <Testimonials />
+        <FaqSection />
+        <BlogPreview />
+        <PrivacySecurity /> */}
+      </main>
+    </>
   );
 }

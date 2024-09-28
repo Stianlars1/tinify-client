@@ -12,7 +12,7 @@ export const PageContent = ({
   height,
   hideHeader = false,
 }: {
-  title: string;
+  title: string | ReactElement;
   description: string | ReactElement;
   tag?: string | ReactElement | ReactNode;
   children: ReactElement | ReactElement[];

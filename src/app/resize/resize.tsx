@@ -19,17 +19,15 @@ export const Resize = () => {
   }, [files]); // Recalculate only when `files` changes
 
   return (
-    <>
-      <section className={styles.resize}>
-        {!isImageDropped && <DropZone onLoaded={handleOnLoaded} />}
+    <section className={styles.resize}>
+      {!isImageDropped && <DropZone onLoaded={handleOnLoaded} />}
 
-        {isImageDropped && (
-          <>
-            <HiddenDropZone />
-            <ResizeContent images={files} />
-          </>
-        )}
-      </section>
-    </>
+      {isImageDropped && (
+        <>
+          <HiddenDropZone />
+          <ResizeContent images={files} />
+        </>
+      )}
+    </section>
   );
 };

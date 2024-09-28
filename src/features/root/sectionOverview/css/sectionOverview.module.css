@@ -1,0 +1,81 @@
+.overviewSection {
+  padding: 4rem var(--padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  justify-content: flex-start;
+  position: relative;
+}
+.overviewSection .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: flex-start;
+  text-align: center;
+}
+.overviewSection .header .title {
+  /* Add styling if needed */
+  font-size: 1.5rem;
+  margin: 0;
+}
+.overviewSection .header .description {
+  margin: 0;
+}
+.overviewSection .featuresList {
+  min-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 1rem;
+}
+.overviewSection .featuresList .feature {
+  flex: 1 1 min(300px, 100%);
+  height: 150px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Align content inside feature card */
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: hsl(var(--black));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  color: hsl(var(--white));
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.overviewSection .featuresList .feature:hover {
+  transform: scale(1.025); /* Optional: Add a hover effect */
+}
+.overviewSection .featuresList .feature:first-child {
+  animation: pulse 2s infinite;
+  background-color: hsl(var(--black));
+}
+.overviewSection .featuresList .feature:nth-child(2) {
+  background-color: hsl(var(--black)/0.95);
+  color: white;
+}
+.overviewSection .featuresList .feature:nth-child(3) {
+  background-color: hsl(var(--black)/0.9);
+  color: white;
+  grid-column: span 2;
+  /* Specific color schemes for each feature */
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}/*# sourceMappingURL=sectionOverview.module.css.map */

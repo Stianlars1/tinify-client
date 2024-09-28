@@ -1,6 +1,6 @@
+import { DOMAIN } from "@/utils/urls";
 import { MetadataRoute } from "next";
 
-export const DOMAIN = "https://tinify.dev";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     "",

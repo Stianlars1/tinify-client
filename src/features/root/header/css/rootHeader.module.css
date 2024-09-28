@@ -1,0 +1,54 @@
+.header {
+  width: 100vw;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 6rem var(--padding) 8rem;
+  position: relative;
+}
+.header .backgroundWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.header .title {
+  text-align: center;
+  font-size: 3.75rem; /* Larger for the title */
+  font-weight: 600;
+  color: light-dark(hsl(var(--white)), hsl(var(--white)/0.8));
+  text-shadow: 0 0.5px 5px hsl(var(--foreground)/0.1);
+  max-width: 800px;
+  text-wrap: balance;
+  line-height: 0.9;
+  position: relative;
+}
+.header .description {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: light-dark(hsl(var(--white)), hsl(var(--white)/0.8));
+  text-wrap: pretty;
+  text-align: center;
+  line-height: 1.4;
+}
+.header .waves {
+  position: absolute;
+  top: 0rem;
+  width: auto;
+  height: 1200px;
+  z-index: -1;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}/*# sourceMappingURL=rootHeader.module.css.map */
