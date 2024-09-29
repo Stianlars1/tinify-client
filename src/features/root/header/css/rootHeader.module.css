@@ -17,12 +17,12 @@
 .header .title {
   text-align: center;
   font-size: 3.75rem; /* Larger for the title */
-  font-weight: 600;
+  font-weight: 900;
   color: light-dark(hsl(var(--white)), hsl(var(--white)/0.8));
   text-shadow: 0 0.5px 5px hsl(var(--foreground)/0.1);
   max-width: 800px;
   text-wrap: balance;
-  line-height: 0.9;
+  line-height: 1;
   position: relative;
 }
 .header .description {
@@ -41,6 +41,14 @@
   z-index: -1;
 }
 
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 3rem var(--padding) 3rem;
+  }
+  .header .title {
+    font-size: 2.25rem;
+  }
+}
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;

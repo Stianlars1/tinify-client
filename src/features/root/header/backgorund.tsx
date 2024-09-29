@@ -17,6 +17,8 @@ export const HeaderBackground = ({ id }: { id?: string }) => {
       existingScript.remove(); // Remove the old script
     }
 
+    const isMobileSize = window.innerWidth < 768;
+
     // Create new script element
     const script = document.createElement("script");
     script.id = id || "finisher-canvas";
@@ -32,18 +34,18 @@ export const HeaderBackground = ({ id }: { id?: string }) => {
         new RootHeader({
           "count": 10,
           "size": {
-            "min": 1300,
-            "max": 1500,
+            "min": ${isMobileSize ? "350" : "1000"},
+            "max": ${isMobileSize ? "850" : "1350"},
             "pulse": 0
           },
           "speed": {
             "x": {
-              "min": 0.1,
-              "max": 0.9
+              "min": ${isMobileSize ? "0.07" : "0.1"},
+              "max":  ${isMobileSize ? "0.5" : "0.9"},
             },
             "y": {
-              "min": 0.2,
-              "max": 0.9
+              "min": ${isMobileSize ? "0.1" : "0.2"},
+              "max":  ${isMobileSize ? "0.5" : "0.9"},
             }
           },
           "colors": {
@@ -76,18 +78,18 @@ export const HeaderBackground = ({ id }: { id?: string }) => {
         new RootHeader({
           "count": 12,
           "size": {
-            "min": 1300,
-            "max": 1500,
+            "min": ${isMobileSize ? "350" : "1000"},
+            "max": ${isMobileSize ? "850" : "1200"},
             "pulse": 0
           },
           "speed": {
             "x": {
-              "min": 0.6,
-              "max": 3
+              "min": ${isMobileSize ? "0.5" : "0.6"},
+              "max":  ${isMobileSize ? "1.5" : "3"},
             },
             "y": {
-              "min": 0.6,
-              "max": 3
+              "min": ${isMobileSize ? "0.5" : "0.6"},
+              "max":  ${isMobileSize ? "1.5" : "3"},
             }
           },
           "colors": {
