@@ -9,6 +9,7 @@
   position: relative;
   max-width: var(--content-width);
   margin: 0 auto;
+  position: relative;
   > * {
     font-family: inherit;
     min-width: 100%;
@@ -17,6 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
     .pageHeader {
       display: flex;
@@ -41,6 +43,15 @@
         color: hsl(var(--foreground));
         font-weight: 300;
       }
+
+      .smallSubtitle {
+        max-width: var(--content-width);
+        font-size: 1.25rem;
+        text-align: center;
+        text-wrap: balance;
+        color: hsl(var(--foreground));
+        font-weight: 300;
+      }
     }
   }
 }
@@ -48,6 +59,11 @@
 .pageContentFull {
   flex: 1;
   min-height: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+  max-width: var(--max-width) !important;
 }
 
 [data-hide-header="true"] {

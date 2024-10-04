@@ -1,5 +1,6 @@
 import { DownloadAllButton } from "@/components/ui/buttons/downloadAllButton";
 import { ResizedImage } from "@/components/ui/compress/types";
+import { Spinner } from "@/components/ui/loaders/loaders";
 import { Skeleton } from "@/components/ui/loaders/skeleton";
 import { formatFileSize } from "@/utils/imageUtils";
 import { ReactElement } from "react";
@@ -35,13 +36,21 @@ export const ResizeProcessHeader = ({
           </h2>
           <p className={styles.subtitle}>{subtitle}</p>
         </div>
-        <DownloadAllButton compressedFiles={compressedFiles}>
-          Download All Images
-        </DownloadAllButton>
+        {!isProcessing && compressedFiles.length > 0 && (
+          <>
+            <DownloadAllButton compressedFiles={compressedFiles}>
+              Download All Images
+            </DownloadAllButton>
+            <button
+              onClick={handleResetAndGoAgain}
+              className={styles.resetButton}
+            >
+              Resize more
+            </button>
+          </>
+        )}
 
-        <button onClick={handleResetAndGoAgain} className={styles.resetButton}>
-          Resize more
-        </button>
+        {isProcessing && <Spinner size={24} />}
       </div>
     </>
   );

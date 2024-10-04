@@ -1,0 +1,35 @@
+/* src/pages/AboutPage.module.scss */
+.blog {
+  padding-top: 3rem;
+
+  .blogList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 110px;
+    gap: 2rem;
+    .blogItem {
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .gradientBackground {
+        border: 1px solid hsl(var(--white));
+        border-radius: var(--radius);
+        position: absolute !important;
+      }
+    }
+
+    .blogItem:hover {
+      .gradientBackground {
+        transform: skewY(-2deg) !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .blog {
+  }
+}

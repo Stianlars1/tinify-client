@@ -21,8 +21,8 @@
     justify-content: center;
     width: fit-content;
     .logo {
-      width: 35px;
-      height: 35px;
+      width: 28px;
+      height: 28px;
 
       overflow: hidden;
     }
@@ -48,6 +48,17 @@
         width: 30px;
         height: 30px;
       }
+    }
+
+    .navLinks {
+      gap: 1rem;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .navbar {
+    .navLinks {
+      gap: 0.65rem;
     }
   }
 }

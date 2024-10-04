@@ -1,0 +1,10 @@
+//pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/80 [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"}
+
+.dot {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  min-width: 100%;
+  fill: hsl(var(--muted-foreground) / 0.7);
+}

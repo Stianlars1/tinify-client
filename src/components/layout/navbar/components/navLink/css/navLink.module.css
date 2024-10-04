@@ -1,19 +1,15 @@
 .navLink {
-  font-size: 1.2rem;
-  border-bottom: 2px solid transparent;
+  font-size: 0.875rem;
+  border-bottom: 1px solid transparent;
   color: hsl(var(--foreground)/0.7);
   transition: color 0.15s ease;
 }
 .navLink:hover {
   color: hsl(var(--foreground)/1);
+  border-bottom: 1px solid light-dark(hsl(var(--foreground)), hsl(var(--muted-foreground)));
 }
 
 .activeLink {
-  border-bottom: 2px solid light-dark(hsl(var(--border)), hsl(var(--muted-foreground)));
-}
-
-@media screen and (max-width: 768px) {
-  .navLink {
-    font-size: 1rem;
-  }
+  color: hsl(var(--foreground));
+  border-bottom: 1px solid light-dark(hsl(var(--foreground)), hsl(var(--muted-foreground)));
 }/*# sourceMappingURL=navLink.module.css.map */

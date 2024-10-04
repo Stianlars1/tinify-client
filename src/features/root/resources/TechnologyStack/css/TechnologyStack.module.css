@@ -1,0 +1,20 @@
+/* src/components/TechnologyStack/TechnologyStack.module.scss */
+.technologyStack {
+  padding: 2rem;
+}
+.technologyStack h2 {
+  font-size: 2rem;
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
+}
+.technologyStack p {
+  font-size: 1rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.technologyStack h3 {
+  font-size: 1.8rem;
+  color: hsl(var(--foreground));
+  margin-top: 2rem;
+}/*# sourceMappingURL=TechnologyStack.module.css.map */

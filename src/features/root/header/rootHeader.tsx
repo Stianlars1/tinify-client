@@ -4,16 +4,17 @@ export const RootHeader = () => {
   return (
     <>
       <header className={`${styles.header} `}>
-        <div className={`${styles.backgroundWrapper} finisher-header`}>
-          <HeaderBackground />
+        <div className={`${styles.backgroundWrapper} `}>
+          <HeaderBackground notMountedClass={styles.notMountedClass} />
         </div>
         <h1 className={styles.title}>
-          Fast and Free Image <br />
-          Optimization
+          Supercharge Your Images with Instant, Free Optimization
         </h1>
+
         <p className={styles.description}>
-          Compress, resize, and crop images instantly. No limits, no fees—just
-          high-quality results.
+          Optimize your images effortlessly with our lightning-fast tools.
+          Compress, resize, and crop without limits or hidden fees. Just
+          superior quality every time.
         </p>
       </header>
     </>

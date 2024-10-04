@@ -4,7 +4,8 @@ import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
 import { Features } from "@/features/root/features/features";
-import Script from "next/script";
+import { Resources } from "@/features/root/resources/resources";
+import { UsageSection } from "@/features/root/usageSection/usageSection";
 import { rootMeta } from "./rootMeta";
 export const viewport: Viewport = {
   themeColor: [
@@ -24,15 +25,6 @@ const geistMono = localFont({
 export default async function Home() {
   return (
     <>
-      <Script
-        src={"/scripts/rootHeaderBackground.min.js"}
-        strategy="beforeInteractive"
-      />
-      <Script
-        src={"/scripts/overviewSectionBackground.js"}
-        strategy="beforeInteractive"
-      />
-
       <main
         style={{
           ...geistMono.style,
@@ -41,11 +33,13 @@ export default async function Home() {
         }}
       >
         <RootHeader />
+        <UsageSection />
         <SectionOverview />
         <Features />
+
+        <Resources />
         {/* <Testimonials />
         <FaqSection />
-        <BlogPreview />
         <PrivacySecurity /> */}
       </main>
     </>

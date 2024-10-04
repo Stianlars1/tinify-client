@@ -1,0 +1,166 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0;
+}
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.content h1 {
+  color: hsl(var(--foreground));
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.content h2 {
+  color: hsl(var(--foreground)/0.9);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.content h3 {
+  color: hsl(var(--foreground)/0.8);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.content h4 {
+  color: hsl(var(--foreground)/0.7);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.content h5 {
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+.content h6 {
+  line-height: 1.55;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+.content a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  font-weight: inherit;
+}
+.content p,
+.content li {
+  color: hsl(var(--foreground)/1);
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.contentPlain h1 {
+  color: hsl(var(--foreground));
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.contentPlain h2 {
+  color: hsl(var(--foreground)/0.9);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.contentPlain h3 {
+  color: hsl(var(--foreground)/0.8);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.contentPlain h4 {
+  color: hsl(var(--foreground)/0.7);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.contentPlain h5 {
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+.contentPlain h6 {
+  line-height: 1.55;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+.contentPlain a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  font-weight: inherit;
+}
+.contentPlain p,
+.contentPlain li {
+  color: light-dark(hsl(var(--foreground)/1), hsl(var(--muted-foreground)/1));
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.contentPlain li {
+  list-style: initial;
+  padding: 0;
+  padding-left: 0.1rem;
+  margin-left: 2rem;
+}
+.contentPlain li:first-child {
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contentPlain h1,
+  .content h1 {
+    font-size: 2rem;
+  }
+  .contentPlain h2,
+  .content h2 {
+    font-size: 1.75rem;
+  }
+  .contentPlain h3,
+  .content h3 {
+    font-size: 1.5rem;
+  }
+  .contentPlain h4,
+  .content h4 {
+    font-size: 1.25rem;
+  }
+  .contentPlain h5,
+  .content h5 {
+    font-size: 1.25rem;
+  }
+  .contentPlain h6,
+  .content h6 {
+    font-size: 1rem;
+  }
+  .contentPlain a,
+  .content a {
+    font-size: 1rem;
+  }
+  .contentPlain p,
+  .contentPlain li,
+  .content p,
+  .content li {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=content.module.css.map */

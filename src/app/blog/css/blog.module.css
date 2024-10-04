@@ -1,0 +1,25 @@
+/* src/pages/AboutPage.module.scss */
+.blog {
+  padding-top: 3rem;
+}
+.blog .blogList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 110px;
+  gap: 2rem;
+}
+.blog .blogList .blogItem {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.blog .blogList .blogItem .gradientBackground {
+  border: 1px solid hsl(var(--white));
+  border-radius: var(--radius);
+  position: absolute !important;
+}
+.blog .blogList .blogItem:hover .gradientBackground {
+  transform: skewY(-2deg) !important;
+}/*# sourceMappingURL=blog.module.css.map */

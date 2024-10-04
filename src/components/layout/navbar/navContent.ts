@@ -4,6 +4,14 @@ export interface NavLink {
 }
 export const NAV_LINKS: NavLink[] = [
   {
+    name: "About",
+    url: "/about",
+  },
+  {
+    name: "Blog",
+    url: "/blog",
+  },
+  {
     name: "Compress",
     url: "/compress",
   },

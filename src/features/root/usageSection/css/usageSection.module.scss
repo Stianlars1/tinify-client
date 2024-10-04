@@ -1,0 +1,19 @@
+.usageSection {
+  padding: 4rem var(--padding);
+  font-size: 1.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  margin: 0 auto;
+
+  > span {
+    text-wrap: pretty;
+  }
+
+  .icon {
+    fill: light-dark(hsl(var(--purple)), hsl(var(--warning)));
+  }
+}

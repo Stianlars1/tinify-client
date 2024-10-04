@@ -1,0 +1,115 @@
+/* src/pages/AboutPage.module.scss */
+.about {
+  padding-top: 3rem;
+  .section {
+    margin-bottom: 3rem;
+    display: flex;
+    position: relative;
+    z-index: 0;
+
+    .left {
+      flex: 1 1 40%;
+    }
+    .right {
+      flex: 1 1 60%;
+      z-index: 0;
+      background: hsl(var(--background));
+    }
+    .article {
+      padding: 1.5rem;
+      position: relative;
+      z-index: 1;
+
+      &:not(:first-child) {
+        margin-top: 1.5rem;
+      }
+    }
+
+    .rightWithGradient {
+      flex: 1 1 60%;
+      padding: 1.5rem;
+      position: relative;
+      background: hsl(var(--background));
+      z-index: 0;
+    }
+
+    .dotPattern {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+
+  .teamMembers {
+    display: flex;
+    justify-content: center;
+
+    .member {
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      gap: 0.5rem;
+
+      .image {
+      }
+
+      .role {
+        width: fit-content;
+        text-align: center;
+      }
+
+      .description {
+        text-wrap: pretty;
+        text-align: left;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.gradientBackground {
+  opacity: 0.35;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 640px) {
+  .about {
+    z-index: 0;
+    .section {
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .rightWithGradient {
+        margin-top: 1.5rem;
+      }
+
+      .right {
+        .article {
+          &:first-child,
+          &:not(:first-child) {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .teamMembers {
+      width: 100%;
+      .member {
+        width: 100%;
+        .image {
+        }
+
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

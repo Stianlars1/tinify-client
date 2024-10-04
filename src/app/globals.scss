@@ -10,6 +10,7 @@
   --muted-hex: #f4f4f5;
   --bg-hex-light: #f5f8fa;
   --bg-hex-dark: #09090b;
+  --bg-hex-grey: #1b1b1b;
 
   //const colors
   --black: 240 10% 3.9%;
@@ -102,8 +103,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
   font-family: system-ui, -apple-system, sans-serif, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
   -webkit-font-smoothing: antialiased;

@@ -22,8 +22,8 @@
   width: fit-content;
 }
 .navbar .logoLink .logo {
-  width: 35px;
-  height: 35px;
+  width: 28px;
+  height: 28px;
   overflow: hidden;
 }
 .navbar .navLinks {
@@ -42,5 +42,13 @@
   .navbar .logoLink .logo {
     width: 30px;
     height: 30px;
+  }
+  .navbar .navLinks {
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .navbar .navLinks {
+    gap: 0.65rem;
   }
 }/*# sourceMappingURL=navbar.module.css.map */

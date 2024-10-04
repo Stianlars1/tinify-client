@@ -1,0 +1,10 @@
+/* src/components/UnderstandingServices/UnderstandingServices.module.scss */
+.understandingServices {
+  padding: 2rem;
+}
+.understandingServices h2 {
+  font-size: 2rem;
+  color: hsl(var(foreground));
+  text-align: center;
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=UnderstandingServices.module.css.map */

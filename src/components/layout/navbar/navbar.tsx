@@ -1,4 +1,4 @@
-import { TinifyLogo } from "@/assets/tinify/tinifyLogo";
+import { TinifyLogoAuto } from "@/assets/tinify/tinifyLogoAuto";
 import Link from "next/link";
 import { NavLink } from "./components/navLink/navLink";
 import styles from "./css/navbar.module.css";
@@ -7,7 +7,7 @@ export const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <Link className={styles.logoLink} href={"/"}>
-        <TinifyLogo className={styles.logo} />
+        <TinifyLogoAuto className={styles.logo} />
       </Link>
 
       <nav>

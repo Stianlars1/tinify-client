@@ -1,0 +1,15 @@
+.usageSection {
+  padding: 4rem var(--padding);
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+.usageSection > span {
+  text-wrap: pretty;
+}
+.usageSection .icon {
+  fill: light-dark(hsl(var(--purple)), hsl(var(--warning)));
+}/*# sourceMappingURL=usageSection.module.css.map */

@@ -25,13 +25,16 @@ export const FireIcon = ({ className }: IconProps) => {
     </svg>
   );
 };
-export const SparklesIcon = ({ className }: IconProps) => {
+
+export const SparklesIcon = ({ className, size }: IconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
       className={className}
+      width={size}
+      height={size}
     >
       <path
         fillRule="evenodd"
@@ -41,6 +44,7 @@ export const SparklesIcon = ({ className }: IconProps) => {
     </svg>
   );
 };
+
 export const ArrowDownIcon = ({ className }: IconProps) => {
   return (
     <svg
@@ -312,6 +316,117 @@ export const ArrowsExpandIcon = ({ className, size }: IconProps) => {
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
+        />
+      </svg>
+    </>
+  );
+};
+export const CropIcon = ({ className, size }: IconProps) => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+        width={size}
+        height={size}
+      >
+        <path d="M6 2v14a2 2 0 0 0 2 2h14" />
+        <path d="M18 22V8a2 2 0 0 0-2-2H2" />
+      </svg>
+    </>
+  );
+};
+export const CompressImageIcon = ({ className, size }: IconProps) => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+        width={size}
+        height={size}
+      >
+        <path d="m15 15 6 6m-6-6v4.8m0-4.8h4.8" />
+        <path d="M9 19.8V15m0 0H4.2M9 15l-6 6" />
+        <path d="M15 4.2V9m0 0h4.8M15 9l6-6" />
+        <path d="M9 4.2V9m0 0H4.2M9 9 3 3" />
+      </svg>
+    </>
+  );
+};
+export const ResizeIcon = ({ className, size }: IconProps) => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+        width={size}
+        height={size}
+      >
+        <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+        <path d="M14 15H9v-5" />
+        <path d="M16 3h5v5" />
+        <path d="M21 3 9 15" />
+      </svg>
+    </>
+  );
+};
+export const BookOpenIcon = ({ className, size }: IconProps) => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        width={size}
+        height={size}
+        className={className}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+        />
+      </svg>
+    </>
+  );
+};
+export const LockIcon = ({ className, size }: IconProps) => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        width={size}
+        height={size}
+        className={className}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
         />
       </svg>
     </>

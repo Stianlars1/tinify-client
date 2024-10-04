@@ -1,131 +1,98 @@
 "use client";
 import { useDarkMode } from "@/hooks/useDarkmode";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { GradientBackground } from "react-gradient-animation";
 
-export const HeaderBackground = ({ id }: { id?: string }) => {
+export const HeaderBackground = ({
+  notMountedClass,
+}: {
+  notMountedClass?: string;
+}) => {
+  const [hasMounted, setHasMounted] = useState(false);
   const isDarkmode = useDarkMode();
 
+  // State to hold whether it's mobile size
+  const [isMobileSize, setIsMobileSize] = useState<boolean | null>(null);
+
   useEffect(() => {
-    // Clean up existing canvas and script if they exist
-    const existingCanvas = document.getElementById("finisher-canvas");
-    if (existingCanvas) {
-      existingCanvas.remove(); // Remove the old canvas
-    }
-
-    const existingScript = document.getElementById("finisher-canvas");
-    if (existingScript) {
-      existingScript.remove(); // Remove the old script
-    }
-
-    const isMobileSize = window.innerWidth < 768;
-
-    // Create new script element
-    const script = document.createElement("script");
-    script.id = id || "finisher-canvas";
-    script.type = "text/javascript";
-
-    script.async = true;
-
-    if (isDarkmode) {
-      console.log("Rendering dark mode script");
-
-      // Dark mode configuration
-      script.innerHTML = `
-        new RootHeader({
-          "count": 10,
-          "size": {
-            "min": ${isMobileSize ? "350" : "1000"},
-            "max": ${isMobileSize ? "850" : "1350"},
-            "pulse": 0
-          },
-          "speed": {
-            "x": {
-              "min": ${isMobileSize ? "0.07" : "0.1"},
-              "max":  ${isMobileSize ? "0.5" : "0.9"},
-            },
-            "y": {
-              "min": ${isMobileSize ? "0.1" : "0.2"},
-              "max":  ${isMobileSize ? "0.5" : "0.9"},
-            }
-          },
-          "colors": {
-            "background": "hsl(var(--background))",
-            "particles": [
-              "#ff4848",
-              "#000000",
-              "#2235e5",
-              "#000000",
-              "#ff0000"
-            ]
-          },
-          "blending": "overlay",
-          "opacity": {
-            "center": 0.9,
-            "edge": 0
-          },
-          "skew": -2,
-          "shapes": [
-            "c"
-          ]
-        });
-      `;
-      script.style.outline = "1px solid hsl(var(--background)) !important";
-    } else {
-      console.log("Rendering light mode script");
-
-      // Light mode configuration
-      script.innerHTML = `
-        new RootHeader({
-          "count": 12,
-          "size": {
-            "min": ${isMobileSize ? "350" : "1000"},
-            "max": ${isMobileSize ? "850" : "1200"},
-            "pulse": 0
-          },
-          "speed": {
-            "x": {
-              "min": ${isMobileSize ? "0.5" : "0.6"},
-              "max":  ${isMobileSize ? "1.5" : "3"},
-            },
-            "y": {
-              "min": ${isMobileSize ? "0.5" : "0.6"},
-              "max":  ${isMobileSize ? "1.5" : "3"},
-            }
-          },
-          "colors": {
-            "background": "#953eff",
-            "particles": [
-              "#ff681c",
-              "#ff0a53",
-              "#2563eb"
-            ]
-          },
-          "blending": "overlay",
-          "opacity": {
-            "center": 0.45,
-            "edge": 0
-          },
-          "skew": -1.6,
-          "shapes": [
-            "c"
-          ]
-        });
-      `;
-      script.style.outline = "1px solid hsl(var(--background)) !important";
-    }
-
-    // Append the script to the body
-    document.body.appendChild(script);
-
-    // Cleanup when component unmounts or mode changes
-    return () => {
-      const canvas = document.getElementById("finisher-canvas");
-      if (canvas) {
-        canvas.remove(); // Ensure old canvas is removed
-      }
-      script.remove(); // Remove the script as well
+    setHasMounted(true);
+    // Function to determine if the window width is less than 768px
+    const checkMobileSize = () => {
+      setIsMobileSize(window.innerWidth < 768);
     };
-  }, [isDarkmode]); // This will run whenever `isDarkmode` changes
 
-  return null;
+    // Initial check
+    checkMobileSize();
+
+    // Add event listener to handle window resize
+    window.addEventListener("resize", checkMobileSize);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("resize", checkMobileSize);
+  }, []);
+
+  // Render a loader or null during the first render (to prevent mismatch)
+  if (isMobileSize === null) {
+    // You can return a placeholder or null
+    return (
+      <>
+        {!hasMounted && notMountedClass && <div className={notMountedClass} />}
+      </>
+    );
+  }
+
+  // Common props for both themes
+  const commonProps = {
+    count: isDarkmode ? 10 : 12,
+    size: {
+      min: isMobileSize ? 350 : isDarkmode ? 1000 : 1000,
+      max: isMobileSize ? 850 : isDarkmode ? 1350 : 1200,
+      pulse: 0,
+    },
+    speed: {
+      x: {
+        min: isMobileSize ? (isDarkmode ? 0.07 : 0.5) : isDarkmode ? 0.1 : 0.6,
+        max: isMobileSize ? (isDarkmode ? 0.5 : 1.5) : isDarkmode ? 0.9 : 3,
+      },
+      y: {
+        min: isMobileSize ? (isDarkmode ? 0.1 : 0.5) : isDarkmode ? 0.2 : 0.6,
+        max: isMobileSize ? (isDarkmode ? 0.5 : 1.5) : isDarkmode ? 0.9 : 3,
+      },
+    },
+    blending: "lighten",
+    opacity: { center: 0.45, edge: 0 },
+    skew: -2,
+    shapes: ["c"],
+    translateYcorrection: true,
+  };
+
+  // Render the GradientBackground with appropriate props
+  return (
+    <>
+      <GradientBackground
+        {...(commonProps as any)}
+        colors={
+          isDarkmode
+            ? {
+                background: "hsl(var(--background))",
+                particles: [
+                  "#ff4848",
+                  "#000000",
+                  "#2235e5",
+                  "#000000",
+                  "#ff0000",
+                ],
+              }
+            : {
+                background: "#953eff",
+                particles: ["#ff681c", "#ff0a53", "#2563eb"],
+              }
+        }
+      />
+
+      {!hasMounted && notMountedClass && (
+        <div className={notMountedClass} style={{ marginTop: "-2rem" }} />
+      )}
+    </>
+  );
 };

@@ -1,6 +1,6 @@
 "use server";
 import { TinifyServices } from "@/types";
-import { ReactElement, ReactNode } from "react";
+import { ReactElement } from "react";
 import { Tag } from "./components/tag/tag";
 import "./css/hide.css";
 import styles from "./css/pageContent.module.css";
@@ -11,22 +11,27 @@ export const PageContent = ({
   service,
   height,
   hideHeader = false,
+  smallSubtitle,
+  fullWidth,
+  headerChildren,
 }: {
   title: string | ReactElement;
-  description: string | ReactElement;
-  tag?: string | ReactElement | ReactNode;
+  description?: string | ReactElement;
   children: ReactElement | ReactElement[];
   service?: TinifyServices;
   height?: "full" | "fit-content";
   hideHeader?: boolean;
+  smallSubtitle?: string;
+  fullWidth?: boolean;
+  headerChildren?: ReactElement;
 }) => {
   return (
     <main
       className={`${styles.pageContent} ${
         height === "full" ? styles.pageContentFull : ""
-      }`}
+      } ${fullWidth ? styles.fullWidth : ""}`}
     >
-      {title && description && !hideHeader && (
+      {title && !hideHeader && (
         <header
           id="pageContentHeader"
           data-hide-header={hideHeader}
@@ -36,8 +41,12 @@ export const PageContent = ({
 
           <div className={styles.pageHeader}>
             <h1 className={styles.title}>{title}</h1>
-            <p className={styles.description}>{description}</p>
+            {description && <p className={styles.description}>{description}</p>}
+            {smallSubtitle && !description && (
+              <p className={styles.smallSubtitle}>{smallSubtitle}</p>
+            )}
           </div>
+          {headerChildren && <>{headerChildren}</>}
         </header>
       )}
 

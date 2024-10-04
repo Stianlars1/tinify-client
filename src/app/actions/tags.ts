@@ -18,6 +18,16 @@ export const getAllUsageData = async (): Promise<UsageDataType> => {
   }
 };
 
+export const getTotalUsageData = async () => {
+  const allData = await getAllUsageData();
+  if (allData.length === 0) {
+    return 0;
+  }
+  const total = allData.reduce((acc, data) => acc + data.count, 0);
+
+  return total;
+};
+
 export const getCompressionTag = async () => {
   const allUsageData = await getAllUsageData();
   if (allUsageData.length === 0) {
@@ -37,11 +47,16 @@ export const getTagByService = async (service: TinifyServices) => {
     return [];
   }
 
-  const compressionData = allUsageData.find(
+  if (service === TinifyServices.ALL) {
+    const total = await getTotalUsageData();
+    return `${total}+ Images Optimized`;
+  }
+
+  const usageData = allUsageData.find(
     (data) => data.serviceName === service.toString()
   );
 
-  const finalTag = getTagText(service, compressionData?.count);
+  const finalTag = getTagText(service, usageData?.count);
   return finalTag;
 };
 

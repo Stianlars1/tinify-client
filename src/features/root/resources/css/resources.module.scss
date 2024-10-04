@@ -1,0 +1,59 @@
+.resources {
+  max-width: var(--max-width);
+  padding: 3rem var(--padding) 6rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .navLinks {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1.5rem;
+    .link {
+      flex: 1 1 min(300px, 100%);
+      min-height: 110px;
+
+      padding: var(--padding);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+
+      position: relative;
+      box-sizing: border-box;
+      transition: all 0.2s ease-in-out;
+
+      .gradientBackground {
+        border-radius: 4px;
+        border-radius: 4px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        font-weight: 500;
+      }
+    }
+
+    .link:hover {
+      .gradientBackground {
+        border-radius: 8px;
+        transform: skewY(-2deg) !important;
+      }
+    }
+
+    .link:first-child:hover {
+      .gradientBackground {
+        transform: skewY(2deg) !important;
+      }
+    }
+    .link:last-child:hover {
+      .gradientBackground {
+        transform: skewY(0) !important;
+        transform: skewX(-4deg) !important;
+      }
+    }
+  }
+}
