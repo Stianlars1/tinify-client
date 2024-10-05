@@ -24,9 +24,9 @@ export default async function Blog() {
 }
 
 const blogPosts = [
-  { title: "What is Compression", url: "/blog/what-is-compression" },
-  { title: "What is Resizing", url: "/blog/what-is-resizing" },
-  { title: "What is Cropping", url: "/blog/what-is-cropping" },
+  { title: "What is Compression?", url: "/blog/what-is-compression" },
+  { title: "What is Resizing?", url: "/blog/what-is-resizing" },
+  { title: "What is Cropping?", url: "/blog/what-is-cropping" },
 ];
 
 const BlogContent = async () => {

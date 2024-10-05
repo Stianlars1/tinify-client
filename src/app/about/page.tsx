@@ -82,7 +82,7 @@ const AboutContent = () => {
             skew={2}
             shapes={["s"]} // Shapes: circle
             className={styles.gradientBackground}
-            translateYcorrection={true}
+            translateYcorrection={false}
             style={{ position: "absolute" }}
           />
         </div>

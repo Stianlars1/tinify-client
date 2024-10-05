@@ -19,34 +19,34 @@ export const Resources = () => (
     {/* Our Technology Stack Section */}
     <SectionHeader title="Resources" />
     <nav className={styles.navLinks}>
-      <Link className={styles.link} href="/services">
-        What is Compression
+      <Link className={styles.link} href="/blog/what-is-compression">
+        What is Compression?
         <Gradient />
       </Link>
-      <Link className={styles.link} href="/services">
-        What is Resizing
+      <Link className={styles.link} href="/blog/what-is-resizing">
+        What is Resizing?
         <Gradient />
       </Link>
-      <Link className={styles.link} href="/services">
-        What is Cropping
+      <Link className={styles.link} href="/blog/what-is-cropping">
+        What is Cropping?
         <Gradient />
       </Link>
     </nav>
   </section>
 );
 
-export const Gradient = () => {
+const Gradient = () => {
   return (
     <GradientBackground
       count={10} // Number of particles
       size={{ min: 600, max: 1000, pulse: 0 }} // Adjusted for visibility
-      speed={{ x: { min: 0.1, max: 0.2 }, y: { min: 0.1, max: 0.2 } }}
+      speed={{ x: { min: 0.4, max: 0.6 }, y: { min: 0.3, max: 0.5 } }}
       colors={{
-        background: "transparent", // Solid background for better visibility
-        particles: ["#ff681c", "#ff0a53", "#2563eb"],
+        background: "hsl(var(--background))", // Solid background for better visibility
+        particles: ["#2563eb", "#e517db", "#ff0a53", "#2563eb"],
       }}
-      blending={"lighten"} // Adjust blending mode if necessary
-      opacity={{ center: 0.45, edge: 0 }} // Center opacity and edge opacity
+      blending={"source-over"} // Adjust blending mode if necessary
+      opacity={{ center: 1, edge: 0 }} // Center opacity and edge opacity
       skew={0}
       shapes={["c"]} // Shapes: circle
       className={styles.gradientBackground}

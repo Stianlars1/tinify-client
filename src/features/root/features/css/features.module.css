@@ -17,6 +17,8 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
+  will-change: auto;
+  transition: all 0.1s ease;
 }
 .keyFeatures .featuresList {
   display: flex;
@@ -28,7 +30,7 @@
 .keyFeatures .featuresList .feature {
   flex: 1 1 min(300px, 100%);
   padding: 1rem;
-  background-color: hsl(var(--muted));
+  background-color: hsl(var(--card));
   border-radius: var(--radius);
   border: 1px solid hsl(var(--muted-foreground)/0.25);
   display: flex;
@@ -40,7 +42,34 @@
   font-size: 1.1rem;
   font-weight: 600;
 }
+.keyFeatures .featuresList .feature .title .icon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  margin-bottom: 2px;
+  stroke-width: 1.5px;
+}
 .keyFeatures .featuresList .feature .description {
   font-size: 0.875rem;
   color: hsl(var(--muted-foreground));
+}
+.keyFeatures .featuresList .feature:first-child .title .icon {
+  color: hsl(var(--warning));
+}
+.keyFeatures .featuresList .feature:nth-child(2) .title .icon {
+  color: hsl(var(--primary));
+}
+.keyFeatures .featuresList .feature:nth-child(3) .title .icon {
+  color: hsl(var(--success));
+}
+.keyFeatures .featuresList .feature:nth-child(4) .title .icon {
+  color: hsl(var(--activeText));
+}
+.keyFeatures .featuresList .feature:nth-child(5) .title .icon {
+  color: hsl(var(--purple));
+}
+.keyFeatures .featuresList .feature:nth-child(6) .title .icon {
+  color: hsl(var(--yellow));
+}
+.keyFeatures .featuresList .feature:nth-child(7) .title .icon {
+  color: hsl(var(--orange));
 }/*# sourceMappingURL=features.module.css.map */

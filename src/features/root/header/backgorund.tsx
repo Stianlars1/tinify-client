@@ -46,12 +46,12 @@ export const HeaderBackground = ({
     count: isDarkmode ? 10 : 12,
     size: {
       min: isMobileSize ? 350 : isDarkmode ? 1000 : 1000,
-      max: isMobileSize ? 850 : isDarkmode ? 1350 : 1200,
+      max: isMobileSize ? 950 : isDarkmode ? 1350 : 1200,
       pulse: 0,
     },
     speed: {
       x: {
-        min: isMobileSize ? (isDarkmode ? 0.07 : 0.5) : isDarkmode ? 0.1 : 0.6,
+        min: isMobileSize ? (isDarkmode ? 0.1 : 0.5) : isDarkmode ? 0.2 : 0.6,
         max: isMobileSize ? (isDarkmode ? 0.5 : 1.5) : isDarkmode ? 0.9 : 3,
       },
       y: {
@@ -59,7 +59,7 @@ export const HeaderBackground = ({
         max: isMobileSize ? (isDarkmode ? 0.5 : 1.5) : isDarkmode ? 0.9 : 3,
       },
     },
-    blending: "lighten",
+    blending: "overlay",
     opacity: { center: 0.45, edge: 0 },
     skew: -2,
     shapes: ["c"],
@@ -74,8 +74,9 @@ export const HeaderBackground = ({
         colors={
           isDarkmode
             ? {
-                background: "hsl(var(--background))",
+                background: "#000000",
                 particles: [
+                  "#000000",
                   "#ff4848",
                   "#000000",
                   "#2235e5",

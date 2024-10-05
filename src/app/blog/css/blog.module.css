@@ -14,12 +14,24 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  color: hsl(var(--white));
+  font-weight: 400;
+  transition: all 0.2s ease;
+  will-change: font-weight, transform, color, opacity;
 }
 .blog .blogList .blogItem .gradientBackground {
   border: 1px solid hsl(var(--white));
   border-radius: var(--radius);
   position: absolute !important;
+  transition: all 0.2s ease;
+  opacity: 0.85;
+  will-change: font-weight, transform, color, opacity;
+}
+.blog .blogList .blogItem:hover {
+  font-weight: 600;
+  transform: scale(1.05);
 }
 .blog .blogList .blogItem:hover .gradientBackground {
   transform: skewY(-2deg) !important;
+  opacity: 1;
 }/*# sourceMappingURL=blog.module.css.map */

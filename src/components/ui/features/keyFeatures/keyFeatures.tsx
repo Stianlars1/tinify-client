@@ -10,18 +10,22 @@ export const KeyFeatures = ({
     <section className={styles.keyFeatures}>
       <TitleTag beam={true} title="Key Features" />
       <ul className={styles.featureList}>
-        {keyFeaturesContent.map((keyFeature) => (
-          <KeyFeature key={keyFeature.title} {...keyFeature} />
+        {keyFeaturesContent.map((keyFeature, index) => (
+          <KeyFeature
+            key={keyFeature.title}
+            {...keyFeature}
+            index={index + 1}
+          />
         ))}
       </ul>
     </section>
   );
 };
 
-const KeyFeature = ({ icon, title, description }: KeyFeatureContent) => {
+const KeyFeature = ({ icon, title, description, index }: KeyFeatureContent) => {
   const Icon = icon;
 
-  const classname = getClassName(title);
+  const classname = getClassName(index);
   return (
     <li className={styles.featureItem}>
       <Icon size={32} className={classname} />
@@ -30,15 +34,15 @@ const KeyFeature = ({ icon, title, description }: KeyFeatureContent) => {
     </li>
   );
 };
-const getClassName = (title: string) => {
-  switch (title) {
-    case "Fast Compression":
+const getClassName = (index: number | undefined) => {
+  switch (index) {
+    case 1:
       return styles.bolt;
-    case "High-Quality Results":
+    case 2:
       return styles.check;
-    case "Free Service":
+    case 3:
       return styles.gift;
-    case "Responsive Interface":
+    case 4:
       return styles.mobile;
     default:
       return "";

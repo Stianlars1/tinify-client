@@ -16,7 +16,7 @@ export default async function BlogPost({
   const { BlogPostComponent, Header } = await verifyAndRedirectOrGetComponent(
     params.slug
   );
-  if (Boolean(BlogPostComponent || Header)) return null;
+  if (!BlogPostComponent || !Header) return null;
   return (
     <>
       <PageContainer>
@@ -102,7 +102,7 @@ const Gradient = (): ReactElement => {
       size={{ min: 600, max: 1000, pulse: 0.2 }} // Adjusted for visibility
       speed={{ x: { min: 1.5, max: 2 }, y: { min: 1.5, max: 2 } }}
       colors={{
-        background: "hsl(var(--backgorund))", // Solid background for better visibility
+        background: "hsl(var(--background))", // Solid background for better visibility
         particles: ["#ff681c", "#ff0a53", "#2563eb"],
       }}
       blending={"source-over"} // Adjust blending mode if necessary

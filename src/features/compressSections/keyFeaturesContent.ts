@@ -45,6 +45,7 @@ export interface KeyFeatureContent {
   icon: ({ className, size }: IconProps) => JSX.Element;
   title: string;
   description: string;
+  index?: number;
 }
 export const keyFeaturesContentCompress: KeyFeatureContent[] = [
   {

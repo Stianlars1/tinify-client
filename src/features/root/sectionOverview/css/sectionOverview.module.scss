@@ -1,18 +1,17 @@
 .gradientBackground {
-  position: absolute;
+  // position: absolute;
 
-  mix-blend-mode: screen;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: calc(100% * 1.05) !important;
-  height: 100%;
-  z-index: 1 !important;
-
-  opacity: 1;
+  // mix-blend-mode: screen;
+  // left: 50% !important;
+  // transform: translateX(-50%) !important;
+  // width: calc(100% * 1.05) !important;
+  // height: 100%;
+  // z-index: 1 !important;
+  transition: all 0.2s ease-in-out;
 
   @media screen and (prefers-color-scheme: dark) {
     //mix-blend-mode: ;
-    display: none;
+    //display: none;
   }
 }
 
@@ -47,7 +46,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    gap: 1rem;
+    gap: 1.5rem;
     position: relative;
 
     .feature {
@@ -61,15 +60,16 @@
       justify-content: flex-start;
       gap: 0.25rem;
       padding: 1.5rem;
-      background-color: hsl(var(--black) / 0.9);
+      background-color: hsl(var(--black));
       border: 1px solid hsl(var(--border));
       border-radius: var(--radius);
 
       overflow: hidden;
 
-      transition: all 0.2s ease-in-out;
+      transition: all 0.15s ease;
       will-change: auto;
       font-optical-sizing: auto;
+      position: relative;
 
       .cardIcon {
         color: hsl(var(--white));
@@ -90,15 +90,19 @@
         color: hsl(var(--white) / 0.7);
         text-wrap: pretty;
       }
-
-      &:hover {
-        transform: scale(1.05);
-      }
     }
 
     .feature:hover {
-      & .gradientBackground {
+      background-color: hsl(var(--black) / 0.2);
+
+      @media screen and (prefers-color-scheme: light) {
         transform: scale(1.05);
+      }
+
+      & .gradientBackground {
+        @media screen and (prefers-color-scheme: light) {
+          transform: scale(1.05);
+        }
       }
     }
 

@@ -15,6 +15,7 @@
 .resources .navLinks .link {
   flex: 1 1 min(300px, 100%);
   min-height: 110px;
+  font-weight: 500;
   padding: var(--padding);
   display: flex;
   align-items: center;
@@ -23,6 +24,7 @@
   position: relative;
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
+  color: hsl(var(--white));
 }
 .resources .navLinks .link .gradientBackground {
   border-radius: 4px;
@@ -31,7 +33,7 @@
 }
 .resources .navLinks .link:hover {
   transform: scale(1.05);
-  font-weight: 500;
+  font-weight: 600;
 }
 .resources .navLinks .link:hover .gradientBackground {
   border-radius: 8px;
