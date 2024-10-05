@@ -34,6 +34,7 @@ export const CompressionCard = memo(
   }: CompressionCardProps) => {
     const { originalName, originalSize, originalFormat, originalImage } =
       getOriginalFileInfo(originalFile);
+    const [takesLongTime, setTakesLongTime] = useState(false);
 
     const [uploadProgress, setUploadProgress] = useState(0);
     const [downloadProgress, setDownloadProgress] = useState(0);
@@ -85,11 +86,19 @@ export const CompressionCard = memo(
             },
           };
 
+          // Adding a timeout for long time warning
+          const timeoutId = setTimeout(() => {
+            setTakesLongTime(true);
+          }, 5000);
+
           const response = await axios.post<ImageResponse>(
             COMPRESS_URL,
             formData,
             requestConfig
           );
+
+          // If the request completes, clear the timeout
+          clearTimeout(timeoutId);
 
           if (response.status === 200) {
             setIsCompressed(true);
@@ -97,6 +106,7 @@ export const CompressionCard = memo(
             setCompressedData(response.data as ImageResponse);
             setCompressedFileInContext(response.data as ImageResponse);
             setIsProcessingFiles(false);
+            setTakesLongTime(false); // Reset if completed successfully within 5s
           }
         } catch (error: unknown) {
           console.error("Compression failed message:", error);
@@ -108,6 +118,7 @@ export const CompressionCard = memo(
             setIsCompressed(false);
             hasCompressed.current = true; // Prevent future re-execution
             setIsProcessingFiles(false);
+            setTakesLongTime(false); // Reset if completed successfully within 5s
           }
         }
       };
@@ -192,12 +203,11 @@ export const CompressionCard = memo(
                 <div className={styles.compressedPercent}>
                   {!isCompressed && !compressedData?.isError && (
                     <Skeleton
-                      width={81}
+                      width={takesLongTime ? 81 * 1.5 : 81}
                       height={17.5}
                       className={styles.skeletonLoading}
                     >
-                      {" "}
-                      {loadingText}
+                      {takesLongTime ? "Still processing" : loadingText}
                     </Skeleton>
                   )}
                   {isCompressed && (

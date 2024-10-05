@@ -21,6 +21,7 @@
     padding: 0; // Reset any padding applied by the browser
     appearance: none; // Remove browser-specific styling
     border-radius: 9999px;
+
     background-color: hsl(0, 0%, 90%); // Background for the entire progress bar
     align-self: flex-end;
     &::-webkit-progress-bar {
@@ -78,6 +79,7 @@
     grid-template-columns: 45px auto auto;
     grid-template-rows: auto;
     gap: 0.5rem;
+    position: relative;
 
     .imageWrapper {
       grid-column: 1 / 2;

@@ -7,7 +7,7 @@ import { ResizeControls } from "../resizeControls/resizeControls";
 import { ResizeProcessHeader } from "../resizeProcessHeader/resizeProcessHeader";
 import styles from "./css/resizeContent.module.css";
 
-interface OriginalNewImage {
+export interface OriginalNewImage {
   file: File;
   name: string;
   originalWidth: number;
@@ -175,6 +175,8 @@ export const ResizeContent = ({ images }: { images: File[] }): ReactElement => {
             isProcessing={loading}
             compressedFiles={resizedImages}
             totalFiles={images.length}
+            imageData={imageData}
+            resizeOptions={resizeOptions}
           />
         )}
       </>

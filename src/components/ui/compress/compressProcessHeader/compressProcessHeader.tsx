@@ -24,7 +24,10 @@ export const CompressProcessHeader = ({
 
   return (
     <>
-      <div className={styles.compressProcessHeader}>
+      <div
+        id="compress-processin-header"
+        className={styles.compressProcessHeader}
+      >
         <div className={styles.specs}>
           <h2 className={styles.title}>
             <span className={styles.savedSpan}>

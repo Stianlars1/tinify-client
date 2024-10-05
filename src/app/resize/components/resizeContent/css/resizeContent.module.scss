@@ -124,6 +124,8 @@
 
         font-size: 12px;
         font-weight: 400;
+        white-space: nowrap;
+        text-wrap: nowrap;
       }
       .fromSizeTag {
         background-color: hsl(var(--muted));

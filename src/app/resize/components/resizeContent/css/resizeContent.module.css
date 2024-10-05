@@ -111,6 +111,8 @@
   justify-content: center;
   font-size: 12px;
   font-weight: 400;
+  white-space: nowrap;
+  text-wrap: nowrap;
 }
 .resizePreviewContainer .imageNames .imageName .fromSizeTag {
   background-color: hsl(var(--muted));

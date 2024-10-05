@@ -4,9 +4,18 @@
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 1rem;
-  gap: 1.5rem;
+  gap: 2rem;
   padding-top: 40px;
+  // border: 1px solid hsl(var(--border));
+  // border-radius: var(--radius);
+  // padding: 1rem 0.5rem;
+  // --ring-shadow: 0 0 #0000;
+  // --ring-offset-shadow: 0 0 #0000;
+  // --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  // --shadow-colored: 0 1px 2px 0 var(--shadow-color);
 
+  // box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+  //   var(--ring-shadow, 0 0 #0000), var(--shadow);
   .specs {
     display: flex;
     flex-direction: column;
@@ -53,6 +62,235 @@
       align-items: center;
     }
   }
+
+  .finishedResizeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    min-width: 100%;
+
+    .resizedList {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid hsl(var(--border));
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-width: 100%;
+
+      --ring-shadow: 0 0 #0000;
+      --ring-offset-shadow: 0 0 #0000;
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px -1px rgba(0, 0, 0, 0.1);
+      --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--ring-shadow, 0 0 #0000), var(--shadow);
+
+      //   <li className={styles.resizedCard}>
+      //   <div className={styles.resizedImage}>
+      //     <Image
+      //       src={file.url}
+      //       width={30}
+      //       height={30}
+      //       alt={file.originalFilename}
+      //     />
+      //   </div>
+
+      //   <div className={styles.resizedSpecs}>
+      //     <p className={styles.resizedFilename}>{file.originalFilename}</p>
+      //     <div className={styles.resizedInfo}>
+      //       <p className={styles.originalFormat}>
+      //         {file.originalFormat.toUpperCase()}
+      //       </p>
+      //       {imageData && (
+      //         <p className={styles.originalSize}>
+      //           {imageData.originalWidth} x {imageData.originalHeight}
+      //         </p>
+      //       )}
+      //     </div>
+      //   </div>
+
+      //   <div>
+      //     <div className={styles.resizedPercent}>
+      //       <div className={styles.saved}>You Saved</div>
+      //       <span className={styles.percent}>
+      //         {parseInt(
+      //           (
+      //             ((parseFloat(file.originalFileSize) -
+      //               parseFloat(file.compressedSize)) /
+      //               parseFloat(file.originalFileSize)) *
+      //             100
+      //           ).toString()
+      //         )}
+      //         %
+      //       </span>
+      //     </div>
+      //     <div className={styles.resizedSize}>
+      //       <span>{formatFileSize(parseFloat(file.compressedSize))}</span>
+      //     </div>
+
+      //     <div className={styles.resizedDimensions}>
+      //       {file.width} x {file.height}
+      //     </div>
+      //   </div>
+      // </li>
+
+      .resizedCard {
+        padding: 0.5rem;
+        overflow: hidden;
+
+        display: grid;
+        grid-template-columns: 45px auto auto auto;
+        grid-template-rows: auto;
+        gap: 0.5rem;
+        background-color: hsl(var(--card));
+
+        border-bottom: 1px solid
+          light-dark(hsl(var(--border)), hsl(var(--muted-foreground) / 0.2));
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .resizedImage {
+          grid-column: 1 / 2;
+          grid-row: 1;
+          width: 45px;
+          height: 45px;
+          overflow: hidden; /* Hide anything that overflows the container */
+          display: flex;
+          align-items: center;
+          justify-content: center; /* Center the image inside the container */
+          border-radius: calc(var(--radius) - 6px);
+          border: 0.5px solid hsl(var(--border) / 0.8);
+          .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image scales to cover the container while maintaining aspect ratio */
+            object-position: center; /* Center the image within the container */
+          }
+        }
+        .resizedSpecs {
+          grid-column: 2 / 3;
+          grid-row: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          .resizedFilename {
+            font-size: 13px;
+            min-width: 0;
+            width: 100%;
+            max-width: 200px;
+            color: hsl(var(--foreground));
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &:hover {
+              white-space: normal;
+            }
+          }
+
+          .resizedInfo {
+            display: flex;
+            gap: 0.25rem;
+            .originalFormat,
+            .originalSize {
+              font-size: 11px;
+              padding: 2px 6px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 4px;
+              color: hsl(var(--white));
+            }
+            .originalFormat {
+              background-color: hsl(var(--orange));
+            }
+            .originalSize {
+              background-color: hsl(var(--primary));
+            }
+          }
+        }
+
+        .arrow {
+          grid-column: 3 / 4;
+          grid-row: 1;
+          font-size: 20px;
+          color: hsl(var(--foreground));
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          min-height: 100%;
+          margin-top: auto;
+        }
+
+        .resizedNewSpecs {
+          grid-column: 4 / -1;
+          grid-row: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: space-between;
+
+          .resizedPercent {
+            white-space: nowrap;
+            text-wrap: nowrap;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.5rem;
+            .saved {
+              font-size: 10px;
+              text-wrap: nowrap;
+              padding: 0.1rem 0.5rem;
+              background-color: hsl(var(--purple));
+              color: hsl(var(--purple-foreground));
+              border-radius: 999px;
+              font-weight: 500;
+
+              .youSavedFirstPart {
+                display: initial;
+              }
+            }
+            .percent {
+              font-size: 13px;
+              font-weight: 600;
+            }
+          }
+
+          .sizeDimensionWrapper {
+            display: flex;
+
+            gap: 0.5rem;
+
+            .resizedSize {
+              background-color: hsl(var(--orange));
+            }
+
+            .resizedDimensions {
+              background-color: hsl(var(--primary));
+            }
+
+            .resizedSize,
+            .resizedDimensions {
+              font-size: 11px;
+              padding: 2px 6px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 4px;
+              color: hsl(var(--white));
+              width: fit-content;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .resetButton {
@@ -74,6 +312,76 @@
   }
   &:active {
     transform: scale(0.95);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .resizeProcessHeader {
+    .specs {
+      .title {
+        .savedSpan {
+          .percent {
+          }
+        }
+
+        .smallTitle {
+        }
+      }
+
+      .subtitle {
+      }
+    }
+
+    .finishedResizeContainer {
+      .resizedList {
+        .resizedCard {
+          .resizedImage {
+            .image {
+            }
+          }
+          .resizedSpecs {
+            .resizedFilename {
+              max-width: 100px;
+              &:hover {
+              }
+            }
+
+            .resizedInfo {
+              .originalFormat,
+              .originalSize {
+              }
+              .originalFormat {
+              }
+              .originalSize {
+              }
+            }
+          }
+          .resizedNewSpecs {
+            .resizedPercent {
+              .saved {
+                .youSavedFirstPart {
+                  display: none;
+                }
+              }
+              .percent {
+              }
+            }
+
+            .sizeDimensionWrapper {
+              .resizedSize {
+              }
+
+              .resizedDimensions {
+              }
+
+              .resizedSize,
+              .resizedDimensions {
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 

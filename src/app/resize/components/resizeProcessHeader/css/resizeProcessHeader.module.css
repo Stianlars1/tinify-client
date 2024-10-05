@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 1rem;
-  gap: 1.5rem;
+  gap: 2rem;
   padding-top: 40px;
 }
 .resizeProcessHeader .specs {
@@ -48,6 +48,168 @@
   display: flex;
   align-items: center;
 }
+.resizeProcessHeader .finishedResizeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-width: 100%;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-width: 100%;
+  --ring-shadow: 0 0 #0000;
+  --ring-offset-shadow: 0 0 #0000;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--shadow);
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard {
+  padding: 0.5rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 45px auto auto auto;
+  grid-template-rows: auto;
+  gap: 0.5rem;
+  background-color: hsl(var(--card));
+  border-bottom: 1px solid light-dark(hsl(var(--border)), hsl(var(--muted-foreground)/0.2));
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard:last-child {
+  border-bottom: none;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedImage {
+  grid-column: 1/2;
+  grid-row: 1;
+  width: 45px;
+  height: 45px;
+  overflow: hidden; /* Hide anything that overflows the container */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the image inside the container */
+  border-radius: calc(var(--radius) - 6px);
+  border: 0.5px solid hsl(var(--border)/0.8);
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedImage .image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Ensures the image scales to cover the container while maintaining aspect ratio */
+  -o-object-position: center;
+     object-position: center; /* Center the image within the container */
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedSpecs {
+  grid-column: 2/3;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedSpecs .resizedFilename {
+  font-size: 13px;
+  min-width: 0;
+  width: 100%;
+  max-width: 200px;
+  color: hsl(var(--foreground));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedSpecs .resizedFilename:hover {
+  white-space: normal;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedSpecs .resizedInfo {
+  display: flex;
+  gap: 0.25rem;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedSpecs .resizedInfo .originalFormat,
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedSpecs .resizedInfo .originalSize {
+  font-size: 11px;
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: hsl(var(--white));
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedSpecs .resizedInfo .originalFormat {
+  background-color: hsl(var(--orange));
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedSpecs .resizedInfo .originalSize {
+  background-color: hsl(var(--primary));
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .arrow {
+  grid-column: 3/4;
+  grid-row: 1;
+  font-size: 20px;
+  color: hsl(var(--foreground));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 100%;
+  margin-top: auto;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs {
+  grid-column: 4/-1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .resizedPercent {
+  white-space: nowrap;
+  text-wrap: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .resizedPercent .saved {
+  font-size: 10px;
+  text-wrap: nowrap;
+  padding: 0.1rem 0.5rem;
+  background-color: hsl(var(--purple));
+  color: hsl(var(--purple-foreground));
+  border-radius: 999px;
+  font-weight: 500;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .resizedPercent .saved .youSavedFirstPart {
+  display: initial;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .resizedPercent .percent {
+  font-size: 13px;
+  font-weight: 600;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .sizeDimensionWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .sizeDimensionWrapper .resizedSize {
+  background-color: hsl(var(--orange));
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .sizeDimensionWrapper .resizedDimensions {
+  background-color: hsl(var(--primary));
+}
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .sizeDimensionWrapper .resizedSize,
+.resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .sizeDimensionWrapper .resizedDimensions {
+  font-size: 11px;
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: hsl(var(--white));
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 600;
+}
 
 .resetButton {
   font-size: 0.875rem;
@@ -66,4 +228,13 @@
 }
 .resetButton:active {
   transform: scale(0.95);
+}
+
+@media screen and (max-width: 768px) {
+  .resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedSpecs .resizedFilename {
+    max-width: 100px;
+  }
+  .resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard .resizedNewSpecs .resizedPercent .saved .youSavedFirstPart {
+    display: none;
+  }
 }/*# sourceMappingURL=resizeProcessHeader.module.css.map */

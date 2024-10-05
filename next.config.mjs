@@ -14,6 +14,15 @@ const nextConfig = {
     workerThreads: true,
   },
   pageExtensions: ["mdx", "tsx"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "tinify.dev",
+        port: "",
+      },
+    ],
+  },
 };
 
 const withMDX = createMDX({
