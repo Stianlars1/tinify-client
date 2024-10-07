@@ -150,6 +150,10 @@
         border-bottom: 1px solid
           light-dark(hsl(var(--border)), hsl(var(--muted-foreground) / 0.2));
 
+        @media (prefers-color-scheme: dark) {
+          border-bottom: 1px solid hsl(var(--muted-foreground) / 0.2);
+        }
+
         &:last-child {
           border-bottom: none;
         }

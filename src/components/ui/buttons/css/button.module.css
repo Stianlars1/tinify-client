@@ -27,8 +27,18 @@
   font-size: 16px;
   cursor: pointer;
 }
+@media (prefers-color-scheme: dark) {
+  .downloadAllButton {
+    background-color: hsl(var(--purple));
+  }
+}
 .downloadAllButton:hover {
   background-color: light-dark(hsl(var(--black)/0.7), hsl(var(--purple)/0.7));
+}
+@media (prefers-color-scheme: dark) {
+  .downloadAllButton:hover {
+    background-color: hsl(var(--purple)/0.7);
+  }
 }
 
 @media screen and (max-width: 400px) {

@@ -1,3 +1,28 @@
+.resizeControlsWrapper {
+  flex: 1 1 auto;
+  padding: 2rem;
+  gap: 1rem;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--input));
+
+  border-radius: var(--radius);
+
+  --ring-shadow: 0 0 #0000;
+  --ring-offset-shadow: 0 0 #0000;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--ring-shadow, 0 0 #0000), var(--shadow);
+
+  @media (max-width: 768px) {
+    width: 75%;
+  }
+  @media (max-width: 640px) {
+    padding: 1.25rem;
+    width: 100%;
+  }
+}
 .tabs {
   display: flex;
   gap: 1rem;
@@ -26,7 +51,7 @@
   display: flex;
   flex-direction: column;
 
-  width: 100%;
+  min-width: 100%;
   gap: 1rem;
 }
 
@@ -49,30 +74,3 @@
 
   cursor: pointer;
 }
-
-// .downloadButtonText {
-//   display: none;
-// }
-
-// .downloadButtonIconWrapper {
-//   display: flex;
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   .downloadButtonIcon {
-//     display: flex;
-//     width: 1.5rem;
-//     fill: black;
-//     color: white;
-//     stroke: transparent;
-//     z-index: 10;
-//   }
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     inset: 5px;
-//     border-radius: 100%;
-//     background-color: light-dark(hsl(var(--white)), hsl(var(--white)));
-//     z-index: 0;
-//   }
-// }

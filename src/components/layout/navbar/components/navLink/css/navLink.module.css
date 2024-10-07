@@ -8,8 +8,18 @@
   color: hsl(var(--foreground)/1);
   border-bottom: 1px solid light-dark(hsl(var(--foreground)), hsl(var(--muted-foreground)));
 }
+@media (prefers-color-scheme: dark) {
+  .navLink:hover {
+    border-bottom: 1px solid hsl(var(--muted-foreground));
+  }
+}
 
 .activeLink {
   color: hsl(var(--foreground));
   border-bottom: 1px solid light-dark(hsl(var(--foreground)), hsl(var(--muted-foreground)));
+}
+@media (prefers-color-scheme: dark) {
+  .activeLink {
+    border-bottom: 1px solid hsl(var(--muted-foreground));
+  }
 }/*# sourceMappingURL=navLink.module.css.map */

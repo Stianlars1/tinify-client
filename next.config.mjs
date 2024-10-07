@@ -7,11 +7,7 @@ import createMDX from "@next/mdx";
 const nextConfig = {
   reactStrictMode: false,
   experimental: {
-    nextScriptWorkers: true,
-    adjustFontFallbacks: true,
-    cssChunking: "strict",
     optimizePackageImports: ["axios", "lottie-light-react", "lottie-web"],
-    workerThreads: true,
   },
   pageExtensions: ["mdx", "tsx"],
   images: {

@@ -5,7 +5,13 @@
   border-top: 1px solid transparent;
   border-bottom: 1px solid
     light-dark(hsl(var(--border)), hsl(var(--muted-foreground) / 0.2));
+
   background-color: light-dark(hsl(var(--card)), hsl(var(--muted)));
+
+  @media (prefers-color-scheme: dark) {
+    background-color: hsl(var(--muted));
+    border-bottom: 1px solid hsl(var(--muted-foreground) / 0.2);
+  }
   //border-radius: var(--radius);
 
   height: fit-content;
@@ -340,6 +346,9 @@
               width: 18px;
               height: 18px;
               fill: light-dark(hsl(var(--primary)), hsl(var(--warning)));
+              @media (prefers-color-scheme: dark) {
+                fill: hsl(var(--warning));
+              }
             }
           }
 
@@ -348,6 +357,11 @@
               //display: none;
               fill: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
               color: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
+
+              @media (prefers-color-scheme: dark) {
+                fill: hsl(var(--primary));
+                color: hsl(var(--primary));
+              }
             }
           }
         }
@@ -381,6 +395,9 @@
               width: 18px;
               height: 18px;
               fill: light-dark(hsl(var(--primary)), hsl(var(--warning)));
+              @media (prefers-color-scheme: dark) {
+                fill: hsl(var(--warning));
+              }
             }
           }
 
@@ -389,6 +406,10 @@
               //display: none;
               fill: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
               color: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
+              @media (prefers-color-scheme: dark) {
+                fill: hsl(var(--primary));
+                color: hsl(var(--primary));
+              }
             }
           }
         }
@@ -416,6 +437,9 @@
             inset: 5px;
             border-radius: 100%;
             background-color: light-dark(hsl(var(--white)), hsl(var(--white)));
+            @media (prefers-color-scheme: dark) {
+              background-color: hsl(var(--white));
+            }
             z-index: 0;
           }
         }

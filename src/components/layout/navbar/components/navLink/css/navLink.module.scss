@@ -9,6 +9,9 @@
     color: hsl(var(--foreground) / 1);
     border-bottom: 1px solid
       light-dark(hsl(var(--foreground)), hsl(var(--muted-foreground)));
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid hsl(var(--muted-foreground));
+    }
   }
 }
 
@@ -16,6 +19,9 @@
   color: hsl(var(--foreground));
   border-bottom: 1px solid
     light-dark(hsl(var(--foreground)), hsl(var(--muted-foreground)));
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 1px solid hsl(var(--muted-foreground));
+  }
 }
 
 @media screen and (max-width: 768px) {

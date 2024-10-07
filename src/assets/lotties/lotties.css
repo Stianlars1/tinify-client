@@ -3,4 +3,9 @@
 }
 .imageUpload svg * {
   fill: light-dark(hsl(var(--black)), hsl(var(--white)));
+}
+@media (prefers-color-scheme: dark) {
+  .imageUpload svg * {
+    fill: hsl(var(--white));
+  }
 }/*# sourceMappingURL=lotties.css.map */

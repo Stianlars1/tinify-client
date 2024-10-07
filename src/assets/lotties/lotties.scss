@@ -3,6 +3,9 @@
   svg {
     * {
       fill: light-dark(hsl(var(--black)), hsl(var(--white)));
+      @media (prefers-color-scheme: dark) {
+        fill: hsl(var(--white));
+      }
     }
   }
 }

@@ -118,6 +118,12 @@
   font-weight: 400;
   margin-bottom: 1rem;
 }
+@media (prefers-color-scheme: dark) {
+  .contentPlain p,
+  .contentPlain li {
+    color: hsl(var(--muted-foreground)/1);
+  }
+}
 .contentPlain li {
   list-style: initial;
   padding: 0;

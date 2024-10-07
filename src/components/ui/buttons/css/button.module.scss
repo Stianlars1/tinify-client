@@ -23,6 +23,9 @@
 
 .downloadAllButton {
   background-color: light-dark(hsl(var(--black)), hsl(var(--purple)));
+  @media (prefers-color-scheme: dark) {
+    background-color: hsl(var(--purple));
+  }
   color: hsl(var(--white));
   padding: 0.65rem 1rem;
   font-size: 16px;
@@ -33,6 +36,10 @@
       hsl(var(--black) / 0.7),
       hsl(var(--purple) / 0.7)
     );
+
+    @media (prefers-color-scheme: dark) {
+      background-color: hsl(var(--purple) / 0.7);
+    }
   }
 }
 @media screen and (max-width: 400px) {

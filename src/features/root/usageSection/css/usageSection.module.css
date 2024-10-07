@@ -12,4 +12,9 @@
 }
 .usageSection .icon {
   fill: light-dark(hsl(var(--purple)), hsl(var(--warning)));
+}
+@media (prefers-color-scheme: dark) {
+  .usageSection .icon {
+    fill: hsl(var(--warning));
+  }
 }/*# sourceMappingURL=usageSection.module.css.map */

@@ -81,6 +81,11 @@
   background-color: hsl(var(--card));
   border-bottom: 1px solid light-dark(hsl(var(--border)), hsl(var(--muted-foreground)/0.2));
 }
+@media (prefers-color-scheme: dark) {
+  .resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard {
+    border-bottom: 1px solid hsl(var(--muted-foreground)/0.2);
+  }
+}
 .resizeProcessHeader .finishedResizeContainer .resizedList .resizedCard:last-child {
   border-bottom: none;
 }

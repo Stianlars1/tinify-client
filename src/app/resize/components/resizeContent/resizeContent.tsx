@@ -149,12 +149,14 @@ export const ResizeContent = ({ images }: { images: File[] }): ReactElement => {
                       );
                     })}
                 </ol>
-                <button
-                  className={styles.showHideImageNamesButton}
-                  onClick={() => setShowImageName(!showImageNames)}
-                >
-                  {showImageNames ? "Show less" : "Show all"}
-                </button>
+                {imageData.length > 3 && (
+                  <button
+                    className={styles.showHideImageNamesButton}
+                    onClick={() => setShowImageName(!showImageNames)}
+                  >
+                    {showImageNames ? "Show less" : "Show all"}
+                  </button>
+                )}
               </>
             </div>
 
@@ -245,23 +247,25 @@ const ResizePreviewImageSpecs = ({
   }
 
   return (
-    <li className={styles.imageName} key={image.file.lastModified}>
-      <span>
+    <li className={styles.imageInfo} key={image.file.lastModified}>
+      <span className={styles.actualName}>
         <span>{indexDisplay}. </span>
         {image.name}
       </span>
-      <span className={styles.fromSizeTag}>
-        {image.originalWidth} x {image.originalHeight}
-      </span>
-      {intendedWidth && intendedHeight && (
-        <>
-          →
-          <span className={styles.toSizeTag}>
-            {" "}
-            {intendedWidth} x {intendedHeight}
-          </span>
-        </>
-      )}
+      <div className={styles.sizeTags}>
+        <span className={styles.fromSizeTag}>
+          {image.originalWidth} x {image.originalHeight}
+        </span>
+        {intendedWidth && intendedHeight && (
+          <>
+            →
+            <span className={styles.toSizeTag}>
+              {" "}
+              {intendedWidth} x {intendedHeight}
+            </span>
+          </>
+        )}
+      </div>
     </li>
   );
 };

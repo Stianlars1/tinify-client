@@ -7,4 +7,10 @@
   font-weight: 800;
   font-family: var(--font-geist-mono);
   margin-bottom: 0.25rem;
+}
+@media (prefers-color-scheme: dark) {
+  .tag {
+    background-color: hsl(var(--warning)/0.8);
+    color: hsl(var(--black));
+  }
 }/*# sourceMappingURL=tag.module.css.map */

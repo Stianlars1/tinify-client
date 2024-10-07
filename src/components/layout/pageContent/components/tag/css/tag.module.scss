@@ -5,6 +5,10 @@
     hsl(var(--warning) / 0.8)
   );
   color: light-dark(hsl(var(--black)), hsl(var(--black)));
+  @media (prefers-color-scheme: dark) {
+    background-color: hsl(var(--warning) / 0.8);
+    color: hsl(var(--black));
+  }
   border-radius: 999px;
   font-size: 14px;
   font-weight: 800;

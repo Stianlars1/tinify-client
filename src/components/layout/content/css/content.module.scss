@@ -136,6 +136,9 @@
       hsl(var(--foreground) / 1),
       hsl(var(--muted-foreground) / 1)
     );
+    @media (prefers-color-scheme: dark) {
+      color: hsl(var(--muted-foreground) / 1);
+    }
     font-size: 1rem;
     line-height: 1.7;
     font-weight: 400;

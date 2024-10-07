@@ -132,7 +132,7 @@ export const ResizeControls = ({
 
   return (
     <>
-      <div>
+      <div className={styles.resizeControlsWrapper}>
         <div className={styles.tabs}>
           <button
             onClick={() => {
@@ -181,6 +181,7 @@ export const ResizeControls = ({
                 <CustomInputLabel>Width:</CustomInputLabel>
                 <CustomInput
                   type="number"
+                  width="100%"
                   value={width}
                   onFocus={() => {
                     setScale("");
@@ -191,6 +192,7 @@ export const ResizeControls = ({
               <CustomInputWrapper>
                 <CustomInputLabel>Height:</CustomInputLabel>
                 <CustomInput
+                  width="100%"
                   type="number"
                   value={height}
                   placeholder={
@@ -219,6 +221,7 @@ export const ResizeControls = ({
               <CustomInputWrapper>
                 <CustomInputLabel>Scale (e.g., 0.5 for 50%):</CustomInputLabel>
                 <CustomInput
+                  width="100%"
                   type="number"
                   step="0.01"
                   value={scale}

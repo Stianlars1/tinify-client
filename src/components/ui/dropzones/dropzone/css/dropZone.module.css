@@ -20,6 +20,11 @@
   color: hsl(var(--foreground));
   max-width: var(--content-width);
 }
+@media (prefers-color-scheme: dark) {
+  .dropZone {
+    border: 3px dashed hsl(var(--foreground)/0.5);
+  }
+}
 
 .dropZone:hover,
 .isOver {
@@ -27,4 +32,10 @@
   border-style: inset;
   background-color: hsl(var(--muted));
   color: hsl(var(--foreground));
+}
+@media (prefers-color-scheme: dark) {
+  .dropZone:hover,
+  .isOver {
+    border-color: hsl(var(--white));
+  }
 }/*# sourceMappingURL=dropZone.module.css.map */

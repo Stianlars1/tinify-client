@@ -36,6 +36,11 @@
   line-height: 1;
   position: relative;
 }
+@media (prefers-color-scheme: dark) {
+  .header .title {
+    color: hsl(var(--white)/0.8);
+  }
+}
 .header .description {
   font-size: 1.25rem;
   font-weight: 400;
@@ -44,6 +49,11 @@
   text-align: center;
   line-height: 1.4;
   max-width: 600px;
+}
+@media (prefers-color-scheme: dark) {
+  .header .description {
+    color: hsl(var(--white)/0.8);
+  }
 }
 .header .waves {
   position: absolute;

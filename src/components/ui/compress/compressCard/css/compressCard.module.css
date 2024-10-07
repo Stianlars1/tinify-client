@@ -7,6 +7,12 @@
   height: fit-content;
   width: 100%;
 }
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: hsl(var(--muted));
+    border-bottom: 1px solid hsl(var(--muted-foreground)/0.2);
+  }
+}
 .card .progress {
   grid-column: 2/-1;
   grid-row: 1;
@@ -270,9 +276,22 @@
     height: 18px;
     fill: light-dark(hsl(var(--primary)), hsl(var(--warning)));
   }
+}
+@media screen and (max-width: 500px) and (prefers-color-scheme: dark) {
+  .card .compressCard .compressed .compressedSpecs .compressedPercent .fireIconNative {
+    fill: hsl(var(--warning));
+  }
+}
+@media screen and (max-width: 500px) {
   .card .compressCard .compressed .compressedSpecs .compressedSize .bolt {
     fill: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
     color: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
+  }
+}
+@media screen and (max-width: 500px) and (prefers-color-scheme: dark) {
+  .card .compressCard .compressed .compressedSpecs .compressedSize .bolt {
+    fill: hsl(var(--primary));
+    color: hsl(var(--primary));
   }
 }
 @media screen and (max-width: 400px) {
@@ -285,10 +304,25 @@
     height: 18px;
     fill: light-dark(hsl(var(--primary)), hsl(var(--warning)));
   }
+}
+@media screen and (max-width: 400px) and (prefers-color-scheme: dark) {
+  .card .compressCard .compressed .compressedSpecs .compressedPercent .fireIconNative {
+    fill: hsl(var(--warning));
+  }
+}
+@media screen and (max-width: 400px) {
   .card .compressCard .compressed .compressedSpecs .compressedSize .bolt {
     fill: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
     color: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
   }
+}
+@media screen and (max-width: 400px) and (prefers-color-scheme: dark) {
+  .card .compressCard .compressed .compressedSpecs .compressedSize .bolt {
+    fill: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+}
+@media screen and (max-width: 400px) {
   .card .compressCard .compressed .downloadButtonText {
     display: none;
   }
@@ -313,5 +347,10 @@
     border-radius: 100%;
     background-color: light-dark(hsl(var(--white)), hsl(var(--white)));
     z-index: 0;
+  }
+}
+@media screen and (max-width: 400px) and (prefers-color-scheme: dark) {
+  .card .compressCard .compressed .downloadButtonIconWrapper::after {
+    background-color: hsl(var(--white));
   }
 }/*# sourceMappingURL=compressCard.module.css.map */
