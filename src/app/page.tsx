@@ -1,16 +1,15 @@
 import { RootHeader } from "@/features/root/header/rootHeader";
 import { SectionOverview } from "@/features/root/sectionOverview/sectionOverview";
-import { Metadata, Viewport } from "next";
+import { Viewport } from "next";
 import localFont from "next/font/local";
 
 import { FaqSection } from "@/features/root/faqSection/faq";
 import { Features } from "@/features/root/features/features";
 import { Resources } from "@/features/root/resources/resources";
 import { UsageSection } from "@/features/root/usageSection/usageSection";
-import { rootMeta, useThisViewport } from "./rootMeta";
+import { useThisViewport } from "./metadata";
 export const viewport: Viewport = useThisViewport;
 
-export const metadata: Metadata = rootMeta;
 const geistMono = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-mono",

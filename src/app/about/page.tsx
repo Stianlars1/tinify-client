@@ -10,7 +10,7 @@ import Link from "next/link";
 import { DotPattern } from "@/components/ui/dotPattern/dotPattern";
 import { TinifyServices } from "@/types";
 import { GradientBackground } from "react-gradient-animation";
-import { useThisViewport } from "../rootMeta";
+import { useThisViewport } from "../metadata";
 import { aboutMeta } from "./aboutMeta";
 import styles from "./css/about.module.css";
 export const metadata: Metadata = aboutMeta;

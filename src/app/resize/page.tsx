@@ -6,7 +6,7 @@ import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import { ResizeSections } from "@/features/resizeSections/resizeSections";
 import { FileUploadProvider } from "@/providers/FileProvider";
 import { Metadata, Viewport } from "next";
-import { useThisViewport } from "../rootMeta";
+import { useThisViewport } from "../metadata";
 import { resizeMeta } from "./metadata";
 export const viewport: Viewport = useThisViewport;
 

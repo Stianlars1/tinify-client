@@ -4,10 +4,11 @@ import { MetadataRoute } from "next";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
+    "compress",
     "resize",
     "crop",
     "about",
-    "faq",
+    "blog",
   ].map((route) => ({
     url: `${DOMAIN}/${route}`,
     lastModified: new Date().toISOString(),

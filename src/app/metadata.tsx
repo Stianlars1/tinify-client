@@ -8,7 +8,7 @@ export const useThisViewport: Viewport = {
   ],
 };
 
-export const rootMeta: Metadata = {
+export const metadata: Metadata = {
   title: "Tinify.dev | Free Online Image Compression, Resizing, and Cropping",
   description:
     "Optimize your images online without losing quality. Compress, resize, and crop images for free. Supports JPG, PNG, GIF, WEBP, JPEG, TIFF, and more.",

@@ -1,5 +1,5 @@
 import { Metadata, Viewport } from "next";
-import { useThisViewport } from "../rootMeta";
+import { useThisViewport } from "../metadata";
 import { cropMeta } from "./cropMeta";
 
 export const metadata: Metadata = cropMeta;

@@ -7,7 +7,7 @@ import { CompressProcessContainer } from "@/components/ui/compress/compressProce
 import { DropZone } from "@/components/ui/dropzones/dropzone/dropZone";
 import { CompressSections } from "@/features/compressSections/CompressSections";
 import { FileUploadProvider } from "@/providers/FileProvider";
-import { useThisViewport } from "../rootMeta";
+import { useThisViewport } from "../metadata";
 import { CompressBackgrounds } from "./components/compressBackgrounds";
 import { compressMeta } from "./compressMeta";
 export const metadata: Metadata = compressMeta;
