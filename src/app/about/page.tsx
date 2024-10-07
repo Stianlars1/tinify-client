@@ -3,14 +3,18 @@
 import { Content } from "@/components/layout/content/content";
 import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import { PageContent } from "@/components/layout/pageContent/pageContent";
+import { Metadata, Viewport } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import { DotPattern } from "@/components/ui/dotPattern/dotPattern";
 import { TinifyServices } from "@/types";
 import { GradientBackground } from "react-gradient-animation";
+import { useThisViewport } from "../rootMeta";
+import { aboutMeta } from "./aboutMeta";
 import styles from "./css/about.module.css";
-
+export const metadata: Metadata = aboutMeta;
+export const viewport: Viewport = useThisViewport;
 export default function About() {
   return (
     <>

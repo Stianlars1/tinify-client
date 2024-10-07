@@ -9,24 +9,15 @@ export const viewport: Viewport = {
 };
 
 export const compressMeta: Metadata = {
-  title: "Tinify.dev | Free Online Image Compression, Resizing, and Cropping",
+  title: "Compress Images Online - Free & High Quality | Tinify.dev",
   description:
-    "Optimize your images online without losing quality. Compress, resize, and crop images for free. Supports JPG, PNG, GIF, WEBP, JPEG, TIFF, and more.",
+    "Compress your images without losing quality. Supports JPG, PNG, GIF, WEBP, and more. Quick and easy image compression online for free.",
   keywords: [
-    "free image compressor",
-    "online image compression",
-    "image resizer",
-    "online image resizing",
-    "image cropper",
-    "online image cropping",
-    "reduce image size",
-    "image optimization",
     "compress images online",
-    "resize images online",
-    "crop images online",
-    "tinify.dev",
-    "lossless image compression",
-    "web performance optimization",
+    "free image compressor",
+    "image compression",
+    "online image compression",
+    "reduce image size",
     "JPG",
     "PNG",
     "GIF",
@@ -35,28 +26,28 @@ export const compressMeta: Metadata = {
     "TIFF",
   ],
   openGraph: {
-    title: "Tinify.dev | Free Online Image Compression, Resizing, and Cropping",
+    title: "Compress Images Online - Free & High Quality | Tinify.dev",
     description:
-      "Optimize your images online without losing quality. Compress, resize, and crop images for free. Supports JPG, PNG, GIF, WEBP, JPEG, TIFF, and more.",
-    url: "https://tinify.dev/",
+      "Compress your images without losing quality. Supports JPG, PNG, GIF, WEBP, and more. Quick and easy image compression online for free.",
+    url: "https://tinify.dev/compress",
     type: "website",
     images: [
       {
         url: "https://tinify.dev/tinify_op.png",
         width: 1200,
         height: 630,
-        alt: "Tinify.dev - Free Online Image Compression, Resizing, and Cropping",
+        alt: "Compress Images Online - Free & High Quality | Tinify.dev",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tinify.dev | Free Online Image Compression, Resizing, and Cropping",
+    title: "Compress Images Online - Free & High Quality | Tinify.dev",
     description:
-      "Optimize your images online without losing quality. Compress, resize, and crop images for free. Supports JPG, PNG, GIF, WEBP, JPEG, TIFF, and more.",
+      "Compress your images without losing quality. Supports JPG, PNG, GIF, WEBP, and more. Quick and easy image compression online for free.",
     images: ["https://tinify.dev/tinify_op.png"],
   },
   alternates: {
-    canonical: "https://tinify.dev/",
+    canonical: "https://tinify.dev/compress",
   },
 };

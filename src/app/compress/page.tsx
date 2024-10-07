@@ -1,15 +1,17 @@
 import { PageContent } from "@/components/layout/pageContent/pageContent";
 import { TinifyServices } from "@/types";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import { CompressProcessContainer } from "@/components/ui/compress/compressProcessContainer/compressProcessContainer";
 import { DropZone } from "@/components/ui/dropzones/dropzone/dropZone";
 import { CompressSections } from "@/features/compressSections/CompressSections";
 import { FileUploadProvider } from "@/providers/FileProvider";
+import { useThisViewport } from "../rootMeta";
 import { CompressBackgrounds } from "./components/compressBackgrounds";
 import { compressMeta } from "./compressMeta";
 export const metadata: Metadata = compressMeta;
+export const viewport: Viewport = useThisViewport;
 
 export default async function CompressPage() {
   return (

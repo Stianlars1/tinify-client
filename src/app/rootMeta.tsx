@@ -1,7 +1,7 @@
 import type { Viewport } from "next";
 import { Metadata } from "next";
 
-export const viewport: Viewport = {
+export const useThisViewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f5f8fa" },
     { media: "(prefers-color-scheme: dark)", color: "#09090b " },

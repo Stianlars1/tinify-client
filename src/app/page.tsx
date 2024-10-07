@@ -7,13 +7,8 @@ import { FaqSection } from "@/features/root/faqSection/faq";
 import { Features } from "@/features/root/features/features";
 import { Resources } from "@/features/root/resources/resources";
 import { UsageSection } from "@/features/root/usageSection/usageSection";
-import { rootMeta } from "./rootMeta";
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f8fa" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b " },
-  ],
-};
+import { rootMeta, useThisViewport } from "./rootMeta";
+export const viewport: Viewport = useThisViewport;
 
 export const metadata: Metadata = rootMeta;
 const geistMono = localFont({

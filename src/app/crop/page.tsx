@@ -1,3 +1,10 @@
+import { Metadata, Viewport } from "next";
+import { useThisViewport } from "../rootMeta";
+import { cropMeta } from "./cropMeta";
+
+export const metadata: Metadata = cropMeta;
+export const viewport: Viewport = useThisViewport;
+
 export default async function CropPage() {
   return (
     <div

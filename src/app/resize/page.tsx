@@ -6,13 +6,9 @@ import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import { ResizeSections } from "@/features/resizeSections/resizeSections";
 import { FileUploadProvider } from "@/providers/FileProvider";
 import { Metadata, Viewport } from "next";
+import { useThisViewport } from "../rootMeta";
 import { resizeMeta } from "./metadata";
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f8fa" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b " },
-  ],
-};
+export const viewport: Viewport = useThisViewport;
 
 export const metadata: Metadata = resizeMeta;
 

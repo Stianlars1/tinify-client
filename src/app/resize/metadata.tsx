@@ -1,28 +1,45 @@
 import { Metadata } from "next";
 
 export const resizeMeta: Metadata = {
-  title: "Resize Images Online with Tinify",
+  title: "Resize Images Online - Flexible & Free | Tinify.dev",
   description:
-    "Resize any image without losing quality. Supports JPG, PNG, GIF, and more formats. Fast and easy to use.",
+    "Resize your images to fit any dimension without losing quality. Supports JPG, PNG, GIF, WEBP, and more. Fast online image resizing for free.",
   keywords: [
-    "Tinify",
-    "resize",
-    "free online resizer",
+    "resize images online",
     "image resizer",
-    "resize image online",
+    "online image resizing",
+    "free image resizing",
+    "adjust image size",
+    "JPG",
+    "PNG",
+    "GIF",
+    "WEBP",
+    "JPEG",
+    "TIFF",
   ],
   openGraph: {
-    title: "Resize Image Online | Tinify",
+    title: "Resize Images Online - Flexible & Free | Tinify.dev",
     description:
-      "Resize any image without losing quality. Supports JPG, PNG, GIF, and more formats. Fast and easy to use.",
-    url: "https://Tinify.dev/resize",
-    siteName: "Tinify",
+      "Resize your images to fit any dimension without losing quality. Supports JPG, PNG, GIF, WEBP, and more. Fast online image resizing for free.",
+    url: "https://tinify.dev/resize",
     type: "website",
+    images: [
+      {
+        url: "https://tinify.dev/tinify_op.png",
+        width: 1200,
+        height: 630,
+        alt: "Resize Images Online - Flexible & Free | Tinify.dev",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Resize Image Online | Tinify",
+    title: "Resize Images Online - Flexible & Free | Tinify.dev",
     description:
-      "Resize any image without losing quality. Supports JPG, PNG, GIF, and more formats. Fast and easy to use.",
+      "Resize your images to fit any dimension without losing quality. Supports JPG, PNG, GIF, WEBP, and more. Fast online image resizing for free.",
+    images: ["https://tinify.dev/tinify_op.png"],
+  },
+  alternates: {
+    canonical: "https://tinify.dev/resize",
   },
 };
