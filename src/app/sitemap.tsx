@@ -9,6 +9,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "crop",
     "about",
     "blog",
+    "blog/what-is-compression",
+    "blog/what-is-resizing",
+    "blog/what-is-cropping",
   ].map((route) => ({
     url: `${DOMAIN}/${route}`,
     lastModified: new Date().toISOString(),
