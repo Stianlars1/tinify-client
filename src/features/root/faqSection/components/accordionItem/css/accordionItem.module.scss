@@ -1,0 +1,35 @@
+.accordionItem {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+  .accordionButton {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: hsl(var(--card-foreground));
+    &:hover {
+      background: hsl(var(--muted));
+    }
+
+    .accordionTitle {
+      font-weight: bold;
+    }
+
+    .accordionIcon {
+      font-size: 1.5rem;
+    }
+  }
+
+  .accordionContent {
+    padding: 1rem;
+    background: hsl(var(--card));
+    color: hsl(var(--muted-foreground));
+    border-top: 1px solid hsl(var(--border));
+  }
+}

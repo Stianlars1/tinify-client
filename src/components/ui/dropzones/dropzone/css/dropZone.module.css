@@ -18,6 +18,7 @@
   transition: all 0.247s ease;
   border: 3px dashed light-dark(hsl(var(--foreground)/0.5), hsl(var(--foreground)/0.5));
   color: hsl(var(--foreground));
+  max-width: var(--content-width);
 }
 
 .dropZone:hover,

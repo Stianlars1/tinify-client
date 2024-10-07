@@ -7,7 +7,7 @@ export const BlogGradient = ({ className }: { className: string }) => {
     <GradientBackground
       count={10} // Number of particles
       size={{ min: 600, max: 1000, pulse: 0.2 }} // Adjusted for visibility
-      speed={{ x: { min: 1.5, max: 2 }, y: { min: 1.5, max: 2 } }}
+      speed={{ x: { min: 0.4, max: 0.8 }, y: { min: 0.4, max: 0.8 } }}
       colors={{
         background: "#2563eb", // Solid background for better visibility
         particles: ["#2563eb", "#e517db", "#ff0a53", "#2563eb"],

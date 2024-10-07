@@ -1,6 +1,7 @@
 .resize {
   position: relative;
   z-index: 10;
+  min-width: 100%;
 }
 
 .resizeContent {
@@ -9,7 +10,7 @@
   align-items: center;
   justify-content: center;
   padding-top: 40px;
-  gap: 2.5rem;
+  gap: 1rem;
   z-index: 100;
 }
 
@@ -126,6 +127,7 @@
 .arrowRight {
   transform: rotate(-90deg);
   width: 3rem;
+  flex: 0 0 3rem;
 }
 
 .showHideImageNamesButton {

@@ -1,0 +1,32 @@
+.accordionItem {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.accordionItem .accordionButton {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: hsl(var(--card-foreground));
+}
+.accordionItem .accordionButton:hover {
+  background: hsl(var(--muted));
+}
+.accordionItem .accordionButton .accordionTitle {
+  font-weight: bold;
+}
+.accordionItem .accordionButton .accordionIcon {
+  font-size: 1.5rem;
+}
+.accordionItem .accordionContent {
+  padding: 1rem;
+  background: hsl(var(--card));
+  color: hsl(var(--muted-foreground));
+  border-top: 1px solid hsl(var(--border));
+}/*# sourceMappingURL=accordionItem.module.css.map */

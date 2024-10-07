@@ -1,7 +1,14 @@
 .header {
   position: relative;
-  padding: 40px 20px 80px;
+  margin-top: 20px;
+  padding: 80px 20px 80px;
   margin-bottom: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 40px 20px 40px;
+    margin-top: 0px;
+  }
 }
 .header h1 {
   text-align: left;

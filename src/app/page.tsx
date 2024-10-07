@@ -3,6 +3,7 @@ import { SectionOverview } from "@/features/root/sectionOverview/sectionOverview
 import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
+import { FaqSection } from "@/features/root/faqSection/faq";
 import { Features } from "@/features/root/features/features";
 import { Resources } from "@/features/root/resources/resources";
 import { UsageSection } from "@/features/root/usageSection/usageSection";
@@ -38,8 +39,8 @@ export default async function Home() {
         <Features />
 
         <Resources />
-        {/* <Testimonials />
         <FaqSection />
+        {/* <Testimonials />
         <PrivacySecurity /> */}
       </main>
     </>

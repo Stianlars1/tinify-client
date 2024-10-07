@@ -24,6 +24,7 @@ export default async function ResizePage() {
           service={TinifyServices.RESIZE}
           title="Resize any images"
           height="full"
+          fullWidth
           description={
             <span>
               Supports <strong>JPG</strong>, <strong>PNG</strong>,{" "}

@@ -105,12 +105,12 @@ const Gradient = (): ReactElement => {
         background: "hsl(var(--background))", // Solid background for better visibility
         particles: ["#ff681c", "#ff0a53", "#2563eb"],
       }}
-      blending={"source-over"} // Adjust blending mode if necessary
+      blending={"overlay"} // Adjust blending mode if necessary
       opacity={{ center: 0.45, edge: 0 }} // Center opacity and edge opacity
       skew={-1.6}
       shapes={["c"]} // Shapes: circle
       className={styles.gradientBackground}
-      translateYcorrection={true}
+      translateYcorrection={false}
       style={{ position: "absolute" }}
     />
   );
