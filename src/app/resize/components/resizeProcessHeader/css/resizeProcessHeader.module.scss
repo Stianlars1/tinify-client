@@ -147,10 +147,10 @@
         gap: 0.5rem;
         background-color: hsl(var(--card));
 
-        border-bottom: 1px solid
-          light-dark(hsl(var(--border)), hsl(var(--muted-foreground) / 0.2));
+        border-bottom: 1px solid hsl(var(--border));
 
-        @media (prefers-color-scheme: dark) {
+        @media screen and (-webkit-prefers-color-scheme: dark),
+          screen and (prefers-color-scheme: dark) {
           border-bottom: 1px solid hsl(var(--muted-foreground) / 0.2);
         }
 

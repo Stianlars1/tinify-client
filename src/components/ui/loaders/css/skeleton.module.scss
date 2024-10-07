@@ -49,7 +49,8 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
   .animatedLoadingBar {
     background: -webkit-gradient(
       linear,

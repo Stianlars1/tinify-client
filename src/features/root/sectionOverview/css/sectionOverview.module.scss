@@ -1,17 +1,8 @@
 .gradientBackground {
-  // position: absolute;
-
-  // mix-blend-mode: screen;
-  // left: 50% !important;
-  // transform: translateX(-50%) !important;
-  // width: calc(100% * 1.05) !important;
-  // height: 100%;
-  // z-index: 1 !important;
   transition: all 0.2s ease-in-out;
 
-  @media screen and (prefers-color-scheme: dark) {
-    //mix-blend-mode: ;
-    //display: none;
+  @media screen and (-webkit-prefers-color-scheme: dark),
+    screen and (prefers-color-scheme: dark) {
   }
 }
 
@@ -95,12 +86,14 @@
     .feature:hover {
       background-color: hsl(var(--black) / 0.2);
 
-      @media screen and (prefers-color-scheme: light) {
+      @media screen and (-webkit-prefers-color-scheme: light),
+        screen and (prefers-color-scheme: light) {
         transform: scale(1.05);
       }
 
       & .gradientBackground {
-        @media screen and (prefers-color-scheme: light) {
+        @media screen and (-webkit-prefers-color-scheme: light),
+          screen and (prefers-color-scheme: light) {
           transform: scale(1.05);
         }
       }

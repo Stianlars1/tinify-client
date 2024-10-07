@@ -14,8 +14,8 @@
   }
 
   .icon {
-    fill: light-dark(hsl(var(--purple)), hsl(var(--warning)));
-    @media (prefers-color-scheme: dark) {
+    fill: hsl(var(--purple));
+    @media (-webkit-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
       fill: hsl(var(--warning));
     }
   }

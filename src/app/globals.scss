@@ -56,7 +56,8 @@
   --warning-foreground: 26 83.3% 14.1%;
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
   :root {
     --purple: 263.4 70% 50.4%;
     --purple-foreground: 210 20% 98%;
@@ -141,7 +142,8 @@ body {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }

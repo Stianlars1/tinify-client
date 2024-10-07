@@ -1,87 +1,10 @@
-// .waveWrapper {
-//   position: absolute; /* Or fixed if you want it to stay on scroll */
-//   top: 200px;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   width: 100vw; /* Full screen width */
-//   height: 100%; /* Full screen height, or use a calculated value */
-//   z-index: -1;
-//   opacity: 0.15;
-
-//   @media screen and (max-width: 768px) {
-//   }
-
-//   &::after {
-//     content: "";
-//     position: absolute;
-
-//     inset: 0;
-
-//     z-index: 100;
-//   }
-
-//   @media screen and (prefers-color-scheme: dark) {
-//     opacity: 1;
-
-//     &::after {
-//       background: linear-gradient(
-//         to top,
-//         transparent 0%,
-//         hsl(var(--muted) / 0.5) 25%,
-//         transparent 45%
-//       );
-//     }
-//   }
-
-//   .waveBackground {
-//     left: 50%;
-//     transform: translateX(-50%);
-//     position: absolute;
-//     object-fit: cover; /* Ensures that the aspect ratio remains intact */
-//   }
-// }
-
-// .blobsWrapper {
-//   aspect-ratio: 2.57 / 1;
-//   position: absolute; /* Or fixed if you want it to stay on scroll */
-//   top: 1000px;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   width: 100vw; /* Full screen width */
-//   z-index: -1;
-//   opacity: 1;
-
-//   .blobs {
-//     width: 100%;
-//     height: auto;
-//     position: absolute;
-//     object-fit: cover; /* Ensures that the aspect ratio remains intact */
-//   }
-// }
-// .gradientWavesWrapper {
-//   aspect-ratio: 2.57 / 1;
-//   position: absolute; /* Or fixed if you want it to stay on scroll */
-//   top: 1600px;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   width: 100vw; /* Full screen width */
-//   z-index: -1;
-//   opacity: 0.05;
-
-//   .gradientWaves {
-//     width: 100%;
-//     height: auto;
-//     position: absolute;
-//     object-fit: cover; /* Ensures that the aspect ratio remains intact */
-//   }
-// }
-
 .wavebg2 {
   g {
     g {
       opacity: 0.23;
 
-      @media screen and (prefers-color-scheme: dark) {
+      @media screen and (-webkit-prefers-color-scheme: dark),
+        screen and (prefers-color-scheme: dark) {
         opacity: 1 !important;
       }
     }

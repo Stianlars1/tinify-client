@@ -22,8 +22,9 @@
 }
 
 .downloadAllButton {
-  background-color: light-dark(hsl(var(--black)), hsl(var(--purple)));
-  @media (prefers-color-scheme: dark) {
+  background-color: hsl(var(--black));
+  @media screen and (-webkit-prefers-color-scheme: dark),
+    screen and (prefers-color-scheme: dark) {
     background-color: hsl(var(--purple));
   }
   color: hsl(var(--white));
@@ -32,12 +33,9 @@
   cursor: pointer;
 
   &:hover {
-    background-color: light-dark(
-      hsl(var(--black) / 0.7),
-      hsl(var(--purple) / 0.7)
-    );
-
-    @media (prefers-color-scheme: dark) {
+    background-color: hsl(var(--black) / 0.7);
+    @media screen and (-webkit-prefers-color-scheme: dark),
+      screen and (prefers-color-scheme: dark) {
       background-color: hsl(var(--purple) / 0.7);
     }
   }

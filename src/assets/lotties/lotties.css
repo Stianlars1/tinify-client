@@ -2,10 +2,11 @@
   margin-top: -1.25rem;
 }
 .imageUpload svg * {
-  fill: light-dark(hsl(var(--black)), hsl(var(--white)));
+  fill: hsl(var(--black));
 }
-@media (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
   .imageUpload svg * {
     fill: hsl(var(--white));
   }
-}/*# sourceMappingURL=lotties.css.map */
+} /*# sourceMappingURL=lotties.css.map */

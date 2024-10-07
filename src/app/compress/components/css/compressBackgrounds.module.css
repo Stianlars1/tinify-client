@@ -1,7 +1,7 @@
 .wavebg2 g g {
   opacity: 0.23;
 }
-@media screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
   .wavebg2 g g {
     opacity: 1 !important;
   }

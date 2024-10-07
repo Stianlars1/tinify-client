@@ -1,11 +1,10 @@
 .tag {
   padding: 0.25rem 0.65rem;
-  background-color: light-dark(
-    hsl(var(--purple) / 0.3),
-    hsl(var(--warning) / 0.8)
-  );
-  color: light-dark(hsl(var(--black)), hsl(var(--black)));
-  @media (prefers-color-scheme: dark) {
+  background-color: hsl(var(--purple) / 0.3);
+
+  color: hsl(var(--black));
+  @media screen and (-webkit-prefers-color-scheme: dark),
+    screen and (prefers-color-scheme: dark) {
     background-color: hsl(var(--warning) / 0.8);
     color: hsl(var(--black));
   }

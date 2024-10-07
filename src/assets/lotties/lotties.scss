@@ -2,8 +2,9 @@
   margin-top: -1.25rem;
   svg {
     * {
-      fill: light-dark(hsl(var(--black)), hsl(var(--white)));
-      @media (prefers-color-scheme: dark) {
+      fill: hsl(var(--black));
+      @media screen and (-webkit-prefers-color-scheme: dark),
+        screen and (prefers-color-scheme: dark) {
         fill: hsl(var(--white));
       }
     }

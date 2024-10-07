@@ -71,12 +71,12 @@
 .overviewSection .featuresList .feature:hover {
   background-color: hsl(var(--black)/0.2);
 }
-@media screen and (prefers-color-scheme: light) {
+@media screen and (-webkit-prefers-color-scheme: light), screen and (prefers-color-scheme: light) {
   .overviewSection .featuresList .feature:hover {
     transform: scale(1.05);
   }
 }
-@media screen and (prefers-color-scheme: light) {
+@media screen and (-webkit-prefers-color-scheme: light), screen and (prefers-color-scheme: light) {
   .overviewSection .featuresList .feature:hover .gradientBackground {
     transform: scale(1.05);
   }

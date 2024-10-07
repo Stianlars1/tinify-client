@@ -19,7 +19,7 @@
     background-position: 29.25rem 0;
   }
 }
-@media (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
   .animatedLoadingBar {
     background: linear-gradient(to right, hsl(var(--black)) 7%, hsl(var(--border)) 18%, hsl(var(--black)) 34%);
     -webkit-background-size: 50rem 6.5rem;

@@ -36,7 +36,7 @@
 .customInput:hover, .customInput:focus, .customInput:active {
   border-color: hsl(var(--input-hover));
 }
-@media screen and (prefers-color-scheme: dark), screen and (-webkit-prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
   .customInput:hover, .customInput:focus, .customInput:active {
     border-color: hsl(var(--input-hover));
   }

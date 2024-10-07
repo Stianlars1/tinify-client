@@ -31,8 +31,9 @@
     text-align: center;
     font-size: 3.75rem; /* Larger for the title */
     font-weight: 900;
-    color: light-dark(hsl(var(--white)), hsl(var(--white) / 0.8));
-    @media (prefers-color-scheme: dark) {
+    color: hsl(var(--white));
+    @media screen and (-webkit-prefers-color-scheme: dark),
+      screen and (prefers-color-scheme: dark) {
       color: hsl(var(--white) / 0.8);
     }
     text-shadow: 0 0.5px 5px hsl(var(--foreground) / 0.1);
@@ -46,8 +47,9 @@
   .description {
     font-size: 1.25rem;
     font-weight: 400;
-    color: light-dark(hsl(var(--white)), hsl(var(--white) / 0.8));
-    @media (prefers-color-scheme: dark) {
+    color: hsl(var(--white));
+    @media screen and (-webkit-prefers-color-scheme: dark),
+      screen and (prefers-color-scheme: dark) {
       color: hsl(var(--white) / 0.8);
     }
 

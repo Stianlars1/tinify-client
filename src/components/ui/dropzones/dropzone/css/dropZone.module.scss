@@ -19,9 +19,9 @@
   transition: all 0.247s ease;
 
   transition: all 0.247s ease;
-  border: 3px dashed
-    light-dark(hsl(var(--foreground) / 0.5), hsl(var(--foreground) / 0.5));
-  @media (prefers-color-scheme: dark) {
+  border: 3px dashed hsl(var(--foreground) / 0.5);
+  @media screen and (-webkit-prefers-color-scheme: dark),
+    screen and (prefers-color-scheme: dark) {
     border: 3px dashed hsl(var(--foreground) / 0.5);
   }
   color: hsl(var(--foreground));
@@ -30,8 +30,9 @@
 
 .dropZone:hover,
 .isOver {
-  border-color: light-dark(hsl(var(--black)), hsl(var(--white)));
-  @media (prefers-color-scheme: dark) {
+  border-color: hsl(var(--black));
+  @media screen and (-webkit-prefers-color-scheme: dark),
+    screen and (prefers-color-scheme: dark) {
     border-color: hsl(var(--white));
   }
 

@@ -3,12 +3,11 @@
   //padding: 5px 6px 5px 6px;
   padding: 0.75rem 1rem;
   border-top: 1px solid transparent;
-  border-bottom: 1px solid
-    light-dark(hsl(var(--border)), hsl(var(--muted-foreground) / 0.2));
+  border-bottom: 1px solid HSL(var(--border));
 
-  background-color: light-dark(hsl(var(--card)), hsl(var(--muted)));
-
-  @media (prefers-color-scheme: dark) {
+  background-color: hsl(var(--card));
+  @media screen and (-webkit-prefers-color-scheme: dark),
+    screen and (prefers-color-scheme: dark) {
     background-color: hsl(var(--muted));
     border-bottom: 1px solid hsl(var(--muted-foreground) / 0.2);
   }
@@ -345,8 +344,9 @@
               display: inline-block;
               width: 18px;
               height: 18px;
-              fill: light-dark(hsl(var(--primary)), hsl(var(--warning)));
-              @media (prefers-color-scheme: dark) {
+              fill: hsl(var(--primary));
+              @media screen and (-webkit-prefers-color-scheme: dark),
+                screen and (prefers-color-scheme: dark) {
                 fill: hsl(var(--warning));
               }
             }
@@ -355,10 +355,11 @@
           .compressedSize {
             .bolt {
               //display: none;
-              fill: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
-              color: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
+              fill: hsl(var(--foreground));
+              color: hsl(var(--foreground));
 
-              @media (prefers-color-scheme: dark) {
+              @media screen and (-webkit-prefers-color-scheme: dark),
+                screen and (prefers-color-scheme: dark) {
                 fill: hsl(var(--primary));
                 color: hsl(var(--primary));
               }
@@ -394,8 +395,9 @@
               display: inline-block;
               width: 18px;
               height: 18px;
-              fill: light-dark(hsl(var(--primary)), hsl(var(--warning)));
-              @media (prefers-color-scheme: dark) {
+              fill: hsl(var(--primary));
+              @media screen and (-webkit-prefers-color-scheme: dark),
+                screen and (prefers-color-scheme: dark) {
                 fill: hsl(var(--warning));
               }
             }
@@ -404,9 +406,10 @@
           .compressedSize {
             .bolt {
               //display: none;
-              fill: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
-              color: light-dark(hsl(var(--foreground)), hsl(var(--primary)));
-              @media (prefers-color-scheme: dark) {
+              fill: hsl(var(--foreground));
+              color: hsl(var(--foreground));
+              @media screen and (-webkit-prefers-color-scheme: dark),
+                screen and (prefers-color-scheme: dark) {
                 fill: hsl(var(--primary));
                 color: hsl(var(--primary));
               }
@@ -436,8 +439,9 @@
             position: absolute;
             inset: 5px;
             border-radius: 100%;
-            background-color: light-dark(hsl(var(--white)), hsl(var(--white)));
-            @media (prefers-color-scheme: dark) {
+            background-color: hsl(var(--white));
+            @media screen and (-webkit-prefers-color-scheme: dark),
+              screen and (prefers-color-scheme: dark) {
               background-color: hsl(var(--white));
             }
             z-index: 0;
