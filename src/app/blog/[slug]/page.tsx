@@ -236,7 +236,7 @@ const Gradient = (): ReactElement => {
     <GradientBackground
       count={10} // Number of particles
       size={{ min: 600, max: 1000, pulse: 0.2 }} // Adjusted for visibility
-      speed={{ x: { min: 1.5, max: 2 }, y: { min: 1.5, max: 2 } }}
+      speed={{ x: { min: 0.6, max: 1.4 }, y: { min: 0.6, max: 1.5 } }}
       colors={{
         background: "hsl(var(--background))", // Solid background for better visibility
         particles: ["#ff681c", "#ff0a53", "#2563eb"],

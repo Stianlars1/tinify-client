@@ -59,7 +59,7 @@ const Gradient = () => {
     <GradientBackground
       count={10} // Number of particles
       size={{ min: 450, max: 500, pulse: 0 }} // Adjusted for visibility
-      speed={{ x: { min: 0.5, max: 0.6 }, y: { min: 0.5, max: 0.6 } }}
+      speed={{ x: { min: 0.2, max: 0.4 }, y: { min: 0.2, max: 0.4 } }}
       colors={{
         background: "#000000", // Solid background for better visibility
         particles: ["#ff4848", "#000000", "#2235e5", "#000000", "#ff0000"],

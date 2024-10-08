@@ -7,10 +7,56 @@
   justify-content: flex-start;
   align-items: center;
   padding: 1.2rem calc((100vw - var(--max-width)) / 2 + var(--padding));
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.875rem;
 
   .gradientBackground {
+    opacity: 0; // 0.25
+  }
+
+  .gradientBg {
+    // background: "hsl(var(--background))", // Solid background for better visibility
+    // particles: [#ff681c, "#ff0a53", "#2563eb"],
+    // background-clor hsl(var(--backgroud));
+    background: -webkit-linear-gradient(
+      90deg,
+      #ff681c 0%,
+      #ff0a53 50%,
+      #2563eb 100%
+    );
+    background: -webkit-gradient(90deg, #ff681c 0%, #ff0a53 50%, #2563eb 100%);
+    background: -moz-linear-gradient(
+      90deg,
+      #ff681c 0%,
+      #ff0a53 50%,
+      #2563eb 100%
+    );
+    background: -ms-linear-gradient(
+      90deg,
+      #ff681c 0%,
+      #ff0a53 50%,
+      #2563eb 100%
+    );
+    background: -ms-linear-gradient(
+      90deg,
+      #ff681c 0%,
+      #ff0a53 50%,
+      #2563eb 100%
+    );
+    background: -o-linear-gradient(
+      90deg,
+      #ff681c 0%,
+      #ff0a53 50%,
+      #2563eb 100%
+    );
+
+    background: linear-gradient(90deg, #2563eb 0%, #ff681c 50%, #ff0a53 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     opacity: 0.25;
   }
 }

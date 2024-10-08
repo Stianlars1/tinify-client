@@ -30,8 +30,8 @@ export default function About() {
             count={50} // Number of particles
             size={{ min: 2, max: 10, pulse: 0 }} // Adjusted for visibility
             speed={{
-              x: { min: 0.02, max: 0.08 },
-              y: { min: 0.05, max: 0.08 },
+              x: { min: 0.1, max: 0.1 },
+              y: { min: 0.1, max: 0.1 },
             }}
             colors={{
               background: "transparent", // Solid background for better visibility

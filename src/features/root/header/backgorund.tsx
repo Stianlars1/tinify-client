@@ -2,7 +2,6 @@
 import { useDarkMode } from "@/hooks/useDarkmode";
 import { useEffect, useState } from "react";
 import { GradientBackground } from "react-gradient-animation";
-
 export const HeaderBackground = ({
   notMountedClass,
 }: {

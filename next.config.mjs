@@ -8,8 +8,11 @@ const nextConfig = {
   reactStrictMode: false,
   experimental: {
     optimizePackageImports: ["axios", "lottie-light-react", "lottie-web"],
+    scrollRestoration: true,
   },
+  compress: true,
   pageExtensions: ["mdx", "tsx"],
+
   images: {
     remotePatterns: [
       {
