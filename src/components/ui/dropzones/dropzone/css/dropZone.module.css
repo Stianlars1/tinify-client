@@ -16,14 +16,13 @@
   border-radius: var(--radius);
   transition: all 0.247s ease;
   transition: all 0.247s ease;
-  border: 3px dashed hsl(var(--foreground) / 0.5);
+  border: 3px dashed hsl(var(--foreground)/0.5);
   color: hsl(var(--foreground));
   max-width: var(--content-width);
 }
-@media screen and (-webkit-prefers-color-scheme: dark),
-  screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
   .dropZone {
-    border: 3px dashed hsl(var(--foreground) / 0.5);
+    border: 3px dashed hsl(var(--foreground)/0.5);
   }
 }
 
@@ -34,10 +33,9 @@
   background-color: hsl(var(--muted));
   color: hsl(var(--foreground));
 }
-@media screen and (-webkit-prefers-color-scheme: dark),
-  screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
   .dropZone:hover,
   .isOver {
     border-color: hsl(var(--white));
   }
-} /*# sourceMappingURL=dropZone.module.css.map */
+}/*# sourceMappingURL=dropZone.module.css.map */

@@ -44,6 +44,15 @@ const getClassName = (index: number | undefined) => {
       return styles.gift;
     case 4:
       return styles.mobile;
+    case 5:
+      return styles.bolt;
+    case 6:
+      return styles.check;
+    case 7:
+      return styles.gift;
+    case 8:
+      return styles.mobile;
+
     default:
       return "";
   }

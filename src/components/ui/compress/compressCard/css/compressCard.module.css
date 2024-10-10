@@ -7,11 +7,10 @@
   height: fit-content;
   width: 100%;
 }
-@media screen and (-webkit-prefers-color-scheme: dark),
-  screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
   .card {
     background-color: hsl(var(--muted));
-    border-bottom: 1px solid hsl(var(--muted-foreground) / 0.2);
+    border-bottom: 1px solid hsl(var(--muted-foreground)/0.2);
   }
 }
 .card .progress {
@@ -23,8 +22,8 @@
   border: none;
   padding: 0;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border-radius: 9999px;
   background-color: hsl(0, 0%, 90%);
   align-self: flex-end;
@@ -79,15 +78,15 @@
   align-items: center;
   justify-content: center; /* Center the image inside the container */
   border-radius: calc(var(--radius) - 6px);
-  border: 0.5px solid hsl(var(--border) / 0.8);
+  border: 0.5px solid hsl(var(--border)/0.8);
 }
 .card .compressCard .imageWrapper .image {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover; /* Ensures the image scales to cover the container while maintaining aspect ratio */
+     object-fit: cover; /* Ensures the image scales to cover the container while maintaining aspect ratio */
   -o-object-position: center;
-  object-position: center; /* Center the image within the container */
+     object-position: center; /* Center the image within the container */
 }
 .card .compressCard .original {
   grid-column: 2/3;
@@ -162,20 +161,10 @@
   font-size: 12px;
   font-weight: 600;
 }
-.card
-  .compressCard
-  .compressed
-  .compressedSpecs
-  .compressedPercent
-  .fireIconNative {
+.card .compressCard .compressed .compressedSpecs .compressedPercent .fireIconNative {
   display: none;
 }
-.card
-  .compressCard
-  .compressed
-  .compressedSpecs
-  .compressedPercent
-  .skeletonLoading {
+.card .compressCard .compressed .compressedSpecs .compressedPercent .skeletonLoading {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,12 +250,7 @@
     visibility: hidden;
     z-index: 0;
   }
-  .card
-    .compressCard
-    .compressed
-    .compressedSpecs
-    .compressedPercent
-    .saved::after {
+  .card .compressCard .compressed .compressedSpecs .compressedPercent .saved::after {
     visibility: visible;
     content: "saved";
     position: absolute;
@@ -286,26 +270,15 @@
   .card .compressCard .compressed .compressedSpecs .compressedPercent .saved {
     display: none;
   }
-  .card
-    .compressCard
-    .compressed
-    .compressedSpecs
-    .compressedPercent
-    .fireIconNative {
+  .card .compressCard .compressed .compressedSpecs .compressedPercent .fireIconNative {
     display: inline-block;
     width: 18px;
     height: 18px;
     fill: hsl(var(--primary));
   }
 }
-@media screen and (max-width: 500px) and (-webkit-prefers-color-scheme: dark),
-  screen and (max-width: 500px) and (prefers-color-scheme: dark) {
-  .card
-    .compressCard
-    .compressed
-    .compressedSpecs
-    .compressedPercent
-    .fireIconNative {
+@media screen and (max-width: 500px) and (-webkit-prefers-color-scheme: dark), screen and (max-width: 500px) and (prefers-color-scheme: dark) {
+  .card .compressCard .compressed .compressedSpecs .compressedPercent .fireIconNative {
     fill: hsl(var(--warning));
   }
 }
@@ -315,8 +288,7 @@
     color: hsl(var(--foreground));
   }
 }
-@media screen and (max-width: 500px) and (-webkit-prefers-color-scheme: dark),
-  screen and (max-width: 500px) and (prefers-color-scheme: dark) {
+@media screen and (max-width: 500px) and (-webkit-prefers-color-scheme: dark), screen and (max-width: 500px) and (prefers-color-scheme: dark) {
   .card .compressCard .compressed .compressedSpecs .compressedSize .bolt {
     fill: hsl(var(--primary));
     color: hsl(var(--primary));
@@ -326,26 +298,15 @@
   .card .compressCard .compressed .compressedSpecs .compressedPercent .saved {
     display: none;
   }
-  .card
-    .compressCard
-    .compressed
-    .compressedSpecs
-    .compressedPercent
-    .fireIconNative {
+  .card .compressCard .compressed .compressedSpecs .compressedPercent .fireIconNative {
     display: inline-block;
     width: 18px;
     height: 18px;
     fill: hsl(var(--primary));
   }
 }
-@media screen and (max-width: 400px) and (-webkit-prefers-color-scheme: dark),
-  screen and (max-width: 400px) and (prefers-color-scheme: dark) {
-  .card
-    .compressCard
-    .compressed
-    .compressedSpecs
-    .compressedPercent
-    .fireIconNative {
+@media screen and (max-width: 400px) and (-webkit-prefers-color-scheme: dark), screen and (max-width: 400px) and (prefers-color-scheme: dark) {
+  .card .compressCard .compressed .compressedSpecs .compressedPercent .fireIconNative {
     fill: hsl(var(--warning));
   }
 }
@@ -355,8 +316,7 @@
     color: hsl(var(--foreground));
   }
 }
-@media screen and (max-width: 400px) and (-webkit-prefers-color-scheme: dark),
-  screen and (max-width: 400px) and (prefers-color-scheme: dark) {
+@media screen and (max-width: 400px) and (-webkit-prefers-color-scheme: dark), screen and (max-width: 400px) and (prefers-color-scheme: dark) {
   .card .compressCard .compressed .compressedSpecs .compressedSize .bolt {
     fill: hsl(var(--primary));
     color: hsl(var(--primary));
@@ -372,11 +332,7 @@
     width: 100%;
     height: 100%;
   }
-  .card
-    .compressCard
-    .compressed
-    .downloadButtonIconWrapper
-    .downloadButtonIcon {
+  .card .compressCard .compressed .downloadButtonIconWrapper .downloadButtonIcon {
     display: flex;
     width: 1.5rem;
     fill: black;
@@ -393,9 +349,8 @@
     z-index: 0;
   }
 }
-@media screen and (max-width: 400px) and (-webkit-prefers-color-scheme: dark),
-  screen and (max-width: 400px) and (prefers-color-scheme: dark) {
+@media screen and (max-width: 400px) and (-webkit-prefers-color-scheme: dark), screen and (max-width: 400px) and (prefers-color-scheme: dark) {
   .card .compressCard .compressed .downloadButtonIconWrapper::after {
     background-color: hsl(var(--white));
   }
-} /*# sourceMappingURL=compressCard.module.css.map */
+}/*# sourceMappingURL=compressCard.module.css.map */

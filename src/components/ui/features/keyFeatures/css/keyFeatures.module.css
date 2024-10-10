@@ -5,13 +5,14 @@
 }
 
 .featureList {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   align-items: stretch; /* Ensures all items have the same height */
   gap: 1.5rem;
   margin: 0 auto;
 }
 .featureList .featureItem {
+  flex: 1 1 min(300px, 100%);
   list-style-type: none;
   display: flex;
   flex-direction: column;

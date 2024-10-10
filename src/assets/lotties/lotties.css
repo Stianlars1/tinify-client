@@ -4,9 +4,8 @@
 .imageUpload svg * {
   fill: hsl(var(--black));
 }
-@media screen and (-webkit-prefers-color-scheme: dark),
-  screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
   .imageUpload svg * {
     fill: hsl(var(--white));
   }
-} /*# sourceMappingURL=lotties.css.map */
+}/*# sourceMappingURL=lotties.css.map */

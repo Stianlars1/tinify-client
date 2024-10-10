@@ -78,7 +78,8 @@
       border: 1px solid hsl(var(--border));
       border-radius: var(--radius);
       overflow: hidden;
-      min-width: 100%;
+      width: 100%;
+      max-width: var(--content-width);
 
       --ring-shadow: 0 0 #0000;
       --ring-offset-shadow: 0 0 #0000;
@@ -87,55 +88,6 @@
       --shadow-colored: 0 1px 2px 0 var(--shadow-color);
       box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
         var(--ring-shadow, 0 0 #0000), var(--shadow);
-
-      //   <li className={styles.resizedCard}>
-      //   <div className={styles.resizedImage}>
-      //     <Image
-      //       src={file.url}
-      //       width={30}
-      //       height={30}
-      //       alt={file.originalFilename}
-      //     />
-      //   </div>
-
-      //   <div className={styles.resizedSpecs}>
-      //     <p className={styles.resizedFilename}>{file.originalFilename}</p>
-      //     <div className={styles.resizedInfo}>
-      //       <p className={styles.originalFormat}>
-      //         {file.originalFormat.toUpperCase()}
-      //       </p>
-      //       {imageData && (
-      //         <p className={styles.originalSize}>
-      //           {imageData.originalWidth} x {imageData.originalHeight}
-      //         </p>
-      //       )}
-      //     </div>
-      //   </div>
-
-      //   <div>
-      //     <div className={styles.resizedPercent}>
-      //       <div className={styles.saved}>You Saved</div>
-      //       <span className={styles.percent}>
-      //         {parseInt(
-      //           (
-      //             ((parseFloat(file.originalFileSize) -
-      //               parseFloat(file.compressedSize)) /
-      //               parseFloat(file.originalFileSize)) *
-      //             100
-      //           ).toString()
-      //         )}
-      //         %
-      //       </span>
-      //     </div>
-      //     <div className={styles.resizedSize}>
-      //       <span>{formatFileSize(parseFloat(file.compressedSize))}</span>
-      //     </div>
-
-      //     <div className={styles.resizedDimensions}>
-      //       {file.width} x {file.height}
-      //     </div>
-      //   </div>
-      // </li>
 
       .resizedCard {
         padding: 0.5rem;

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@builder.io/partytown": "^0.10.2",
+    "@heroicons/react": "^2.1.5",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/bundle-analyzer": "^14.2.14",
@@ -18,6 +19,7 @@
     "@stianlarsen/meteors": "^1.0.8",
     "@stianlarsen/react-light-beam": "^1.0.9",
     "@types/mdx": "^2.0.13",
+    "@types/react-image-crop": "^8.1.6",
     "axios": "^1.7.7",
     "lottie-light-react": "^2.4.0",
     "next": "14.2.14",
@@ -25,6 +27,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-gradient-animation": "^1.0.6",
+    "react-image-crop": "^11.0.7",
     "sharp": "^0.33.5"
   },
   "devDependencies": {

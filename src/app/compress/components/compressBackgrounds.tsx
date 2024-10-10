@@ -66,20 +66,30 @@ export const CompressBackgrounds = () => {
           style={{ transform: "scaleX(1) scaleY(1)", height: "100%" }}
         />
       </FullWidthBackground>
+    </>
+  );
+};
 
-      {/* <FullWidthBackground top="1600px" opacity={0.4}>
+export const CropBackgrounds = () => {
+  return (
+    <>
+      {/* <FullWidthBackground overflow top="100px" opacity={0.4}>
+        <WaveBG2 className={styles.wavebg2} />
+      </FullWidthBackground> */}
+
+      <FullWidthBackground
+        contain
+        top="100px"
+        opacity={0.2}
+        className={styles.blobWrapper}
+      >
         <Image
-          unoptimized
-          quality={100}
-          src={amplitudesUrl}
+          src={blobsUrl}
           alt="blobs"
           sizes="100vw"
+          style={{ transform: "scaleX(1) scaleY(1)", height: "100%" }}
         />
-      </FullWidthBackground> */}
-
-      {/* <FullWidthBackground top="1600px" opacity={1}>
-        <Image src={gradientWavesUrl} alt="waves" sizes="100vw" />
-      </FullWidthBackground> */}
+      </FullWidthBackground>
     </>
   );
 };

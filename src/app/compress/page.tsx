@@ -1,8 +1,8 @@
-import { PageContent } from "@/components/layout/pageContent/pageContent";
 import { TinifyServices } from "@/types";
 import { Metadata, Viewport } from "next";
 
 import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
+import { PageContent } from "@/components/layout/pageContent/pageContent";
 import { CompressProcessContainer } from "@/components/ui/compress/compressProcessContainer/compressProcessContainer";
 import { DropZone } from "@/components/ui/dropzones/dropzone/dropZone";
 import { CompressSections } from "@/features/compressSections/CompressSections";

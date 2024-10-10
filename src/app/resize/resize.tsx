@@ -13,7 +13,7 @@ export const Resize = () => {
     setFiles([]);
   };
 
-  // Memoize the list of compression cards
+  // Memoize the list of resize cards
   const isImageDropped = useMemo(() => {
     return files.length > 0;
   }, [files]); // Recalculate only when `files` changes

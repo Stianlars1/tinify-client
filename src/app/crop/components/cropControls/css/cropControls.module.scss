@@ -1,0 +1,121 @@
+.cropControls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  gap: 2rem;
+
+  .controlsButtons {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+    .controlButton {
+      flex: 1 1 auto;
+      padding: 6px 12px;
+      border: 1px solid hsl(var(--foreground) / 0.5);
+      border-radius: calc(var(--radius) - 2px);
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      background-color: hsl(var(--muted));
+      color: hsl(var(--muted-foreground));
+      &:hover {
+        background-color: hsl(var(--muted-foreground) / 0.5);
+        color: hsl(var(--foreground));
+      }
+    }
+
+    // .fourThree {
+    //   background-color: hsl(var(--muted));
+    //   color: hsl(var(--muted-foreground));
+    //   &:hover {
+    //     background-color: hsl(var(--muted-foreground) / 0.5);
+    //     color: hsl(var(--foreground));
+    //   }
+    // }
+    // .sixteen {
+    //   background-color: hsl(var(--muted));
+    //   color: hsl(var(--muted-foreground));
+    //   &:hover {
+    //     background-color: hsl(var(--muted-foreground) / 0.5);
+    //     color: hsl(var(--foreground));
+    //   }
+    // }
+    // .oneOne {
+    //   background-color: hsl(var(--muted));
+    //   color: hsl(var(--muted-foreground));
+    //   &:hover {
+    //     background-color: hsl(var(--muted-foreground) / 0.5);
+    //     color: hsl(var(--foreground));
+    //   }
+    // }
+    // .free {
+    //   background-color: hsl(var(--primary));
+    //   &:hover {
+    //     background-color: hsl(var(--primary) / 0.75);
+    //   }
+    //   color: hsl(var(--white));
+    // }
+
+    .active {
+      background-color: hsl(var(--purple));
+      color: hsl(var(--white));
+
+      &:hover {
+        background-color: hsl(var(--purple) / 0.75);
+        color: hsl(var(--white));
+      }
+    }
+  }
+
+  .cropCTAS {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+
+    .CTA {
+      padding: 0.5rem 1rem;
+      border: 1px solid hsl(var(--border));
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .submitCTA {
+      width: 100%;
+      border-radius: calc(var(--radius) - 2px);
+      background-color: hsl(var(--primary));
+      color: hsl(var(--white));
+      &:hover {
+        background-color: hsl(var(--primary) / 0.75);
+      }
+    }
+    .cancelCTA {
+      width: fit-content;
+      background-color: transparent;
+      border: none;
+      border-radius: none;
+
+      border-bottom: 1px solid hsl(var(--destructive));
+      &:hover {
+        border-radius: calc(var(--radius) - 2px);
+        background-color: hsl(var(--destructive) / 0.75);
+      }
+    }
+  }
+}
