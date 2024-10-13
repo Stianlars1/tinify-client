@@ -3,7 +3,7 @@
 import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import { PageContent } from "@/components/layout/pageContent/pageContent";
 import { Metadata, Viewport } from "next";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useThisViewport } from "../metadata";
 import { blogMeta } from "./blogMeta";
 import styles from "./css/blog.module.css";

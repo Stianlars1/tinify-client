@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation";
 import styles from "./css/navLink.module.css";
 export const NavLink = ({

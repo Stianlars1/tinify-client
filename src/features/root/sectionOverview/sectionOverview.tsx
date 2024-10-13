@@ -1,7 +1,7 @@
 // src/components/sections/sectionOverview.tsx
 import { CompressImageIcon, CropIcon, ResizeIcon } from "@/assets/icons/icons";
 import { SectionHeader } from "@/components/layout/sectionHeader/sectionHeader";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { GradientBackground } from "react-gradient-animation";
 import styles from "./css/sectionOverview.module.css";
 export const SectionOverview = () => (

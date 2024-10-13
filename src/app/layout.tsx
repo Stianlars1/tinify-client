@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/footer/footer";
 import { Navbar } from "@/components/layout/navbar/navbar";
+import { ViewTransitions } from "next-view-transitions";
 import { Libre_Franklin } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -32,14 +33,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={` ${libre.className} ${geistMono.variable} ${geistSans.variable}`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body
+          className={` ${libre.className} ${geistMono.variable} ${geistSans.variable}`}
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

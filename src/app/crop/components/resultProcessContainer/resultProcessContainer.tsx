@@ -4,8 +4,8 @@
 
 import { ImageResponse } from "@/components/ui/compress/types";
 import { Spinner } from "@/components/ui/loaders/loaders";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import styles from "./css/resultProcessContainer.module.css";
 
@@ -84,7 +84,8 @@ export const ResultProcessContainer: React.FC<ResultProcessContainerProps> = ({
             />
             {imageLoaded && (
               <figcaption>
-                &quot;Download Image&quot; button to get the original file.
+                Note: The image above is a preview. Please use the{" "}
+                <strong>Download Image</strong> button to get the original file.
                 Right-clicking may save the image in a different format.
               </figcaption>
             )}

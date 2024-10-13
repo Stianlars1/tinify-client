@@ -1,5 +1,5 @@
 import { TinifyLogoAuto } from "@/assets/tinify/tinifyLogoAuto";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { NavLink } from "./components/navLink/navLink";
 import styles from "./css/navbar.module.css";
 import { NAV_LINKS } from "./navContent";

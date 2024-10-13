@@ -4,8 +4,8 @@ import { Content } from "@/components/layout/content/content";
 import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import { PageContent } from "@/components/layout/pageContent/pageContent";
 import { Metadata, Viewport } from "next";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
-import Link from "next/link";
 
 import { DotPattern } from "@/components/ui/dotPattern/dotPattern";
 import { TinifyServices } from "@/types";

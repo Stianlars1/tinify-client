@@ -1,5 +1,5 @@
 import { SectionHeader } from "@/components/layout/sectionHeader/sectionHeader";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { GradientBackground } from "react-gradient-animation";
 import styles from "./css/resources.module.css";
 // src/components/sections/blogPreview.tsx
