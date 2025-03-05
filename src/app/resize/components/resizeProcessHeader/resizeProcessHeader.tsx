@@ -1,15 +1,19 @@
 import { DownloadAllButton } from "@/components/ui/buttons/downloadAllButton";
 import { ResizedImage } from "@/components/ui/compress/types";
-import { Spinner } from "@/components/ui/loaders/loaders";
 import { Skeleton } from "@/components/ui/loaders/skeleton";
 import { formatFileSize } from "@/utils/imageUtils";
 import { default as Image } from "next/image";
-import { ReactElement, useEffect } from "react";
+import { ReactElement, useEffect, useMemo } from "react";
 import {
   OriginalNewImage,
   ResizeOptions,
 } from "../resizeContent/resizeContent";
 import styles from "./css/resizeProcessHeader.module.css";
+import {
+  ProcessingStatus,
+  ProcessingStatuses,
+} from "@/app/resize/components/resizeControls/resizeControls";
+import { DownloadButton } from "@/components/ui/buttons/downloadButton";
 
 export const ResizeProcessHeader = ({
   compressedFiles,
@@ -17,14 +21,18 @@ export const ResizeProcessHeader = ({
   totalFiles,
   imageData,
   resizeOptions,
+  processingStatuses,
 }: {
   compressedFiles: ResizedImage[];
   isProcessing: boolean;
   totalFiles: number;
   imageData: OriginalNewImage[];
   resizeOptions: ResizeOptions;
+  processingStatuses: ProcessingStatuses;
 }): ReactElement => {
   const totalBytesSaved = getTotalSavedBytes(compressedFiles);
+  const isFinished =
+    !isProcessing && imageData.length === compressedFiles.length;
 
   const youSavedOrAddedPercent = getSavedText(isProcessing, compressedFiles);
   const subtitle = getSubtitle(isProcessing, compressedFiles, totalFiles);
@@ -39,8 +47,11 @@ export const ResizeProcessHeader = ({
     }
   }, []);
 
-  console.log("compressedFiles", compressedFiles);
-  console.log("imageData", imageData);
+  const processingCards = useMemo(
+    () => Object.entries(processingStatuses).map(([, value]) => value),
+    [processingStatuses, compressedFiles, isProcessing],
+  );
+
   return (
     <>
       <div className={styles.resizeProcessHeader} id="resize-processing-header">
@@ -54,33 +65,38 @@ export const ResizeProcessHeader = ({
           </h2>
           <p className={styles.subtitle}>{subtitle}</p>
         </div>
-        {!isProcessing && compressedFiles.length > 0 && (
-          <div className={styles.finishedResizeContainer}>
+
+        <div className={styles.finishedResizeContainer}>
+          {isFinished && (
             <DownloadAllButton compressedFiles={compressedFiles}>
               Download All Images
             </DownloadAllButton>
-            <ul className={styles.resizedList}>
-              {compressedFiles.map((file) => (
-                <ResizedCard
-                  key={file.originalFilename}
-                  file={file}
-                  imageData={imageData.find(
-                    (currentFile) => currentFile.name === file.originalFilename
-                  )}
-                  resizeOptions={resizeOptions}
-                />
-              ))}
-            </ul>
+          )}
+          <ul className={styles.resizedList}>
+            {processingCards.map((processingFile) => (
+              <ResizedCard
+                processStatus={processingFile}
+                key={processingFile.fileName}
+                file={compressedFiles.find(
+                  (curr) => curr.originalFilename === processingFile.fileName,
+                )}
+                imageData={imageData.find(
+                  (currentFile) => currentFile.name === processingFile.fileName,
+                )}
+                resizeOptions={resizeOptions}
+              />
+            ))}
+          </ul>
+
+          {isFinished && (
             <button
               onClick={handleResetAndGoAgain}
               className={styles.resetButton}
             >
               Resize more
             </button>
-          </div>
-        )}
-
-        {isProcessing && <Spinner size={24} />}
+          )}
+        </div>
       </div>
     </>
   );
@@ -90,34 +106,49 @@ const ResizedCard = ({
   file,
   imageData,
   resizeOptions,
+  processStatus,
 }: {
-  file: ResizedImage;
+  processStatus: ProcessingStatus;
+  file?: ResizedImage;
   imageData: OriginalNewImage | undefined;
   resizeOptions: ResizeOptions;
 }) => {
   const { intendedWidth, intendedHeight } = getImageDimensions(
     imageData,
+    resizeOptions,
     file,
-    resizeOptions
   );
+
+  const isProcessing =
+    processStatus.status === "processing" ||
+    processStatus.status === "uploading";
   return (
     <li className={styles.resizedCard}>
       <div className={styles.resizedImage}>
-        <Image
-          src={file.url}
-          width={40}
-          height={40}
-          alt={file.originalFilename}
-          fetchPriority="auto"
-          className={styles.image}
-        />
+        {!isProcessing && file ? (
+          <Image
+            src={file.url}
+            width={45}
+            height={45}
+            alt={file.originalFilename}
+            fetchPriority="auto"
+            className={styles.image}
+          />
+        ) : (
+          <Skeleton
+            asSpan={true}
+            width={45}
+            height={45}
+            style={{ borderRadius: "calc(0.5rem - 6px)" }}
+          />
+        )}
       </div>
 
       <div className={styles.resizedSpecs}>
-        <p className={styles.resizedFilename}>{file.originalFilename}</p>
+        <p className={styles.resizedFilename}>{imageData?.name}</p>
         <div className={styles.resizedInfo}>
           <p className={styles.originalFormat}>
-            {file.originalFormat.toUpperCase()}
+            {formatFileSize(imageData?.file?.size ?? 0)}
           </p>
           {imageData && (
             <p className={styles.originalSize}>
@@ -134,30 +165,54 @@ const ResizedCard = ({
       <div className={styles.resizedNewSpecs}>
         <div className={styles.resizedPercent}>
           <div className={styles.saved}>
-            <span className={styles.youSavedFirstPart}>You </span>
-            <span>Saved</span>
+            {!isProcessing ? (
+              <>
+                <span className={styles.youSavedFirstPart}>You </span>
+                <span>Saved</span>
+              </>
+            ) : (
+              <>
+                <span className={styles.youSavedFirstPart}>
+                  {processStatus.status}
+                </span>
+              </>
+            )}
           </div>
           <span className={styles.percent}>
-            {parseInt(
-              (
-                ((parseFloat(file.originalFileSize) -
-                  parseFloat(file.compressedSize)) /
-                  parseFloat(file.originalFileSize)) *
-                100
-              ).toString()
+            {!isProcessing && file ? (
+              <>
+                {parseInt(
+                  (
+                    ((parseFloat(file.originalFileSize) -
+                      parseFloat(file.compressedSize)) /
+                      parseFloat(file.originalFileSize)) *
+                    100
+                  ).toString(),
+                )}
+                %
+              </>
+            ) : (
+              <>{processStatus.progress}%</>
             )}
-            %
           </span>
         </div>
-        <div className={styles.sizeDimensionWrapper}>
-          <div className={styles.resizedSize}>
-            <span>{formatFileSize(parseFloat(file.compressedSize))}</span>
-          </div>
 
-          <div className={styles.resizedDimensions}>
-            {intendedWidth} x {intendedHeight}
+        {!isProcessing && file && (
+          <div className={styles.sizeDimensionWrapper}>
+            <div className={styles.resizedSize}>
+              <span>{formatFileSize(parseFloat(file.compressedSize))}</span>
+            </div>
+
+            <div className={styles.resizedDimensions}>
+              {intendedWidth} x {intendedHeight}
+            </div>
+            <DownloadButton
+              ariaLabel={`Click to download ${file.originalFilename.slice(0, 40)}`}
+              url={file.url}
+              key={file.originalFilename}
+            />
           </div>
-        </div>
+        )}
       </div>
     </li>
   );
@@ -165,8 +220,8 @@ const ResizedCard = ({
 
 const getImageDimensions = (
   imageData: OriginalNewImage | undefined,
-  resizedImage: ResizedImage,
-  resizeOptions: ResizeOptions
+  resizeOptions: ResizeOptions,
+  resizedImage?: ResizedImage,
 ) => {
   let intendedWidth: number | undefined = undefined;
   let intendedHeight: number | undefined = undefined;
@@ -224,11 +279,11 @@ const getImageDimensions = (
 const getTotalSavedBytes = (compressedFiles: ResizedImage[]) => {
   const originalFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.originalFileSize),
-    0
+    0,
   );
   const compressedFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.compressedSize),
-    0
+    0,
   );
   return formatFileSize(originalFileSizes - compressedFileSizes);
 };
@@ -236,23 +291,23 @@ const getTotalSavedBytes = (compressedFiles: ResizedImage[]) => {
 const getTotalSavedPercent = (compressedFiles: ResizedImage[]) => {
   const originalFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.originalFileSize),
-    0
+    0,
   );
   const compressedFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.compressedSize),
-    0
+    0,
   );
   return parseInt(
     (
       ((originalFileSizes - compressedFileSizes) / originalFileSizes) *
       100
-    ).toString()
+    ).toString(),
   );
 };
 
 const getSavedText = (
   isProcessing: boolean,
-  compressedFiles: ResizedImage[]
+  compressedFiles: ResizedImage[],
 ) => {
   if (isProcessing) {
     return (
@@ -288,7 +343,7 @@ const getSavedText = (
 const getSubtitle = (
   isProcessing: boolean,
   compressedFiles: ResizedImage[],
-  totalFiles: number
+  totalFiles: number,
 ) => {
   // {isProcessing ? "" : "Finished"}{" "}
   // {isProcessing ? "Processing" : "resizing"}{" "}

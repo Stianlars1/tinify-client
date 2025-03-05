@@ -6,7 +6,7 @@ import Image from "next/image";
 import { memo, useContext, useEffect, useState } from "react";
 import styles from "./css/dropZone.module.css";
 
-export const DropZone = memo(
+const DropZone = memo(
   ({
     allowMultiple = true,
     onLoaded,
@@ -26,13 +26,15 @@ export const DropZone = memo(
       : BOX_CLOSED_BLACK_URL;
 
     useEffect(() => {
-      onLoaded && onLoaded();
+      if (onLoaded) {
+        onLoaded();
+      }
     }, []);
     const onDrop = () => {
       setHasDropped(true);
       setIsOver(false);
       document
-        .getElementById("pageContentHeader")
+        ?.getElementById("pageContentHeader")
         ?.setAttribute("data-hide-header", "true");
 
       setTimeout(() => {
@@ -45,7 +47,10 @@ export const DropZone = memo(
       if (files && setFiles && droppedFiles.length > 0) {
         setFiles([...files, ...droppedFiles]); // Append new files to existing files
       }
-      onDrop && onDrop();
+
+      if (onDrop) {
+        onDrop();
+      }
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +61,9 @@ export const DropZone = memo(
       } else {
         setFiles(selectedFiles);
       }
-      onDrop && onDrop();
+      if (onDrop) {
+        onDrop();
+      }
     };
 
     const handleDragOver = (event: React.DragEvent) => {
@@ -107,9 +114,11 @@ export const DropZone = memo(
         />
       </>
     );
-  }
+  },
 );
 const BOX_DARK_URL = "/assets/box/v3/box_black_v3.png";
 const BOX_LIGHT_URL = "/assets/box/v3/box_beige_v3.png";
 const BOX_CLOSED_LIGHT_URL = "/assets/box/v3/box_closed_beige.png";
 const BOX_CLOSED_BLACK_URL = "/assets/box/v3/box_closed_black.png";
+
+export default DropZone;

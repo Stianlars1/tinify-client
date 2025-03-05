@@ -57,6 +57,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
       }}
       aspect={aspect}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={imageSrc} alt="Source" onLoad={onLoad} ref={imgRef} />
     </ReactCrop>
   );

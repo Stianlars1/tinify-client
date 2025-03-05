@@ -3,7 +3,6 @@ import { useDarkMode } from "@/hooks/useDarkmode";
 import { useEffect } from "react";
 
 export const OverviewSectionBackground = () => {
-  console.log("Rendering OverviewSectionBackground");
   const isDarkmode = useDarkMode();
 
   useEffect(() => {
@@ -26,8 +25,6 @@ export const OverviewSectionBackground = () => {
     script.async = true;
 
     if (isDarkmode) {
-      console.log("Rendering dark mode script overview");
-
       // Dark mode configuration
       script.innerHTML = `
 new OverviewHeader({
@@ -69,8 +66,6 @@ new OverviewHeader({
 });
       `;
     } else {
-      console.log("Rendering light mode script");
-
       // Light mode configuration
       script.innerHTML = `
         new OverviewHeader({

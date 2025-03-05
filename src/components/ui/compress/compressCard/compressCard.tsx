@@ -1,4 +1,4 @@
-import { ArrowDownIcon, SparklesIcon } from "@/assets/icons/icons";
+import { SparklesIcon } from "@/assets/icons/icons";
 import {
   formatFileSize,
   getOriginalFileInfo,
@@ -14,6 +14,7 @@ import { Skeleton } from "../../loaders/skeleton";
 import { Bolt } from "../assets";
 import { ImageResponse } from "../types";
 import styles from "./css/compressCard.module.css";
+
 enum CompressionType {
   LOSSY = "LOSSY",
   LOSSLESS = "LOSSLESS",
@@ -39,10 +40,9 @@ export const CompressionCard = memo(
     const [uploadProgress, setUploadProgress] = useState(0);
     const [downloadProgress, setDownloadProgress] = useState(0);
     const [isCompressed, setIsCompressed] = useState(false);
-    const [hasDownloaded, setHasDownloaded] = useState(false);
     const [imageLoadError, setImageLoadError] = useState(false);
     const [compressedData, setCompressedData] = useState<ImageResponse | null>(
-      null
+      null,
     );
 
     // Use a ref to track if the file has been compressed to avoid multiple calls
@@ -61,7 +61,7 @@ export const CompressionCard = memo(
           formData.append("file", file);
           formData.append(
             "compressionType",
-            perfectQuality ? CompressionType.LOSSLESS : CompressionType.LOSSY
+            perfectQuality ? CompressionType.LOSSLESS : CompressionType.LOSSY,
           );
 
           const requestConfig: AxiosRequestConfig = {
@@ -71,7 +71,7 @@ export const CompressionCard = memo(
             onUploadProgress(progressEvent) {
               if (progressEvent.lengthComputable && progressEvent.total) {
                 const percentCompleted = Math.round(
-                  (progressEvent.loaded * 100) / progressEvent.total
+                  (progressEvent.loaded * 100) / progressEvent.total,
                 );
                 setUploadProgress(percentCompleted);
               }
@@ -79,7 +79,7 @@ export const CompressionCard = memo(
             onDownloadProgress(progressEvent) {
               if (progressEvent.lengthComputable && progressEvent.total) {
                 const percentCompleted = Math.round(
-                  (progressEvent.loaded * 100) / progressEvent.total
+                  (progressEvent.loaded * 100) / progressEvent.total,
                 );
                 setDownloadProgress(percentCompleted);
               }
@@ -94,7 +94,7 @@ export const CompressionCard = memo(
           const response = await axios.post<ImageResponse>(
             COMPRESS_URL,
             formData,
-            requestConfig
+            requestConfig,
           );
 
           // If the request completes, clear the timeout
@@ -134,10 +134,10 @@ export const CompressionCard = memo(
       uploadProgress < 100
         ? "Uploading"
         : uploadProgress === 100 && downloadProgress === 0
-        ? "Compressing"
-        : downloadProgress > 0 && downloadProgress < 100
-        ? "Downloading"
-        : null;
+          ? "Compressing"
+          : downloadProgress > 0 && downloadProgress < 100
+            ? "Downloading"
+            : null;
 
     const savedPercentage =
       compressedData?.compressionPercentage &&
@@ -230,20 +230,9 @@ export const CompressionCard = memo(
               </div>
               {compressedData?.url && (
                 <DownloadButton
-                  onClick={() => setHasDownloaded(true)}
                   ariaLabel={`Download file ${originalName}`}
                   url={compressedData?.url || ""}
-                  className={hasDownloaded ? styles.hasDownloaded : ""}
-                >
-                  <>
-                    <span className={styles.downloadButtonText}>
-                      {hasDownloaded ? "saved" : "download"}
-                    </span>
-                    <div className={styles.downloadButtonIconWrapper}>
-                      <ArrowDownIcon className={styles.downloadButtonIcon} />
-                    </div>
-                  </>
-                </DownloadButton>
+                />
               )}
               {/* {!isError && loadingText && (
               <>
@@ -267,7 +256,7 @@ export const CompressionCard = memo(
   },
   (prevProps, nextProps) => {
     return prevProps.originalFile === nextProps.originalFile;
-  }
+  },
 );
 
 const getErrorMessages = (errorMessage: string) => {

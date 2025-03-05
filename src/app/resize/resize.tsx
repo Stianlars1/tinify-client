@@ -1,10 +1,18 @@
 "use client";
-import { DropZone } from "@/components/ui/dropzones/dropzone/dropZone";
+
 import { HiddenDropZone } from "@/components/ui/dropzones/hiddenDropzone/hiddenDropzone";
 import { FileUploadContext } from "@/providers/FileProvider";
 import { useContext, useMemo } from "react";
 import { ResizeContent } from "./components/resizeContent/resizeContent";
+
+import dynamic from "next/dynamic";
 import styles from "./css/resize.module.css";
+
+const DropZoneDynamic = dynamic(
+  () => import("@/components/ui/dropzones/dropzone/dropZone"),
+  { ssr: false },
+);
+
 export const Resize = () => {
   const { files, setFiles } = useContext(FileUploadContext);
 
@@ -20,7 +28,7 @@ export const Resize = () => {
 
   return (
     <section className={styles.resize}>
-      {!isImageDropped && <DropZone onLoaded={handleOnLoaded} />}
+      {!isImageDropped && <DropZoneDynamic onLoaded={handleOnLoaded} />}
 
       {isImageDropped && (
         <>

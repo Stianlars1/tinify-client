@@ -2,11 +2,16 @@
 
 "use client";
 
-import { DropZone } from "@/components/ui/dropzones/dropzone/dropZone";
 import { FileUploadContext } from "@/providers/FileProvider";
 import { useContext, useMemo } from "react";
 import { CropContent } from "../cropContent/cropContent";
+import dynamic from "next/dynamic";
 import styles from "./css/cropProcessContainer.module.css";
+
+const DropZoneDynamic = dynamic(
+  () => import("@/components/ui/dropzones/dropzone/dropZone"),
+  { ssr: false },
+);
 
 const CropProcessContainer: React.FC = () => {
   const { files, setFiles } = useContext(FileUploadContext);
@@ -21,7 +26,7 @@ const CropProcessContainer: React.FC = () => {
 
   return (
     <section className={styles.crop}>
-      {!isImageDropped && <DropZone onLoaded={handleOnLoaded} />}
+      {!isImageDropped && <DropZoneDynamic onLoaded={handleOnLoaded} />}
 
       {isImageDropped && (
         <>

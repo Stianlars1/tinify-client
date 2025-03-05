@@ -213,22 +213,6 @@
           }
         }
       }
-
-      // downlaod button - change color on downlaod click
-      .hasDownloaded {
-        background-color: hsl(var(--success));
-        color: hsl(var(--black));
-      }
-
-      .downloadButtonText {
-        display: flex;
-      }
-      .downloadButtonIconWrapper {
-        display: none;
-        .downloadButtonIcon {
-          display: none;
-        }
-      }
     }
 
     .originalInfo,
@@ -414,37 +398,6 @@
                 color: hsl(var(--primary));
               }
             }
-          }
-        }
-
-        .downloadButtonText {
-          display: none;
-        }
-
-        .downloadButtonIconWrapper {
-          display: flex;
-          position: relative;
-          width: 100%;
-          height: 100%;
-          .downloadButtonIcon {
-            display: flex;
-            width: 1.5rem;
-            fill: black;
-            color: white;
-            stroke: transparent;
-            z-index: 10;
-          }
-          &::after {
-            content: "";
-            position: absolute;
-            inset: 5px;
-            border-radius: 100%;
-            background-color: hsl(var(--white));
-            @media screen and (-webkit-prefers-color-scheme: dark),
-              screen and (prefers-color-scheme: dark) {
-              background-color: hsl(var(--white));
-            }
-            z-index: 0;
           }
         }
       }
