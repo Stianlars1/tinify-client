@@ -1,10 +1,10 @@
-"use server";
 import { TinifyServices } from "@/types";
 import { ReactElement } from "react";
 import { Tag } from "./components/tag/tag";
 import "./css/hide.css";
 import styles from "./css/pageContent.module.css";
-export const PageContent = ({
+
+export default async function PageContent({
   title,
   description,
   children,
@@ -24,7 +24,7 @@ export const PageContent = ({
   smallSubtitle?: string;
   fullWidth?: boolean;
   headerChildren?: ReactElement;
-}) => {
+}) {
   return (
     <main
       className={`${styles.pageContent} ${
@@ -53,4 +53,4 @@ export const PageContent = ({
       {children}
     </main>
   );
-};
+}

@@ -1,7 +1,7 @@
 // pages/about.tsx
 
 import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
-import { PageContent } from "@/components/layout/pageContent/pageContent";
+import PageContent from "@/components/layout/pageContent/pageContent";
 import { Metadata, Viewport } from "next";
 import { Link } from "next-view-transitions";
 import { useThisViewport } from "../metadata";

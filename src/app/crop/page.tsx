@@ -1,7 +1,7 @@
 // pages/crop/index.tsx
 
 import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
-import { PageContent } from "@/components/layout/pageContent/pageContent";
+import PageContent from "@/components/layout/pageContent/pageContent";
 import { CropSections } from "@/features/cropSection/cropSections";
 import { FileUploadProvider } from "@/providers/FileProvider";
 import { TinifyServices } from "@/types";

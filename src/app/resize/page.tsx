@@ -1,4 +1,4 @@
-import { PageContent } from "@/components/layout/pageContent/pageContent";
+import PageContent from "@/components/layout/pageContent/pageContent";
 import { TinifyServices } from "@/types";
 
 import { Resize } from "@/app/resize/resize";
@@ -8,6 +8,7 @@ import { FileUploadProvider } from "@/providers/FileProvider";
 import { Metadata, Viewport } from "next";
 import { useThisViewport } from "../metadata";
 import { resizeMeta } from "./metadata";
+
 export const viewport: Viewport = useThisViewport;
 
 export const metadata: Metadata = resizeMeta;

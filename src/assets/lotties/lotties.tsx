@@ -8,6 +8,8 @@ import imageUploadV4 from "./animations/imageUpload_v4.json";
 import imageUploadV5 from "./animations/imageUpload_v5.json";
 import successAnimationData from "./animations/success.json";
 import "./lotties.css";
+import { useEffect, useState } from "react";
+
 export const ImageUploadV1 = ({
   widthHeight = 200,
 }: {
@@ -34,6 +36,7 @@ export const ImageUploadV2 = ({
 }: {
   widthHeight?: number | undefined;
 }) => {
+  const [hasMounted, setHasMounted] = useState(false);
   const defaultLottieOptions: LottieOptions = {
     loop: true,
     autoplay: true,
@@ -48,6 +51,14 @@ export const ImageUploadV2 = ({
     className: "lottie-animation imageUpload",
     renderer: "svg",
   };
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null; // Prevents server-side rendering issues
+  }
 
   return <Lottie {...defaultLottieOptions} />;
 };
