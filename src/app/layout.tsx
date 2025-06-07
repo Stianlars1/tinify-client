@@ -4,6 +4,8 @@ import { ViewTransitions } from "next-view-transitions";
 import { Libre_Franklin } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { GoogleAnalyticsProvider } from "@/lib/analytics/GoogleAnalyticsProvider";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -41,6 +43,8 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+
+          <GoogleAnalyticsProvider />
         </body>
       </html>
     </ViewTransitions>
