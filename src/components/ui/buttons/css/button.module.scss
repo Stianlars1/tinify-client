@@ -22,6 +22,31 @@
   }
 }
 
+.downloadButton {
+  &.isDownloading {
+    opacity: 0.7;
+    cursor: wait;
+
+    &:active {
+      transform: none;
+    }
+  }
+
+  // Add disabled state
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: hsl(var(--primary));
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+}
+
 .downloadAllButton {
   background-color: hsl(var(--black));
   @media screen and (-webkit-prefers-color-scheme: dark),
@@ -38,6 +63,23 @@
     @media screen and (-webkit-prefers-color-scheme: dark),
       screen and (prefers-color-scheme: dark) {
       background-color: hsl(var(--purple) / 0.7);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: hsl(var(--black));
+      @media screen and (-webkit-prefers-color-scheme: dark),
+        screen and (prefers-color-scheme: dark) {
+        background-color: hsl(var(--purple));
+      }
+    }
+
+    &:active {
+      transform: none;
     }
   }
 }

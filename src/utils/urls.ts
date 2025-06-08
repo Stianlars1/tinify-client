@@ -15,4 +15,5 @@ export const OG_ABOUT_URL = `${BASE_URL}/og/OG_ABOUT.webp`;
 export const OG_BLOG_URL = `${BASE_URL}/og/OG_BLOG.webp`;
 
 export const DOMAIN = BASE_URL;
+export const DOMAIN_ENDING = "dev";
 export const HOST = BASE_URL;
