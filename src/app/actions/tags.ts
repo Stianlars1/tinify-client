@@ -2,16 +2,16 @@
 
 import { TinifyServices } from "@/types";
 import { STATS_URL } from "@/utils/urls";
+
 type UsageDataType = Array<{ serviceName: string; count: number }>;
 export const getAllUsageData = async (): Promise<UsageDataType> => {
   try {
-    const response = await fetch(STATS_URL, { next: { revalidate: 0 } });
+    const response = await fetch(STATS_URL, { next: { revalidate: 3600 } });
     const tags = await response.json();
-    const tagsMap = Object.entries(tags).reduce((acc, [key, value]) => {
+    return Object.entries(tags).reduce((acc, [key, value]) => {
       acc.push({ serviceName: key, count: value as number });
       return acc;
     }, [] as UsageDataType);
-    return tagsMap;
   } catch (error) {
     console.error("Error fetching tags", error);
     return [];
@@ -23,9 +23,7 @@ export const getTotalUsageData = async () => {
   if (allData.length === 0) {
     return 0;
   }
-  const total = allData.reduce((acc, data) => acc + data.count, 0);
-
-  return total;
+  return allData.reduce((acc, data) => acc + data.count, 0);
 };
 
 export const getCompressionTag = async () => {
@@ -35,11 +33,10 @@ export const getCompressionTag = async () => {
   }
 
   const compressionData = allUsageData.find(
-    (data) => data.serviceName === TinifyServices.COMPRESS
+    (data) => data.serviceName === TinifyServices.COMPRESS,
   );
 
-  const finalTag = `${compressionData?.count ?? 0} Images Compressed`;
-  return finalTag;
+  return `${compressionData?.count ?? 0} Images Compressed`;
 };
 export const getTagByService = async (service: TinifyServices) => {
   const allUsageData = await getAllUsageData();
@@ -53,11 +50,10 @@ export const getTagByService = async (service: TinifyServices) => {
   }
 
   const usageData = allUsageData.find(
-    (data) => data.serviceName === service.toString()
+    (data) => data.serviceName === service.toString(),
   );
 
-  const finalTag = getTagText(service, usageData?.count);
-  return finalTag;
+  return getTagText(service, usageData?.count);
 };
 
 const getTagText = (service: TinifyServices, count?: number) => {

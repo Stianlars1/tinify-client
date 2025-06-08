@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const resizeMeta: Metadata = {
+export const RESIZE_META: Metadata = {
   title: "Resize Images Online - Flexible & Free | Tinify.dev",
   description:
     "Resize your images to fit any dimension without losing quality. Supports JPG, PNG, GIF, WEBP, and more. Fast online image resizing for free.",

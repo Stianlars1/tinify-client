@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const blogMeta: Metadata = {
+export const META_BLOG: Metadata = {
   title: "Blog - Image Optimization Tips & Tricks | Tinify.dev",
   description:
     "Explore our blog for tips, tricks, and insights on image compression, resizing, cropping, and more.",

@@ -1,5 +1,5 @@
 "use client";
-import Lottie, { LottieOptions } from "lottie-light-react";
+import { LottieOptions } from "lottie-light-react";
 import emailAnimationData from "./animations/email.json";
 import imageUploadV1 from "./animations/imageUpload_v1.json";
 import imageUploadV2 from "./animations/imageUpload_v2.json";
@@ -9,6 +9,12 @@ import imageUploadV5 from "./animations/imageUpload_v5.json";
 import successAnimationData from "./animations/success.json";
 import "./lotties.css";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+
+const LottieDynamic = dynamic(
+  () => import("lottie-light-react").then((mod) => mod.default),
+  { ssr: false },
+);
 
 export const ImageUploadV1 = ({
   widthHeight = 200,
@@ -29,7 +35,7 @@ export const ImageUploadV1 = ({
     className: "lottie-animation",
   };
 
-  return <Lottie {...defaultLottieOptions} />;
+  return <LottieDynamic {...defaultLottieOptions} />;
 };
 export const ImageUploadV2 = ({
   widthHeight = 100,
@@ -60,7 +66,7 @@ export const ImageUploadV2 = ({
     return null; // Prevents server-side rendering issues
   }
 
-  return <Lottie {...defaultLottieOptions} />;
+  return <LottieDynamic {...defaultLottieOptions} />;
 };
 export const ImageUploadV3 = ({
   widthHeight = 200,
@@ -81,7 +87,7 @@ export const ImageUploadV3 = ({
     className: "lottie-animation",
   };
 
-  return <Lottie {...defaultLottieOptions} />;
+  return <LottieDynamic {...defaultLottieOptions} />;
 };
 export const ImageUploadV4 = ({
   widthHeight = 200,
@@ -102,7 +108,7 @@ export const ImageUploadV4 = ({
     className: "lottie-animation",
   };
 
-  return <Lottie {...defaultLottieOptions} />;
+  return <LottieDynamic {...defaultLottieOptions} />;
 };
 export const ImageUploadV5 = ({
   widthHeight = 200,
@@ -123,7 +129,7 @@ export const ImageUploadV5 = ({
     className: "lottie-animation",
   };
 
-  return <Lottie {...defaultLottieOptions} />;
+  return <LottieDynamic {...defaultLottieOptions} />;
 };
 
 export const SuccessAnimation = ({
@@ -145,7 +151,7 @@ export const SuccessAnimation = ({
     className: "lottie-animation",
   };
 
-  return <Lottie {...defaultLottieOptions} />;
+  return <LottieDynamic {...defaultLottieOptions} />;
 };
 
 export const EmailSentAnimation = ({
@@ -167,5 +173,5 @@ export const EmailSentAnimation = ({
     className: "lottie-animation",
   };
 
-  return <Lottie {...defaultLottieOptions} />;
+  return <LottieDynamic {...defaultLottieOptions} />;
 };

@@ -1,14 +1,14 @@
 import {
   ArrowsExpandIcon,
-  // ArrowsExpandIcon,
   AspectRatioIcon,
   CompressIcon,
   IconProps,
   UploadIcon,
 } from "@/assets/icons/icons";
+import { ReactElement } from "react";
 
 export interface KeyFeatureContent {
-  icon: ({ className, size }: IconProps) => JSX.Element;
+  icon: ({ className, size }: IconProps) => ReactElement;
   title: string;
   description: string;
 }

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const cropMeta: Metadata = {
+export const CROP_META: Metadata = {
   title: "Crop Images Online - Focus on What Matters | Tinify.dev",
   description:
     "Crop your images to focus on the most important parts. Supports JPG, PNG, GIF, WEBP, and more. Free and easy image cropping online.",

@@ -7,9 +7,10 @@ import {
   SettingsIcon,
   UploadIcon,
 } from "@/assets/icons/icons";
+import { ReactElement } from "react";
 
 export interface HowItWorksStep {
-  icon: ({ className, size }: IconProps) => JSX.Element;
+  icon: ({ className, size }: IconProps) => ReactElement;
   title: string;
   description: string;
 }

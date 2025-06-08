@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const aboutMeta: Metadata = {
+export const ABOUT_META: Metadata = {
   title: "About Us - Learn More About Tinify.dev",
   description:
     "Learn more about Tinify.dev, our mission, and how we help you optimize your images effortlessly and for free.",
