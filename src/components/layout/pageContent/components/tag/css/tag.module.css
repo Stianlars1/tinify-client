@@ -1,6 +1,6 @@
 .tag {
   padding: 0.25rem 0.65rem;
-  background-color: hsl(var(--purple)/0.3);
+  background-color: hsl(var(--purple) / 0.3);
   color: hsl(var(--black));
   border-radius: 999px;
   font-size: 12px;
@@ -8,9 +8,10 @@
   font-family: var(--font-geist-mono);
   margin-bottom: 0.25rem;
 }
-@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
   .tag {
-    background-color: hsl(var(--warning)/0.8);
+    background-color: hsl(var(--warning) / 0.8);
     color: hsl(var(--black));
   }
-}/*# sourceMappingURL=tag.module.css.map */
+} /*# sourceMappingURL=tag.module.css.map */

@@ -3,12 +3,12 @@ import { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { PageContainer } from "@/components/layout/pageContainer/pageContainer";
 import PageContent from "@/components/layout/pageContent/pageContent";
-import Link from "next/link";
 import styles from "./css/blog.module.css";
 import { BlogGradient } from "./gradient";
 import { useThisViewport } from "../metadata";
 import { APP_NAME, OG_BLOG_URL, ROUTE_ROOT } from "@/utils/urls";
 import { META_BLOG } from "@/app/blog/blogMeta";
+import { Link } from "next-view-transitions";
 
 export const viewport: Viewport = useThisViewport;
 export const revalidate = 3600;

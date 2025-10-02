@@ -17,7 +17,7 @@
 .cropControls .controlsButtons .controlButton {
   flex: 1 1 auto;
   padding: 6px 12px;
-  border: 1px solid hsl(var(--foreground)/0.5);
+  border: 1px solid hsl(var(--foreground) / 0.5);
   border-radius: calc(var(--radius) - 2px);
   font-size: 1rem;
   font-weight: 500;
@@ -28,7 +28,7 @@
   color: hsl(var(--muted-foreground));
 }
 .cropControls .controlsButtons .controlButton:hover {
-  background-color: hsl(var(--muted-foreground)/0.5);
+  background-color: hsl(var(--muted-foreground) / 0.5);
   color: hsl(var(--foreground));
 }
 .cropControls .controlsButtons .active {
@@ -36,7 +36,7 @@
   color: hsl(var(--white));
 }
 .cropControls .controlsButtons .active:hover {
-  background-color: hsl(var(--purple)/0.75);
+  background-color: hsl(var(--purple) / 0.75);
   color: hsl(var(--white));
 }
 .cropControls .cropCTAS {
@@ -66,7 +66,7 @@
   color: hsl(var(--white));
 }
 .cropControls .cropCTAS .submitCTA:hover {
-  background-color: hsl(var(--primary)/0.75);
+  background-color: hsl(var(--primary) / 0.75);
 }
 .cropControls .cropCTAS .cancelCTA {
   width: -moz-fit-content;
@@ -78,5 +78,5 @@
 }
 .cropControls .cropCTAS .cancelCTA:hover {
   border-radius: calc(var(--radius) - 2px);
-  background-color: hsl(var(--destructive)/0.75);
-}/*# sourceMappingURL=cropControls.module.css.map */
+  background-color: hsl(var(--destructive) / 0.75);
+} /*# sourceMappingURL=cropControls.module.css.map */

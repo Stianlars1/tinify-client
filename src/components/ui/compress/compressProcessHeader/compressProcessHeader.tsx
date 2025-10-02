@@ -68,11 +68,11 @@ export const CompressProcessHeader = ({
 const getTotalSavedBytes = (compressedFiles: ImageResponse[]) => {
   const originalFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.originalFileSize),
-    0
+    0,
   );
   const compressedFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.compressedSize),
-    0
+    0,
   );
   return formatFileSize(originalFileSizes - compressedFileSizes);
 };
@@ -80,16 +80,16 @@ const getTotalSavedBytes = (compressedFiles: ImageResponse[]) => {
 const getTotalSavedPercent = (compressedFiles: ImageResponse[]) => {
   const originalFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.originalFileSize),
-    0
+    0,
   );
   const compressedFileSizes = compressedFiles.reduce(
     (acc, file) => acc + parseFloat(file.compressedSize),
-    0
+    0,
   );
   return parseInt(
     (
       ((originalFileSizes - compressedFileSizes) / originalFileSizes) *
       100
-    ).toString()
+    ).toString(),
   );
 };

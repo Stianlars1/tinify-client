@@ -5,7 +5,7 @@
   border-width: 2px;
   border-style: solid;
   border-radius: 50%;
-  border-color: hsl(var(--foreground)/0.8);
+  border-color: hsl(var(--foreground) / 0.8);
   border-left-color: hsl(var(--background));
   animation: spin 1s linear infinite;
 }
@@ -17,4 +17,4 @@
   to {
     transform: rotate(360deg);
   }
-}/*# sourceMappingURL=loaders.module.css.map */
+} /*# sourceMappingURL=loaders.module.css.map */

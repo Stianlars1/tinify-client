@@ -79,7 +79,8 @@
   .about .section .rightWithGradient {
     margin-top: 1.5rem;
   }
-  .about .section .right .article:first-child, .about .section .right .article:not(:first-child) {
+  .about .section .right .article:first-child,
+  .about .section .right .article:not(:first-child) {
     margin-top: 1.5rem;
   }
   .about .teamMembers {
@@ -91,4 +92,4 @@
   .about .teamMembers .member p {
     text-align: left;
   }
-}/*# sourceMappingURL=about.module.css.map */
+} /*# sourceMappingURL=about.module.css.map */

@@ -26,7 +26,7 @@ interface CompressionCardProps {
   setIsProcessingFiles: (processing: boolean) => void;
 }
 
-export const CompressionCard = memo(
+const CompressionCard = memo(
   ({
     originalFile,
     perfectQuality,
@@ -275,3 +275,6 @@ const getErrorMessages = (errorMessage: string) => {
 
   return "An error occurred while compressing image";
 };
+
+CompressionCard.displayName = "CompressionCard";
+export default CompressionCard;

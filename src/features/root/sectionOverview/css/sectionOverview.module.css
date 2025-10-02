@@ -65,18 +65,20 @@
 }
 .overviewSection .featuresList .feature .cardDescription {
   font-size: 0.875rem;
-  color: hsl(var(--white)/0.7);
+  color: hsl(var(--white) / 0.7);
   text-wrap: pretty;
 }
 .overviewSection .featuresList .feature:hover {
-  background-color: hsl(var(--black)/0.2);
+  background-color: hsl(var(--black) / 0.2);
 }
-@media screen and (-webkit-prefers-color-scheme: light), screen and (prefers-color-scheme: light) {
+@media screen and (-webkit-prefers-color-scheme: light),
+  screen and (prefers-color-scheme: light) {
   .overviewSection .featuresList .feature:hover {
     transform: scale(1.05);
   }
 }
-@media screen and (-webkit-prefers-color-scheme: light), screen and (prefers-color-scheme: light) {
+@media screen and (-webkit-prefers-color-scheme: light),
+  screen and (prefers-color-scheme: light) {
   .overviewSection .featuresList .feature:hover .gradientBackground {
     transform: scale(1.05);
   }
@@ -100,4 +102,4 @@
   100% {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
-}/*# sourceMappingURL=sectionOverview.module.css.map */
+} /*# sourceMappingURL=sectionOverview.module.css.map */

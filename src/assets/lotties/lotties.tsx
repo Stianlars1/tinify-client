@@ -1,5 +1,4 @@
 "use client";
-import { LottieOptions } from "lottie-light-react";
 import emailAnimationData from "./animations/email.json";
 import imageUploadV1 from "./animations/imageUpload_v1.json";
 import imageUploadV2 from "./animations/imageUpload_v2.json";
@@ -10,9 +9,10 @@ import successAnimationData from "./animations/success.json";
 import "./lotties.css";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import { LottieOptions } from "lottie-react";
 
 const LottieDynamic = dynamic(
-  () => import("lottie-light-react").then((mod) => mod.default),
+  () => import("lottie-react").then((mod) => mod.default),
   { ssr: false },
 );
 

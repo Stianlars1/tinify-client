@@ -9,17 +9,15 @@ const nextConfig = {
   pageExtensions: ["mdx", "tsx"],
 
   experimental: {
-    typedRoutes: false,
-    serverMinification: true,
     serverActions: {
       bodySizeLimit: "200mb",
     },
     reactCompiler: true,
+    cssChunking: true,
     viewTransition: true,
     // Add optimizations for production
-    optimizePackageImports: ["axios", "lottie-light-react", "lottie-web"],
+    optimizePackageImports: ["axios", "lottie-react", "lottie-web"],
   },
-  reactStrictMode: false,
 
   images: {
     remotePatterns: [
@@ -30,6 +28,8 @@ const nextConfig = {
       },
     ],
   },
+
+  typedRoutes: false,
 };
 
 const withMDX = createMDX({

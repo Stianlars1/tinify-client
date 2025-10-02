@@ -70,23 +70,23 @@
   border-radius: calc(var(--radius) - 2px);
 }
 .header .download:hover {
-  background-color: hsl(var(--primary)/0.75);
+  background-color: hsl(var(--primary) / 0.75);
 }
 .header .cropAgain {
   line-height: 1;
   margin-top: 0.5rem;
   background-color: transparent;
-  color: hsl(var(--foreground)/0.75);
+  color: hsl(var(--foreground) / 0.75);
   font-weight: 400;
   font-size: 0.875rem;
   border-left: none;
   border-right: none;
   border-top: none;
-  border-bottom: 1px solid hsl(var(--foreground)/0.5);
+  border-bottom: 1px solid hsl(var(--foreground) / 0.5);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 .header .cropAgain:hover {
-  color: hsl(var(--foreground)/1);
-  border-color: hsl(var(--foreground)/1);
-}/*# sourceMappingURL=resultProcessContainer.module.css.map */
+  color: hsl(var(--foreground) / 1);
+  border-color: hsl(var(--foreground) / 1);
+} /*# sourceMappingURL=resultProcessContainer.module.css.map */

@@ -40,7 +40,7 @@ export const CropContent: React.FC<CropContentProps> = ({
   const [processing, setProcessing] = useState<boolean>(false);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
   const [imageResponse, setImageResponse] = useState<ImageResponse | null>(
-    null
+    null,
   );
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export const CropContent: React.FC<CropContentProps> = ({
   const centerAspectCrop = (
     mediaWidth: number,
     mediaHeight: number,
-    aspect: number
+    aspect: number,
   ): Crop => {
     return centerCrop(
       makeAspectCrop(
@@ -68,10 +68,10 @@ export const CropContent: React.FC<CropContentProps> = ({
         },
         aspect,
         mediaWidth,
-        mediaHeight
+        mediaHeight,
       ),
       mediaWidth,
-      mediaHeight
+      mediaHeight,
     );
   };
 
@@ -161,7 +161,7 @@ export const CropContent: React.FC<CropContentProps> = ({
         onUploadProgress: (progressEvent) => {
           if (progressEvent.total) {
             const percentCompleted = Math.round(
-              (progressEvent.loaded * 100) / progressEvent.total
+              (progressEvent.loaded * 100) / progressEvent.total,
             );
             setUploadProgress(percentCompleted);
           }

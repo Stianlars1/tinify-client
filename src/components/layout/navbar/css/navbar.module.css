@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: hsl(var(--foreground)/0.1);
+  background-color: hsl(var(--foreground) / 0.1);
   background-color: hsl(var(--background));
   padding: 0 calc((100vw - var(--max-width)) / 2 + var(--padding));
   grid-column: 1/-1px;
@@ -11,7 +11,9 @@
   --ring-offset-shadow: 0 0 #0000;
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   --shadow-colored: 0 1px 2px 0 var(--shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--shadow);
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+    var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--shadow);
   z-index: 1000;
 }
 .navbar .logoLink {
@@ -51,4 +53,4 @@
   .navbar .navLinks {
     gap: 0.65rem;
   }
-}/*# sourceMappingURL=navbar.module.css.map */
+} /*# sourceMappingURL=navbar.module.css.map */

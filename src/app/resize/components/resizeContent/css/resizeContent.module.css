@@ -1,1 +1,219 @@
-.resize{position:relative;z-index:10;min-width:100%}.resizeContent{display:flex;flex-direction:row;align-items:center;justify-content:center;padding-top:40px;gap:1rem;z-index:100}.resizePreviewContainer{flex:1 1 auto;position:relative;width:fit-content;height:fit-content;padding:2rem;box-sizing:content-box;margin:auto;perspective:preserve-3d;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem;background-color:hsl(var(--card));border:1px solid hsl(var(--input));border-radius:var(--radius);--ring-shadow: 0 0 #0000;--ring-offset-shadow: 0 0 #0000;--shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);--shadow-colored: 0 1px 2px 0 var(--shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)),var(--shadow);box-sizing:border-box}.resizePreviewContainer .resizePreviewWrapper{width:200px;height:200px;display:flex;justify-content:center;align-items:center;position:relative}.resizePreviewContainer .resizePreviewWrapper .resizePreviewImage{position:absolute;margin:auto;border-radius:4px;border:1px solid hsl(var(--muted-foreground)/0.2);border-style:inline;overflow:hidden;--ring-shadow: 0 0 #0000;--ring-offset-shadow: 0 0 #0000;--shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);--shadow-colored: 0 1px 2px 0 var(--shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)),var(--shadow);object-fit:cover;object-position:center;background-color:hsl(var(--background))}.resizePreviewContainer .resizePreviewWrapper .firstImage{opacity:1;z-index:1;left:50%;top:50%;transform:translateX(-50%) translateY(-50%) scale(1)}.resizePreviewContainer .resizePreviewWrapper .secondImage{opacity:1;z-index:0;left:70%;top:30%;transform:translateX(-70%) translateY(-30%) scale(0.95)}.resizePreviewContainer .resizePreviewWrapper .thirdImage{opacity:1;z-index:-1;left:90%;top:10%;transform:translateX(-90%) translateY(-10%) scale(0.9)}.resizePreviewContainer .imageNames{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;width:fit-content}.resizePreviewContainer .imageNames .imageInfo{width:100%;font-size:14px;color:hsl(var(--muted-foreground));display:inline-flex;align-items:center;flex-wrap:wrap;list-style-type:none;gap:.5rem}.resizePreviewContainer .imageNames .imageInfo .actualName{min-width:0;width:100%;max-width:200px;overflow:hidden;text-wrap:nowrap;text-overflow:ellipsis}.resizePreviewContainer .imageNames .imageInfo .sizeTags{display:flex;gap:.5rem;align-items:center}.resizePreviewContainer .imageNames .imageInfo .sizeTags .fromSizeTag,.resizePreviewContainer .imageNames .imageInfo .sizeTags .toSizeTag{padding:.1rem .3rem;border-radius:999px;display:flex;align-items:center;flex-wrap:nowrap;justify-content:center;font-size:12px;font-weight:400;white-space:nowrap;text-wrap:nowrap}.resizePreviewContainer .imageNames .imageInfo .sizeTags .fromSizeTag{background-color:hsl(var(--muted));color:hsl(var(--muted-foreground))}.resizePreviewContainer .imageNames .imageInfo .sizeTags .toSizeTag{background-color:hsl(var(--primary));color:hsl(var(--white))}.arrowRight{transform:rotate(-90deg);width:3rem;flex:0 0 3rem}.showHideImageNamesButton{border:0;border-bottom:1px solid hsl(var(--border));cursor:pointer;background-color:rgba(0,0,0,0)}@media screen and (max-width: 768px){.resizeContent{flex-direction:column;gap:1.5rem}.resizeContent .resizePreviewContainer{padding:1rem;gap:.5rem;width:75%}.resizeContent .resizePreviewContainer .resizePreviewWrapper{width:180px;height:180px}.resizeContent .resizePreviewContainer .resizePreviewWrapper .firstImage{left:50%;top:90%;transform:translateX(-50%) translateY(-90%) scale(1)}.resizeContent .resizePreviewContainer .resizePreviewWrapper .secondImage{left:70%;top:70%;transform:translateX(-70%) translateY(-70%) scale(0.95)}.resizeContent .resizePreviewContainer .resizePreviewWrapper .thirdImage{left:90%;top:50%;transform:translateX(-90%) translateY(-50%) scale(0.9)}.resizeContent .resizePreviewContainer .imageNames{width:fit-content;margin:0 auto;gap:1rem}.resizeContent .resizePreviewContainer .imageNames .imageInfo{flex-direction:row;align-items:flex-start;flex-wrap:wrap}.resizeContent .resizePreviewContainer .imageNames .imageInfo .actualName{min-width:0;width:100%;font-size:12px}.resizeContent .resizePreviewContainer .imageNames .imageInfo .sizeTags .fromSizeTag,.resizeContent .resizePreviewContainer .imageNames .imageInfo .sizeTags .toSizeTag{font-size:12px}.arrowRight{transform:rotate(0)}.headerHidden{padding-top:0}}@media screen and (max-width: 640px){.resizeContent .resizePreviewContainer{width:100%}}
+.resize {
+  position: relative;
+  z-index: 10;
+  min-width: 100%;
+}
+.resizeContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  gap: 1rem;
+  z-index: 100;
+}
+.resizePreviewContainer {
+  flex: 1 1 auto;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  box-sizing: content-box;
+  margin: auto;
+  perspective: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--input));
+  border-radius: var(--radius);
+  --ring-shadow: 0 0 #0000;
+  --ring-offset-shadow: 0 0 #0000;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+    var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--shadow);
+  box-sizing: border-box;
+}
+.resizePreviewContainer .resizePreviewWrapper {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.resizePreviewContainer .resizePreviewWrapper .resizePreviewImage {
+  position: absolute;
+  margin: auto;
+  border-radius: 4px;
+  border: 1px solid hsl(var(--muted-foreground) / 0.2);
+  border-style: inline;
+  overflow: hidden;
+  --ring-shadow: 0 0 #0000;
+  --ring-offset-shadow: 0 0 #0000;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-colored: 0 1px 2px 0 var(--shadow-color);
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),
+    var(--ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--shadow);
+  object-fit: cover;
+  object-position: center;
+  background-color: hsl(var(--background));
+}
+.resizePreviewContainer .resizePreviewWrapper .firstImage {
+  opacity: 1;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+.resizePreviewContainer .resizePreviewWrapper .secondImage {
+  opacity: 1;
+  z-index: 0;
+  left: 70%;
+  top: 30%;
+  transform: translateX(-70%) translateY(-30%) scale(0.95);
+}
+.resizePreviewContainer .resizePreviewWrapper .thirdImage {
+  opacity: 1;
+  z-index: -1;
+  left: 90%;
+  top: 10%;
+  transform: translateX(-90%) translateY(-10%) scale(0.9);
+}
+.resizePreviewContainer .imageNames {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: fit-content;
+}
+.resizePreviewContainer .imageNames .imageInfo {
+  width: 100%;
+  font-size: 14px;
+  color: hsl(var(--muted-foreground));
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  gap: 0.5rem;
+}
+.resizePreviewContainer .imageNames .imageInfo .actualName {
+  min-width: 0;
+  width: 100%;
+  max-width: 200px;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+.resizePreviewContainer .imageNames .imageInfo .sizeTags {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.resizePreviewContainer .imageNames .imageInfo .sizeTags .fromSizeTag,
+.resizePreviewContainer .imageNames .imageInfo .sizeTags .toSizeTag {
+  padding: 0.1rem 0.3rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+.resizePreviewContainer .imageNames .imageInfo .sizeTags .fromSizeTag {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+.resizePreviewContainer .imageNames .imageInfo .sizeTags .toSizeTag {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--white));
+}
+.arrowRight {
+  transform: rotate(-90deg);
+  width: 3rem;
+  flex: 0 0 3rem;
+}
+.showHideImageNamesButton {
+  border: 0;
+  border-bottom: 1px solid hsl(var(--border));
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+}
+@media screen and (max-width: 768px) {
+  .resizeContent {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .resizeContent .resizePreviewContainer {
+    padding: 1rem;
+    gap: 0.5rem;
+    width: 75%;
+  }
+  .resizeContent .resizePreviewContainer .resizePreviewWrapper {
+    width: 180px;
+    height: 180px;
+  }
+  .resizeContent .resizePreviewContainer .resizePreviewWrapper .firstImage {
+    left: 50%;
+    top: 90%;
+    transform: translateX(-50%) translateY(-90%) scale(1);
+  }
+  .resizeContent .resizePreviewContainer .resizePreviewWrapper .secondImage {
+    left: 70%;
+    top: 70%;
+    transform: translateX(-70%) translateY(-70%) scale(0.95);
+  }
+  .resizeContent .resizePreviewContainer .resizePreviewWrapper .thirdImage {
+    left: 90%;
+    top: 50%;
+    transform: translateX(-90%) translateY(-50%) scale(0.9);
+  }
+  .resizeContent .resizePreviewContainer .imageNames {
+    width: fit-content;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  .resizeContent .resizePreviewContainer .imageNames .imageInfo {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .resizeContent .resizePreviewContainer .imageNames .imageInfo .actualName {
+    min-width: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+  .resizeContent
+    .resizePreviewContainer
+    .imageNames
+    .imageInfo
+    .sizeTags
+    .fromSizeTag,
+  .resizeContent
+    .resizePreviewContainer
+    .imageNames
+    .imageInfo
+    .sizeTags
+    .toSizeTag {
+    font-size: 12px;
+  }
+  .arrowRight {
+    transform: rotate(0);
+  }
+  .headerHidden {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  .resizeContent .resizePreviewContainer {
+    width: 100%;
+  }
+}

@@ -17,27 +17,32 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   -webkit-appearance: textfield;
-          appearance: textfield;
+  appearance: textfield;
 }
 .customInput:autofill {
   box-shadow: inset 0 0 0 100px hsl(var(--card));
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 .customInput::-moz-placeholder {
-  color: hsl(var(--foreground)/0.5);
+  color: hsl(var(--foreground) / 0.5);
 }
 .customInput::placeholder {
-  color: hsl(var(--foreground)/0.5);
+  color: hsl(var(--foreground) / 0.5);
 }
-.customInput:hover, .customInput:focus, .customInput:active {
+.customInput:hover,
+.customInput:focus,
+.customInput:active {
   border-color: hsl(var(--input-hover));
 }
-@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
-  .customInput:hover, .customInput:focus, .customInput:active {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
+  .customInput:hover,
+  .customInput:focus,
+  .customInput:active {
     border-color: hsl(var(--input-hover));
   }
 }
@@ -57,7 +62,9 @@
 
 /* Override autofill styles */
 .customInput:-webkit-autofill {
-  -webkit-text-fill-color: hsl(var(--foreground)) !important; /* Change text color */
+  -webkit-text-fill-color: hsl(
+    var(--foreground)
+  ) !important; /* Change text color */
   background-color: hsl(var(--card)) !important; /* Change background color */
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
@@ -67,8 +74,10 @@
 .customInput:-webkit-autofill-strong-password,
 .customInput:-webkit-autofill-strong-password-viewable,
 .customInput:-webkit-autofill-and-obscured {
-  -webkit-text-fill-color: hsl(var(--foreground)) !important; /* Change text color */
+  -webkit-text-fill-color: hsl(
+    var(--foreground)
+  ) !important; /* Change text color */
   background-color: hsl(var(--card)) !important; /* Change background color */
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
-}/*# sourceMappingURL=customInput.module.css.map */
+} /*# sourceMappingURL=customInput.module.css.map */

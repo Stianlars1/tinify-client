@@ -121,4 +121,5 @@ const BOX_LIGHT_URL = "/assets/box/v3/box_beige_v3.png";
 const BOX_CLOSED_LIGHT_URL = "/assets/box/v3/box_closed_beige.png";
 const BOX_CLOSED_BLACK_URL = "/assets/box/v3/box_closed_black.png";
 
+DropZone.displayName = "DropZone";
 export default DropZone;

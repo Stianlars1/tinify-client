@@ -114,7 +114,7 @@ export const ResizeControls = ({
     const promises = images.map((file) =>
       limit(() => resizeImages(file)).catch((error) => {
         console.error("Resize failed message:", error);
-      })
+      }),
     );
 
     // Wait for all promises to resolve
@@ -208,7 +208,7 @@ export const ResizeControls = ({
 
                     updateResizeOptions({ height: e.target.value });
                     setHeight(
-                      e.target.value === "" ? "" : parseInt(e.target.value)
+                      e.target.value === "" ? "" : parseInt(e.target.value),
                     );
                   }}
                 />
@@ -228,7 +228,7 @@ export const ResizeControls = ({
                   onChange={(e) => {
                     updateResizeOptions({ scale: e.target.value });
                     setScale(
-                      e.target.value === "" ? "" : parseFloat(e.target.value)
+                      e.target.value === "" ? "" : parseFloat(e.target.value),
                     );
                   }}
                 />

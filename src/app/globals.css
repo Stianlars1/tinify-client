@@ -46,7 +46,8 @@
   --warning-foreground: 26 83.3% 14.1%;
 }
 
-@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
   :root {
     --purple: 263.4 70% 50.4%;
     --purple-foreground: 210 20% 98%;
@@ -96,7 +97,18 @@ body {
 body {
   color: hsl(var(--foreground));
   background: hsl(var(--background));
-  font-family: system-ui, -apple-system, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
@@ -123,7 +135,8 @@ body h6 {
   color: hsl(var(--foreground));
 }
 
-@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -137,4 +150,4 @@ body h6 {
   :root {
     --nav-height: 40px;
   }
-}/*# sourceMappingURL=globals.css.map */
+} /*# sourceMappingURL=globals.css.map */

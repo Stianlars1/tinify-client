@@ -63,6 +63,6 @@
   max-width: var(--max-width) !important;
 }
 
-[data-hide-header=true] .pageContent .pageHeaderWrapper {
+[data-hide-header="true"] .pageContent .pageHeaderWrapper {
   display: none !important;
-}/*# sourceMappingURL=pageContent.module.css.map */
+} /*# sourceMappingURL=pageContent.module.css.map */

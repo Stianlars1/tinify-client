@@ -4,5 +4,5 @@
   inset: 0;
   min-height: 100%;
   min-width: 100%;
-  fill: hsl(var(--muted-foreground)/0.7);
-}/*# sourceMappingURL=dot.module.css.map */
+  fill: hsl(var(--muted-foreground) / 0.7);
+} /*# sourceMappingURL=dot.module.css.map */

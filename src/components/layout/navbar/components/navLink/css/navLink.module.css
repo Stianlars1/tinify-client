@@ -1,14 +1,15 @@
 .navLink {
   font-size: 0.875rem;
   border-bottom: 1px solid transparent;
-  color: hsl(var(--foreground)/0.7);
+  color: hsl(var(--foreground) / 0.7);
   transition: color 0.15s ease;
 }
 .navLink:hover {
-  color: hsl(var(--foreground)/1);
+  color: hsl(var(--foreground) / 1);
   border-bottom: 1px solid hsl(var(--foreground));
 }
-@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
   .navLink:hover {
     border-bottom: 1px solid hsl(var(--muted-foreground));
   }
@@ -18,8 +19,9 @@
   color: hsl(var(--foreground));
   border-bottom: 1px solid hsl(var(--foreground));
 }
-@media screen and (-webkit-prefers-color-scheme: dark), screen and (prefers-color-scheme: dark) {
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
   .activeLink {
     border-bottom: 1px solid hsl(var(--muted-foreground));
   }
-}/*# sourceMappingURL=navLink.module.css.map */
+} /*# sourceMappingURL=navLink.module.css.map */

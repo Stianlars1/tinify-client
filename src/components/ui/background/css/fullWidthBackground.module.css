@@ -45,12 +45,20 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, hsl(var(--background)), transparent 40%);
+    background: linear-gradient(
+      to right,
+      hsl(var(--background)),
+      transparent 40%
+    );
   }
   .overflow::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to left, hsl(var(--background)), transparent 40%);
+    background: linear-gradient(
+      to left,
+      hsl(var(--background)),
+      transparent 40%
+    );
   }
-}/*# sourceMappingURL=fullWidthBackground.module.css.map */
+} /*# sourceMappingURL=fullWidthBackground.module.css.map */

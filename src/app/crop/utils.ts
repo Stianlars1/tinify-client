@@ -3,7 +3,7 @@ import { centerCrop, makeAspectCrop } from "react-image-crop";
 export function centerAspectCrop(
   mediaWidth: number,
   mediaHeight: number,
-  aspect: number
+  aspect: number,
 ) {
   return centerCrop(
     makeAspectCrop(
@@ -13,9 +13,9 @@ export function centerAspectCrop(
       },
       aspect,
       mediaWidth,
-      mediaHeight
+      mediaHeight,
     ),
     mediaWidth,
-    mediaHeight
+    mediaHeight,
   );
 }

@@ -1,1 +1,123 @@
-.button{font-size:.875rem;padding:4px 8px;border-radius:calc(var(--radius) - 3px);border:1px solid rgba(0,0,0,0);display:inline-block;transition:all .15s ease;cursor:pointer;z-index:100}.button:active{transform:scale(0.95)}.downloadButton{background-color:hsl(var(--primary));color:hsl(var(--primary-foreground))}.downloadButton:hover{background-color:hsl(var(--primary)/0.7)}.downloadButton.isDownloading{opacity:.7;cursor:wait}.downloadButton.isDownloading:active{transform:none}.downloadButton:disabled{opacity:.6;cursor:not-allowed}.downloadButton:disabled:hover{background-color:hsl(var(--primary))}.downloadButton:disabled:active{transform:none}.downloadAllButton{background-color:hsl(var(--black));color:hsl(var(--white));padding:.65rem 1rem;font-size:16px;cursor:pointer}@media screen and (-webkit-prefers-color-scheme: dark),screen and (prefers-color-scheme: dark){.downloadAllButton{background-color:hsl(var(--purple))}}.downloadAllButton:hover{background-color:hsl(var(--black)/0.7)}@media screen and (-webkit-prefers-color-scheme: dark),screen and (prefers-color-scheme: dark){.downloadAllButton:hover{background-color:hsl(var(--purple)/0.7)}}.downloadAllButton:disabled{opacity:.6;cursor:not-allowed}.downloadAllButton:disabled:hover{background-color:hsl(var(--black))}@media screen and (-webkit-prefers-color-scheme: dark),screen and (prefers-color-scheme: dark){.downloadAllButton:disabled:hover{background-color:hsl(var(--purple))}}.downloadAllButton:disabled:active{transform:none}@media screen and (max-width: 400px){.downloadButton{padding:.15rem !important}}.hasDownloaded{background-color:hsl(var(--success));color:hsl(var(--black))}.downloadButtonText{display:flex}.downloadButtonIconWrapper{display:none}.downloadButtonIconWrapper .downloadButtonIcon{display:none}@media screen and (max-width: 400px){.downloadButtonIconWrapper{display:flex;position:relative;width:100%;height:100%}.downloadButtonIconWrapper .downloadButtonIcon{display:flex;width:1.5rem;fill:#000;color:#fff;stroke:rgba(0,0,0,0);z-index:10}.downloadButtonIconWrapper::after{content:"";position:absolute;inset:5px;border-radius:100%;background-color:hsl(var(--white));z-index:0}}@media screen and (max-width: 400px)and (-webkit-prefers-color-scheme: dark),screen and (max-width: 400px)and (prefers-color-scheme: dark){.downloadButtonIconWrapper::after{background-color:hsl(var(--white))}}
+.button {
+  font-size: 0.875rem;
+  padding: 4px 8px;
+  border-radius: calc(var(--radius) - 3px);
+  border: 1px solid rgba(0, 0, 0, 0);
+  display: inline-block;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  z-index: 100;
+}
+.button:active {
+  transform: scale(0.95);
+}
+.downloadButton {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+.downloadButton:hover {
+  background-color: hsl(var(--primary) / 0.7);
+}
+.downloadButton.isDownloading {
+  opacity: 0.7;
+  cursor: wait;
+}
+.downloadButton.isDownloading:active {
+  transform: none;
+}
+.downloadButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.downloadButton:disabled:hover {
+  background-color: hsl(var(--primary));
+}
+.downloadButton:disabled:active {
+  transform: none;
+}
+.downloadAllButton {
+  background-color: hsl(var(--black));
+  color: hsl(var(--white));
+  padding: 0.65rem 1rem;
+  font-size: 16px;
+  cursor: pointer;
+}
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
+  .downloadAllButton {
+    background-color: hsl(var(--purple));
+  }
+}
+.downloadAllButton:hover {
+  background-color: hsl(var(--black) / 0.7);
+}
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
+  .downloadAllButton:hover {
+    background-color: hsl(var(--purple) / 0.7);
+  }
+}
+.downloadAllButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.downloadAllButton:disabled:hover {
+  background-color: hsl(var(--black));
+}
+@media screen and (-webkit-prefers-color-scheme: dark),
+  screen and (prefers-color-scheme: dark) {
+  .downloadAllButton:disabled:hover {
+    background-color: hsl(var(--purple));
+  }
+}
+.downloadAllButton:disabled:active {
+  transform: none;
+}
+@media screen and (max-width: 400px) {
+  .downloadButton {
+    padding: 0.15rem !important;
+  }
+}
+.hasDownloaded {
+  background-color: hsl(var(--success));
+  color: hsl(var(--black));
+}
+.downloadButtonText {
+  display: flex;
+}
+.downloadButtonIconWrapper {
+  display: none;
+}
+.downloadButtonIconWrapper .downloadButtonIcon {
+  display: none;
+}
+@media screen and (max-width: 400px) {
+  .downloadButtonIconWrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .downloadButtonIconWrapper .downloadButtonIcon {
+    display: flex;
+    width: 1.5rem;
+    fill: #000;
+    color: #fff;
+    stroke: rgba(0, 0, 0, 0);
+    z-index: 10;
+  }
+  .downloadButtonIconWrapper::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 100%;
+    background-color: hsl(var(--white));
+    z-index: 0;
+  }
+}
+@media screen and (max-width: 400px) and (-webkit-prefers-color-scheme: dark),
+  screen and (max-width: 400px) and (prefers-color-scheme: dark) {
+  .downloadButtonIconWrapper::after {
+    background-color: hsl(var(--white));
+  }
+}
